@@ -1,0 +1,103 @@
+<div class="min-h-screen bg-gradient-to-br from-blue-50 to-purple-100 flex items-center justify-center p-8">
+  <div class="w-full max-w-5xl bg-white rounded-3xl shadow-2xl p-10 space-y-8">
+
+    <!-- Título -->
+    <h1 class="text-3xl md:text-4xl font-extrabold text-gray-800 text-center">
+      {{ 'PAGE_TITLE' | translate }}
+    </h1>
+
+    <!-- Descripción -->
+    <p class="text-gray-700 text-center text-lg md:text-xl">
+      {{ 'PAGE_DESCRIPTION' | translate }}
+    </p>
+
+    <!-- Lista de modelos con barras de progreso -->
+    <div class="space-y-4">
+
+      <div>
+        <div class="flex justify-between mb-1">
+          <span class="font-semibold text-gray-700">PVT</span>
+          <span class="text-gray-600">80.36%</span>
+        </div>
+        <div class="w-full bg-gray-200 rounded-full h-4">
+          <div class="bg-blue-500 h-4 rounded-full" style="width:80.36%"></div>
+        </div>
+      </div>
+
+      <div>
+        <div class="flex justify-between mb-1">
+          <span class="font-semibold text-gray-700">DenseNet</span>
+          <span class="text-gray-600">81.13%</span>
+        </div>
+        <div class="w-full bg-gray-200 rounded-full h-4">
+          <div class="bg-blue-500 h-4 rounded-full" style="width:81.13%"></div>
+        </div>
+      </div>
+
+      <div>
+        <div class="flex justify-between mb-1">
+          <span class="font-semibold text-gray-700">EfficientNet</span>
+          <span class="text-gray-600">81.62%</span>
+        </div>
+        <div class="w-full bg-gray-200 rounded-full h-4">
+          <div class="bg-blue-500 h-4 rounded-full" style="width:81.62%"></div>
+        </div>
+      </div>
+
+      <div>
+        <div class="flex justify-between mb-1">
+          <span class="font-semibold text-gray-700">CaiT</span>
+          <span class="text-gray-600">82.12%</span>
+        </div>
+        <div class="w-full bg-gray-200 rounded-full h-4">
+          <div class="bg-blue-500 h-4 rounded-full" style="width:82.12%"></div>
+        </div>
+      </div>
+
+      <div>
+        <div class="flex justify-between mb-1">
+          <span class="font-semibold text-gray-700">ViT</span>
+          <span class="text-gray-600">82.16%</span>
+        </div>
+        <div class="w-full bg-gray-200 rounded-full h-4">
+          <div class="bg-blue-500 h-4 rounded-full" style="width:82.16%"></div>
+        </div>
+      </div>
+
+      <div>
+        <div class="flex justify-between mb-1">
+          <span class="font-semibold text-gray-700">Inception</span>
+          <span class="text-gray-600">82.33%</span>
+        </div>
+        <div class="w-full bg-gray-200 rounded-full h-4">
+          <div class="bg-blue-500 h-4 rounded-full" style="width:82.33%"></div>
+        </div>
+      </div>
+
+      <div>
+        <div class="flex justify-between mb-1">
+          <span class="font-semibold text-gray-700">DeiT</span>
+          <span class="text-gray-600">82.55%</span>
+        </div>
+        <div class="w-full bg-gray-200 rounded-full h-4">
+          <div class="bg-blue-500 h-4 rounded-full" style="width:82.55%"></div>
+        </div>
+      </div>
+
+      <div>
+        <div class="flex justify-between mb-1">
+          <span class="font-semibold text-gray-700">Swin</span>
+          <span class="text-gray-600">82.96%</span>
+        </div>
+        <div class="w-full bg-gray-200 rounded-full h-4">
+          <div class="bg-blue-500 h-4 rounded-full" style="width:82.96%"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Ensamblaje de modelos -->
+    <div class="mt-8 text-center">
+      <p class="text-gray-700 text-lg md:text-xl" [innerHTML]="'ENSEMBLE_DESCRIPTION' | translate"></p>
+    </div>
+  </div>
+</div>

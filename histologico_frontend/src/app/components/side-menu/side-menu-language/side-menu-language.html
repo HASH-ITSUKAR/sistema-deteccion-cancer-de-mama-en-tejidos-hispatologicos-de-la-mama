@@ -1,0 +1,43 @@
+<div class="px-6 py-4 mt-auto border-t border-slate-700">
+  <button
+    (click)="isOpen = !isOpen"
+    class="w-full px-3 py-2.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 transition-all flex items-center justify-between group"
+  >
+    <div class="flex items-center gap-2">
+      <span class="text-lg">{{ getCurrentFlag() }}</span>
+      <span class="text-sm font-medium group-hover:text-white">{{ getCurrentLanguageName() }}</span>
+    </div>
+    <svg
+      [ngClass]="{'rotate-180': isOpen}"
+      class="w-4 h-4 transition-transform duration-200"
+      fill="none"
+      stroke="currentColor"
+      viewBox="0 0 24 24"
+    >
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+    </svg>
+  </button>
+
+  @if (isOpen) {
+    <div class="mt-2 space-y-1 max-h-64 overflow-y-auto animate-fadeIn">
+      @for (lang of languages; track lang.code) {
+        <button
+          (click)="changeLanguage(lang.code)"
+          [ngClass]="{
+            'bg-blue-600 text-white hover:bg-blue-700': currentLanguage === lang.code,
+            'text-slate-300 hover:bg-white/5 hover:text-white': currentLanguage !== lang.code
+          }"
+          class="w-full px-3 py-2 rounded-lg transition-all flex items-center gap-2.5"
+        >
+          <span class="text-base">{{ lang.flag }}</span>
+          <span class="text-sm font-medium">{{ lang.name }}</span>
+          @if (currentLanguage === lang.code) {
+            <svg class="w-4 h-4 ml-auto" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+            </svg>
+          }
+        </button>
+      }
+    </div>
+  }
+</div>
