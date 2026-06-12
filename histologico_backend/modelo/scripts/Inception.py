@@ -29,11 +29,55 @@ def hook_backward(module, grad_input, grad_output): gradientes['data'] = grad_ou
 handle_f = modelo.stages[-1].register_forward_hook(hook_forward)
 handle_b = modelo.stages[-1].register_full_backward_hook(hook_backward)
 
+def generar_mapa_clase_inception(clase_id, salida, imagen_procesada_vista):
+    """Genera el mapa de calor específico para una clase usando Grad-CAM en InceptionNeXt"""
+    modelo.zero_grad()
+    score = salida[0, clase_id]
+    # retain_graph=True permite evaluar secuencialmente ambas clases diagnósticas
+    score.backward(retain_graph=True)
+    
+    if 'data' not in gradientes or 'data' not in activaciones:
+        return None
+        
+    grads = gradientes['data'].cpu().data.numpy()[0]
+    acts = activaciones['data'].cpu().data.numpy()[0]
+    
+    # Ponderación global de la importancia de los canales basándose en los gradientes promedio
+    pesos = np.mean(grads, axis=(1, 2))
+    
+    # Combinación lineal ponderada
+    cam = np.zeros(acts.shape[1:], dtype=np.float32)
+    for i, w in enumerate(pesos): 
+        cam += w * acts[i, :, :]
+        
+    # Pasar por la función de activación ReLU
+    cam = np.maximum(cam, 0)
+    
+    # Normalizar el mapa final entre un rango de 0 y 255
+    if cam.max() > 0: 
+        cam = (cam - cam.min()) / (cam.max() - cam.min() + 1e-8)
+    mapa_normalizado = (cam * 255).astype(np.uint8)
+
+    # Redimensionar el mapa convolucional de la última etapa al tamaño estándar (224x224)
+    mapa_escalado = cv2.resize(mapa_normalizado, (224, 224), interpolation=cv2.INTER_CUBIC)
+    
+    # Aplicar el mapa de color JET y reestructurar a RGB para PIL
+    mapa_color = cv2.applyColorMap(mapa_escalado, cv2.COLORMAP_JET)
+    mapa_color_rgb = cv2.cvtColor(mapa_color, cv2.COLOR_BGR2RGB)
+    imagen_mapa_calor_pil = Image.fromarray(mapa_color_rgb)
+    
+    # Superposición: Imagen procesada (50%) + Mapa de Calor (50%)
+    imagen_superpuesta_pil = Image.blend(imagen_procesada_vista, imagen_mapa_calor_pil, alpha=0.5)
+    
+    # Codificar la imagen fusionada a string Base64
+    buffer = io.BytesIO()
+    imagen_superpuesta_pil.save(buffer, format="PNG")
+    return f"data:image/png;base64,{base64.b64encode(buffer.getvalue()).decode('utf-8')}"
+
 def analizar_inception(imagen_pil):
     """
-    Analiza una imagen usando InceptionNeXt, calcula el mapa de calor Grad-CAM 
-    sobre la imagen procesada de 224x224 y devuelve el resultado con la 
-    imagen superpuesta codificada en Base64.
+    Analiza una imagen usando InceptionNeXt y devuelve las métricas junto a
+    dos mapas de calor independientes (uno por cada clase diagnóstica).
     """
     # 1. Escalar la imagen de entrada a la vista del modelo (224x224) para la visualización
     imagen_procesada_vista = imagen_pil.resize((224, 224))
@@ -47,50 +91,10 @@ def analizar_inception(imagen_pil):
     probabilidades = F.softmax(salida, dim=1)
     pred = int(probabilidades.argmax(dim=1).item())
 
-    # Viaje hacia atrás (Backward pass) enfocándose en la neurona que predijo el modelo
-    modelo.zero_grad()
-    salida[0, pred].backward()
-
-    imagen_base64 = None
-
-    # 3. Procesamiento de Grad-CAM si se capturaron los datos de la última capa
-    if 'data' in gradientes and 'data' in activaciones:
-        grads = gradientes['data'].cpu().data.numpy()[0]
-        acts = activaciones['data'].cpu().data.numpy()[0]
-        
-        # Ponderación global de la importancia de los canales basándose en los gradientes promedio
-        pesos = np.mean(grads, axis=(1, 2))
-        
-        # Combinación lineal ponderada
-        cam = np.zeros(acts.shape[1:], dtype=np.float32)
-        for i, w in enumerate(pesos): 
-            cam += w * acts[i, :, :]
-            
-        # Pasar por la función de activación ReLU
-        cam = np.maximum(cam, 0)
-        
-        # Normalizar el mapa final entre un rango de 0 y 255
-        if cam.max() > 0: 
-            cam = (cam - cam.min()) / (cam.max() - cam.min() + 1e-8)
-        mapa_normalizado = (cam * 255).astype(np.uint8)
-
-        # Redimensionar el mapa convolucional pequeño (ej. 7x7) al tamaño de la imagen procesada (224x224)
-        mapa_escalado = cv2.resize(mapa_normalizado, (224, 224), interpolation=cv2.INTER_CUBIC)
-        
-        # Aplicar el mapa de color JET y reestructurar a RGB para PIL
-        mapa_color = cv2.applyColorMap(mapa_escalado, cv2.COLORMAP_JET)
-        mapa_color_rgb = cv2.cvtColor(mapa_color, cv2.COLOR_BGR2RGB)
-        imagen_mapa_calor_pil = Image.fromarray(mapa_color_rgb)
-        
-        # Superposición: Imagen procesada (50%) + Mapa de Calor (50%)
-        imagen_superpuesta_pil = Image.blend(imagen_procesada_vista, imagen_mapa_calor_pil, alpha=0.5)
-        
-        # 4. Codificar la imagen fusionada a string Base64 limpio para transporte en respuestas de API
-        buffer = io.BytesIO()
-        imagen_superpuesta_pil.save(buffer, format="PNG")
-        imagen_base64 = base64.b64encode(buffer.getvalue()).decode('utf-8')
-
-    # Retorno JSON estandarizado con el formato unificado
+    # Generar de forma independiente los mapas para Clase 0 y Clase 1
+    mapa_clase_0 = generar_mapa_clase_inception(0, salida, imagen_procesada_vista)
+    mapa_clase_1 = generar_mapa_clase_inception(1, salida, imagen_procesada_vista)
+    
     return {
         "modelo": "Inception",
         "prediccion": pred,
@@ -98,6 +102,7 @@ def analizar_inception(imagen_pil):
             "clase_0": probabilidades[0, 0].item(), 
             "clase_1": probabilidades[0, 1].item()
         },
-        "tipo_explicacion": "gradcam",
-        "mapa_calor": f"data:image/png;base64,{imagen_base64}"
+        "tipo_explicacion": "grad_cam_por_clase",
+        "mapa_calor_clase_0": mapa_clase_0,
+        "mapa_calor_clase_1": mapa_clase_1
     }

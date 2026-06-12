@@ -19,76 +19,92 @@ modelo = create_model("deit_tiny_patch16_224", pretrained=False, num_classes=2, 
 modelo.load_state_dict(torch.load(ruta_deit, map_location=device))
 modelo.to(device).eval()
 
-# Hook para capturar y replicar el cálculo de la matriz de atención de DeiT
-atencion_capturada = {}
-def hook_atencion_deit(module, input, output):
-    x = input[0]
-    B, N, C = x.shape
-    num_heads = module.num_heads
-    head_dim = C // num_heads
-    scale = head_dim ** -0.5
-    qkv = module.qkv(x).reshape(B, N, 3, num_heads, head_dim).permute(2, 0, 3, 1, 4)
-    q, k, v = qkv[0], qkv[1], qkv[2]
-    attn = (q @ k.transpose(-2, -1)) * scale
-    atencion_capturada['pesos'] = attn.softmax(dim=-1)
+# Variables globales para Grad-CAM
+activaciones_bloque = None
+gradientes_bloque = None
 
-# Registrar el hook en la capa de atención del último bloque
-handle = modelo.blocks[-1].attn.register_forward_hook(hook_atencion_deit)
+def hook_activaciones_deit(module, input, output):
+    global activaciones_bloque
+    activaciones_bloque = output
+
+def hook_gradientes_deit(module, grad_input, grad_output):
+    global gradientes_bloque
+    gradientes_bloque = grad_output[0]
+
+# Registramos los hooks en la norma del último bloque para capturar los mapas de características espaciales
+handle_act = modelo.blocks[-1].norm1.register_forward_hook(hook_activaciones_deit)
+handle_grad = modelo.blocks[-1].norm1.register_full_backward_hook(hook_gradientes_deit)
+
+def generar_mapa_clase_deit(clase_id, logits, imagen_procesada_vista):
+    """Genera el mapa de calor discriminativo para una clase específica en DeiT usando Grad-CAM"""
+    global activaciones_bloque, gradientes_bloque
+    
+    modelo.zero_grad()
+    score = logits[0, clase_id]
+    score.backward(retain_graph=True)
+    
+    # Extraemos gradientes y activaciones del tensor [Batch, Num_Tokens, Canales]
+    grads = gradientes_bloque.cpu().data.numpy()[0]
+    acts = activaciones_bloque.cpu().data.numpy()[0]
+    num_tokens = grads.shape[0]
+    
+    # Manejo de tokens especiales de DeiT (197 significa 1 CLS + 196 parches; 198 significa 1 CLS + 1 Distill + 196 parches)
+    if num_tokens == 198:
+        grads = grads[2:, :]
+        acts = acts[2:, :]
+    elif num_tokens == 197:
+        grads = grads[1:, :]
+        acts = acts[1:, :]
+        
+    # Ponderación de Grad-CAM
+    pesos = np.mean(grads, axis=0)
+    mapa_cam = np.zeros(acts.shape[0], dtype=np.float32)
+    
+    for i, w in enumerate(pesos):
+        mapa_cam += w * acts[:, i]
+        
+    # Reconstrucción 2D (14x14) y paso por ReLU
+    lado_grid = int(np.sqrt(len(mapa_cam)))
+    mapa_2d = mapa_cam.reshape(lado_grid, lado_grid)
+    mapa_2d = np.maximum(mapa_2d, 0)
+    
+    # Normalización del mapa de calor
+    mapa_min, mapa_max = mapa_2d.min(), mapa_2d.max()
+    mapa_normalizado = ((mapa_2d - mapa_min) / (mapa_max - mapa_min + 1e-8) * 255).astype(np.uint8)
+    
+    # Redimensionamiento y renderizado visual
+    mapa_escalado = cv2.resize(mapa_normalizado, (224, 224), interpolation=cv2.INTER_CUBIC)
+    mapa_color = cv2.applyColorMap(mapa_escalado, cv2.COLORMAP_JET)
+    mapa_color_rgb = cv2.cvtColor(mapa_color, cv2.COLOR_BGR2RGB)
+    
+    imagen_mapa_calor_pil = Image.fromarray(mapa_color_rgb)
+    imagen_superpuesta_pil = Image.blend(imagen_procesada_vista, imagen_mapa_calor_pil, alpha=0.5)
+    
+    # Guardado en buffer a Base64
+    buffer = io.BytesIO()
+    imagen_superpuesta_pil.save(buffer, format="PNG")
+    return f"data:image/png;base64,{base64.b64encode(buffer.getvalue()).decode('utf-8')}"
 
 def analizar_deit(imagen_pil):
     """
-    Analiza una imagen usando DeiT, calcula el mapa de calor de atención 
-    sobre la imagen procesada de 224x224 (gestionando tokens CLS/Distill)
-    y devuelve el resultado con la imagen superpuesta codificada en Base64.
+    Analiza una imagen usando DeiT y devuelve las probabilidades junto con dos
+    mapas de calor independientes (uno por cada clase diagnóstica).
     """
-    # 1. Escalar la imagen de entrada a la vista del modelo (224x224) para la visualización
     imagen_procesada_vista = imagen_pil.resize((224, 224))
-    
-    # 2. Preprocesar la imagen para obtener el tensor de inferencia
     tensor = preprocesar_imagen_pil(imagen_pil).unsqueeze(0).to(device)
     
-    # Inferencia sin gradientes
+    # Activamos el rastreo de gradientes para computar el paso backward de Grad-CAM
+    tensor.requires_grad_()
+    salida = modelo(tensor)
+    
     with torch.no_grad():
-        salida = modelo(tensor)
         probabilidades = F.softmax(salida, dim=1).cpu().numpy()[0]
         pred = int(probabilidades.argmax())
-
-    imagen_base64 = None
+        
+    # Generar mapas de calor específicos para Clase 0 y Clase 1
+    mapa_clase_0 = generar_mapa_clase_deit(0, salida, imagen_procesada_vista)
+    mapa_clase_1 = generar_mapa_clase_deit(1, salida, imagen_procesada_vista)
     
-    # 3. Procesamiento del mapa de atención si se capturaron los pesos
-    if 'pesos' in atencion_capturada:
-        pesos = atencion_capturada['pesos'].cpu().numpy()[0]
-        mapa_promedio = np.mean(pesos, axis=0)
-        num_tokens = mapa_promedio.shape[0]
-        
-        # Identificar los parches de la imagen saltando tokens especiales (CLS o CLS + Distill)
-        attn_clase = mapa_promedio[0, 2:] if num_tokens == 198 else mapa_promedio[0, 1:]
-        
-        # Calcular dimensiones del grid
-        lado_grid = int(np.sqrt(len(attn_clase)))
-        mapa_2d = attn_clase[:lado_grid*lado_grid].reshape(lado_grid, lado_grid)
-        
-        # Normalizar la matriz entre 0 y 255
-        mapa_min, mapa_max = mapa_2d.min(), mapa_2d.max()
-        mapa_normalizado = ((mapa_2d - mapa_min) / (mapa_max - mapa_min + 1e-8) * 255).astype(np.uint8)
-        
-        # Redimensionar el mapa a la resolución exacta del modelo (224x224)
-        mapa_escalado = cv2.resize(mapa_normalizado, (224, 224), interpolation=cv2.INTER_CUBIC)
-        
-        # Aplicar el mapa de color JET y corregir canales a RGB para PIL
-        mapa_color = cv2.applyColorMap(mapa_escalado, cv2.COLORMAP_JET)
-        mapa_color_rgb = cv2.cvtColor(mapa_color, cv2.COLOR_BGR2RGB)
-        imagen_mapa_calor_pil = Image.fromarray(mapa_color_rgb)
-        
-        # Superposición: Imagen procesada (50%) + Mapa de Calor (50%)
-        imagen_superpuesta_pil = Image.blend(imagen_procesada_vista, imagen_mapa_calor_pil, alpha=0.5)
-        
-        # 4. Codificar la imagen resultante a formato Base64 para JSON
-        buffer = io.BytesIO()
-        imagen_superpuesta_pil.save(buffer, format="PNG")
-        imagen_base64 = base64.b64encode(buffer.getvalue()).decode('utf-8')
-
-    # Retorno estructurado listo para APIs
     return {
         "modelo": "DeiT",
         "prediccion": pred,
@@ -96,6 +112,7 @@ def analizar_deit(imagen_pil):
             "clase_0": float(probabilidades[0]), 
             "clase_1": float(probabilidades[1])
         },
-        "tipo_explicacion": "atencion",
-        "mapa_calor": f"data:image/png;base64,{imagen_base64}"
+        "tipo_explicacion": "grad_cam_por_clase",
+        "mapa_calor_clase_0": mapa_clase_0,
+        "mapa_calor_clase_1": mapa_clase_1
     }

@@ -7,12 +7,21 @@ import { ChangeDetectionStrategy, Component, input } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class PrediccionDatosExplicativa {
-  cait = input.required<string>();
-  deit = input.required<string>();
-  densenet = input.required<string>();
-  efficientnet = input.required<string>();
-  inception = input.required<string>();
-  pvt = input.required<string>();
-  swin = input.required<string>();
-  vit = input.required<string>();
+  cait_0 = input.required<string>();
+  deit_0 = input.required<string>();
+  densenet_0 = input.required<string>();
+  efficientnet_0 = input.required<string>();
+  inception_0 = input.required<string>();
+  pvt_0 = input.required<string>();
+  swin_0 = input.required<string>();
+  vit_0 = input.required<string>();
+
+  cait_1 = input.required<string>();
+  deit_1 = input.required<string>();
+  densenet_1 = input.required<string>();
+  efficientnet_1 = input.required<string>();
+  inception_1 = input.required<string>();
+  pvt_1 = input.required<string>();
+  swin_1 = input.required<string>();
+  vit_1 = input.required<string>();
 }

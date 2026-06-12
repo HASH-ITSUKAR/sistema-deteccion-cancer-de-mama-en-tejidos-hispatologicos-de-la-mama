@@ -15,9 +15,10 @@ export interface Probabilidades {
 }
 
 export interface ResultadosIndividuales {
-  prediccion:       number;
-  probabilidades:   Probabilidades;
-  tipo_explicacion: string;
-  dimensiones:      number[];
-  mapa_calor:       string;
+  prediccion:               number;
+  probabilidades:           Probabilidades;
+  tipo_explicacion:         string;
+  dimensiones:              number[];
+  mapa_calor_clase_0:       string;
+  mapa_calor_clase_1:       string;
 }
