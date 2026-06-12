@@ -1,0 +1,130 @@
+<div class="min-h-screen bg-gradient-to-br from-blue-50 to-purple-100 flex items-center justify-center p-4 md:p-8">
+  <div class="w-full max-w-7xl bg-white rounded-3xl shadow-2xl p-6 md:p-10 space-y-8">
+
+    <h1 class="text-3xl md:text-4xl font-extrabold text-gray-800 text-center tracking-tight">
+      MÉTRICAS DE LOS MODELOS
+    </h1>
+
+    <p class="text-gray-500 text-center text-base md:text-lg max-w-2xl mx-auto">
+      Evaluación detallada del rendimiento para cada arquitectura implementada.
+    </p>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 pt-4">
+
+      <app-metricas-modelo
+        nombre="XgBoost"
+        tipo="Ensemble"
+        accuracy="93.05%"
+        auc="97.75%"
+        f1="87.81%"
+        precision="87.48%"
+        recall="88.15%"
+        mcc="82.96%"
+        loss="0.17353676699948"
+      />
+
+      <app-metricas-modelo
+        nombre="Swin"
+        tipo="Transformer"
+        accuracy="93.05%"
+        auc="97.75%"
+        f1="87.81%"
+        precision="87.48%"
+        recall="88.15%"
+        mcc="82.96%"
+        loss="0.17353676699948"
+      />
+
+      <app-metricas-modelo
+        nombre="DeiT"
+        tipo="Transformer"
+        accuracy="92.86%"
+        auc="97.56%"
+        f1="87.55%"
+        precision="86.69%"
+        recall="88.43%"
+        mcc="82.55%"
+        loss="0.167364359005969"
+      />
+
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 pt-4">
+
+      <app-metricas-modelo
+        nombre="Inception"
+        tipo="CNN"
+        accuracy="92.74%"
+        auc="97.61%"
+        f1="87.42%"
+        mcc="82.33"
+        loss="0.1851378343165"
+      />
+
+      <app-metricas-modelo
+        nombre="ViT"
+        tipo="Transformer"
+        accuracy="92.68%"
+        auc="97.46%"
+        f1="87.29%"
+        precision="86.03%"
+        recall="88.58%"
+        mcc="82.16%"
+        loss="0.156960647670388"
+      />
+
+      <app-metricas-modelo
+        nombre="CaiT"
+        tipo="Transformer"
+        accuracy="92.69%"
+        auc="97.51%"
+        f1="87.23%"
+        precision="86.56%"
+        recall="87.92%"
+        mcc="82.12%"
+        loss="0.176328299198838"
+      />
+
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 pt-4">
+
+      <app-metricas-modelo
+        nombre="EfficientNet"
+        tipo="CNN"
+        accuracy="92.63%"
+        auc="97.42%"
+        f1="86.63%"
+        mcc="81.62%"
+        loss="0.173959188106377"
+      />
+
+      <app-metricas-modelo
+        nombre="DenseNet"
+        tipo="CNN"
+        accuracy="92.34%"
+        auc="97.20%"
+        f1="86.48%"
+        mcc="81.13"
+        loss="0.190047632573401"
+      />
+
+      <app-metricas-modelo
+        nombre="PVT"
+        tipo="Transformer"
+        accuracy="91.90%"
+        auc="97.14%"
+        f1="86.02%"
+        precision="84.35%"
+        recall="87.76%"
+        mcc="80.36%"
+        loss="0.20067131531097"
+      />
+
+    </div>
+
+
+
+
+
+</div>

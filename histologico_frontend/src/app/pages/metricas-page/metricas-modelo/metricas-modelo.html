@@ -1,0 +1,31 @@
+<div class="bg-gray-50 border border-gray-100 rounded-2xl p-5 shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col justify-between">
+  <div>
+    <div class="flex justify-between items-center mb-4 border-b border-gray-200 pb-2">
+      <h2 class="text-xl font-bold text-gray-800">{{ nombre() }}</h2>
+      <span class="px-2.5 py-0.5 text-xs font-semibold rounded-full bg-blue-100 text-blue-800">{{ tipo() }}</span>
+    </div>
+
+    <div class="grid grid-cols-2 gap-3">
+      <div class="bg-white p-3 rounded-xl border border-gray-100">
+        <p class="text-xs text-gray-400 font-medium uppercase">MCC</p>
+        <p class="text-base font-bold text-gray-800">{{ mcc() }}</p>
+      </div>
+      <div class="bg-white p-3 rounded-xl border border-gray-100">
+        <p class="text-xs text-gray-400 font-medium uppercase">Accuracy</p>
+        <p class="text-base font-bold text-gray-800">{{ accuracy() }}</p>
+      </div>
+      <div class="bg-white p-3 rounded-xl border border-gray-100">
+        <p class="text-xs text-gray-400 font-medium uppercase">AUC</p>
+        <p class="text-base font-bold text-gray-800">{{ auc() }}</p>
+      </div>
+      <div class="bg-white p-3 rounded-xl border border-gray-100">
+        <p class="text-xs text-gray-400 font-medium uppercase">F1-Score</p>
+        <p class="text-base font-bold text-gray-800">{{ f1() }}</p>
+      </div>
+      <div class="bg-white p-3 rounded-xl border border-gray-100 col-span-2 flex justify-between items-center">
+        <p class="text-xs text-gray-400 font-medium uppercase">Loss</p>
+        <p class="text-sm font-bold text-red-500">{{ loss() }}</p>
+      </div>
+    </div>
+  </div>
+</div>
