@@ -35,14 +35,12 @@
   "MENU_PREDICT_SUB": "Modellvorhersage",
   "ERROR_ONLY_IMAGES": "Bitte wählen Sie nur Bilddateien aus.",
   "MENU": {
-    "HOME": {
-      "TITLE": "Startseite",
-      "SUB": "Startseite"
-    },
-    "PREDICT": {
-      "TITLE": "Vorhersagen",
-      "SUB": "Modellvorhersage"
-    }
+    "HOME": { "TITLE": "Startseite", "SUB": "Seitenstart" },
+    "PREDICT": { "TITLE": "Vorhersagen", "SUB": "Modellvorhersage" },
+    "METRICS": { "TITLE": "Metriken", "SUB": "Modellmetriken" },
+    "EDA": { "TITLE": "EDA", "SUB": "Modell-EDA" },
+    "EVAL": { "TITLE": "Bewertung", "SUB": "Modellbewertung" },
+    "TRAIN": { "TITLE": "Training", "SUB": "Modelltraining" }
   },
   "REPORT": {
     "TITLE_MAIN": "MEDIZINISCHER DIAGNOSEBERICHT",

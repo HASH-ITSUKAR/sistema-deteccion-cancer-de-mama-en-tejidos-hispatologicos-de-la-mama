@@ -35,14 +35,12 @@
   "MENU_PREDICT_SUB": "Previsione del modello",
   "ERROR_ONLY_IMAGES": "Seleziona solo file immagine.",
   "MENU": {
-    "HOME": {
-      "TITLE": "Home",
-      "SUB": "Pagina iniziale"
-    },
-    "PREDICT": {
-      "TITLE": "Prevedi",
-      "SUB": "Predizione del modello"
-    }
+    "HOME": { "TITLE": "Home", "SUB": "Home della pagina" },
+    "PREDICT": { "TITLE": "Predire", "SUB": "Predizione del modello" },
+    "METRICS": { "TITLE": "Metriche", "SUB": "Metriche del modello" },
+    "EDA": { "TITLE": "EDA", "SUB": "EDA del modello" },
+    "EVAL": { "TITLE": "Valutazione", "SUB": "Valutazione del modello" },
+    "TRAIN": { "TITLE": "Addestramento", "SUB": "Addestramento del modello" }
   },
   "REPORT": {
     "TITLE_MAIN": "RAPPORTO DIAGNOSTICO MEDICO",

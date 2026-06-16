@@ -35,14 +35,12 @@
   "MENU_PREDICT_SUB": "모델 예측",
   "ERROR_ONLY_IMAGES": "이미지 파일만 선택해주세요.",
   "MENU": {
-    "HOME": {
-      "TITLE": "홈",
-      "SUB": "홈페이지"
-    },
-    "PREDICT": {
-      "TITLE": "예측",
-      "SUB": "모델 예측"
-    }
+    "HOME": { "TITLE": "홈", "SUB": "페이지 홈" },
+    "PREDICT": { "TITLE": "예측", "SUB": "모델 예측" },
+    "METRICS": { "TITLE": "지표", "SUB": "모델 지표" },
+    "EDA": { "TITLE": "EDA", "SUB": "모델 EDA" },
+    "EVAL": { "TITLE": "평가", "SUB": "모델 평가" },
+    "TRAIN": { "TITLE": "훈련", "SUB": "모델 훈련" }
   },
   "REPORT": {
   "TITLE_MAIN": "의료 진단 보고서",

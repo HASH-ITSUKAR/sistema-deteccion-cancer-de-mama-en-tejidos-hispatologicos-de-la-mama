@@ -35,14 +35,12 @@
   "MENU_PREDICT_SUB": "Model prediction",
   "ERROR_ONLY_IMAGES": "Please select image files only.",
   "MENU": {
-    "HOME": {
-      "TITLE": "Home",
-      "SUB": "Homepage"
-    },
-    "PREDICT": {
-      "TITLE": "Predict",
-      "SUB": "Model prediction"
-    }
+    "HOME": { "TITLE": "Home", "SUB": "Page home" },
+    "PREDICT": { "TITLE": "Predict", "SUB": "Model prediction" },
+    "METRICS": { "TITLE": "Metrics", "SUB": "Model metrics" },
+    "EDA": { "TITLE": "EDA", "SUB": "Model EDA" },
+    "EVAL": { "TITLE": "Evaluation", "SUB": "Model evaluation" },
+    "TRAIN": { "TITLE": "Training", "SUB": "Model training" }
   },
   "REPORT": {
     "TITLE_MAIN": "MEDICAL DIAGNOSIS REPORT",

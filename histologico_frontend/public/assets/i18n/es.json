@@ -35,14 +35,12 @@
   "MENU_PREDICT_SUB": "Predicción del modelo",
   "ERROR_ONLY_IMAGES": "Por favor, selecciona solo archivos de imagen.",
   "MENU": {
-    "HOME": {
-      "TITLE": "Inicio",
-      "SUB": "Inicio de página"
-    },
-    "PREDICT": {
-      "TITLE": "Predecir",
-      "SUB": "Predicción del modelo"
-    }
+    "HOME": { "TITLE": "Inicio", "SUB": "Inicio de página" },
+    "PREDICT": { "TITLE": "Predecir", "SUB": "Predicción del modelo" },
+    "METRICS": { "TITLE": "Métricas", "SUB": "Métricas del modelo" },
+    "EDA": { "TITLE": "EDA", "SUB": "EDA del modelo" },
+    "EVAL": { "TITLE": "Evaluación", "SUB": "Evaluación del modelo" },
+    "TRAIN": { "TITLE": "Entrenamiento", "SUB": "Entrenamiento del modelo" }
   },
   "REPORT": {
     "TITLE_MAIN": "REPORTE DE DIAGNÓSTICO MÉDICO",
@@ -74,3 +72,5 @@
     "BENIGN_ICON": "✓ BENIGNO"
   }
 }
+
+

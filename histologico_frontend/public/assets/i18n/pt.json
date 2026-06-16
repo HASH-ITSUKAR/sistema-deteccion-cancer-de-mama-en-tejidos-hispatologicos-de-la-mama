@@ -35,14 +35,12 @@
   "MENU_PREDICT_SUB": "Previsão do modelo",
   "ERROR_ONLY_IMAGES": "Por favor, selecione apenas arquivos de imagem.",
   "MENU": {
-    "HOME": {
-      "TITLE": "Início",
-      "SUB": "Página inicial"
-    },
-    "PREDICT": {
-      "TITLE": "Prever",
-      "SUB": "Previsão do modelo"
-    }
+    "HOME": { "TITLE": "Início", "SUB": "Início da página" },
+    "PREDICT": { "TITLE": "Prever", "SUB": "Previsão do modelo" },
+    "METRICS": { "TITLE": "Métricas", "SUB": "Métricas do modelo" },
+    "EDA": { "TITLE": "EDA", "SUB": "EDA do modelo" },
+    "EVAL": { "TITLE": "Avaliação", "SUB": "Avaliação do modelo" },
+    "TRAIN": { "TITLE": "Treinamento", "SUB": "Treinamento do modelo" }
   },
   "REPORT": {
   "TITLE_MAIN": "RELATÓRIO DE DIAGNÓSTICO MÉDICO",

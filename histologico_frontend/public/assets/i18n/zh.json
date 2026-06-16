@@ -35,14 +35,12 @@
   "MENU_PREDICT_SUB": "模型预测",
   "ERROR_ONLY_IMAGES": "请选择仅图像文件。",
   "MENU": {
-    "HOME": {
-      "TITLE": "主页",
-      "SUB": "首页"
-    },
-    "PREDICT": {
-      "TITLE": "预测",
-      "SUB": "模型预测"
-    }
+    "HOME": { "TITLE": "主页", "SUB": "页面首页" },
+    "PREDICT": { "TITLE": "预测", "SUB": "模型预测" },
+    "METRICS": { "TITLE": "指标", "SUB": "模型指标" },
+    "EDA": { "TITLE": "EDA", "SUB": "模型EDA" },
+    "EVAL": { "TITLE": "评估", "SUB": "模型评估" },
+    "TRAIN": { "TITLE": "训练", "SUB": "模型训练" }
   },
   "REPORT": {
     "TITLE_MAIN": "医学诊断报告",

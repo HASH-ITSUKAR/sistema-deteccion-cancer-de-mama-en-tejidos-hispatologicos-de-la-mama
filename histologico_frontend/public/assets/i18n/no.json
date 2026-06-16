@@ -35,14 +35,12 @@
   "MENU_PREDICT_SUB": "Modellprediksjon",
   "ERROR_ONLY_IMAGES": "Vennligst velg bare bildefiler.",
   "MENU": {
-    "HOME": {
-      "TITLE": "Hjem",
-      "SUB": "Hjemmeside"
-    },
-    "PREDICT": {
-      "TITLE": "Forutsi",
-      "SUB": "Modellprediksjon"
-    }
+    "HOME": { "TITLE": "Hjem", "SUB": "Sidehjem" },
+    "PREDICT": { "TITLE": "Forutsi", "SUB": "Modellforutsigelse" },
+    "METRICS": { "TITLE": "Metrikker", "SUB": "Modellmetrikker" },
+    "EDA": { "TITLE": "EDA", "SUB": "Modell-EDA" },
+    "EVAL": { "TITLE": "Evaluering", "SUB": "Modellevaluering" },
+    "TRAIN": { "TITLE": "Trening", "SUB": "Modelltrening" }
   },
   "REPORT": {
   "TITLE_MAIN": "MEDISINSK DIAGNOSERAPPORT",

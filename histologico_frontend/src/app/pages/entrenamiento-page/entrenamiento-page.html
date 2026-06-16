@@ -1,0 +1,169 @@
+<div class="min-h-screen bg-gradient-to-br from-blue-50 to-purple-100 p-4 md:p-8 font-sans w-full">
+  <div class="space-y-8 p-6 bg-gray-50 rounded-3xl border border-gray-200 mt-6">
+
+    <div class="flex justify-between items-center border-b border-gray-200 pb-4">
+      <div>
+        <h2 class="text-2xl font-black text-gray-900 tracking-tight">Entrenamiento de Modelos</h2>
+        <p class="text-sm text-gray-500">Configuración de hiperparámetros y métricas de desempeño.</p>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+      <div class="bg-white border border-gray-200 rounded-2xl p-4 shadow-sm">
+        <p class="text-[10px] font-bold uppercase tracking-wider text-gray-400">Learning Rate</p>
+        <h3 class="text-xl font-black text-gray-900 mt-1">0.0001</h3>
+      </div>
+      <div class="bg-white border border-gray-200 rounded-2xl p-4 shadow-sm">
+        <p class="text-[10px] font-bold uppercase tracking-wider text-gray-400">Batch Size</p>
+        <h3 class="text-xl font-black text-gray-900 mt-1">32</h3>
+      </div>
+      <div class="bg-white border border-gray-200 rounded-2xl p-4 shadow-sm">
+        <p class="text-[10px] font-bold uppercase tracking-wider text-gray-400">Épocas</p>
+        <h3 class="text-xl font-black text-gray-900 mt-1">30</h3>
+      </div>
+      <div class="bg-white border border-gray-200 rounded-2xl p-4 shadow-sm">
+        <p class="text-[10px] font-bold uppercase tracking-wider text-gray-400">Input Size</p>
+        <h3 class="text-xl font-black text-gray-900 mt-1">224x224</h3>
+      </div>
+      <div class="bg-white border border-indigo-200 rounded-2xl p-4 shadow-sm bg-indigo-50/30">
+        <p class="text-[10px] font-bold uppercase tracking-wider text-indigo-600">Early Stop (MCC)</p>
+        <h3 class="text-xl font-black text-indigo-700 mt-1">Paciencia: 3</h3>
+      </div>
+    </div>
+
+    <div class="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm">
+      <h4 class="text-base font-bold text-gray-900 mb-4">Especificaciones del Equipo</h4>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 text-sm">
+        <div class="space-y-1">
+          <p class="text-[10px] font-bold text-gray-400 uppercase">Modelo</p>
+          <p class="font-bold text-gray-800">Laptop Acer Nitro V15</p>
+        </div>
+        <div class="space-y-1">
+          <p class="text-[10px] font-bold text-gray-400 uppercase">Procesador</p>
+          <p class="font-semibold text-gray-800">Intel Core i9-13900H</p>
+          <p class="text-[10px] text-gray-500">(2.60 GHz, 14 núcleos, 20 hilos)</p>
+        </div>
+        <div class="space-y-1">
+          <p class="text-[10px] font-bold text-gray-400 uppercase">Memoria RAM</p>
+          <p class="font-semibold text-gray-800">31.7 GB DDR5</p>
+          <p class="text-[10px] text-gray-500">@ 5200 MT/s</p>
+        </div>
+        <div class="space-y-1">
+          <p class="text-[10px] font-bold text-gray-400 uppercase">Tarjeta Gráfica</p>
+          <p class="font-semibold text-gray-800">NVIDIA GeForce RTX 4060</p>
+          <p class="text-[10px] text-gray-500">8 GB VRAM</p>
+        </div>
+        <div class="space-y-1 lg:col-span-1">
+          <p class="text-[10px] font-bold text-gray-400 uppercase">Almacenamiento</p>
+          <p class="font-semibold text-gray-800">SSD KINGSTON SNV3S2000G</p>
+          <p class="text-[10px] text-gray-500">1.8 TB (NVMe)</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm">
+      <h4 class="text-base font-bold text-gray-900 mb-4">Comparativa de Modelos</h4>
+      <div class="overflow-x-auto">
+        <table class="w-full text-left text-xs">
+          <thead>
+            <tr class="text-gray-400 border-b border-gray-100">
+              <th class="pb-3 font-bold uppercase">Modelo</th>
+              <th class="pb-3 font-bold uppercase text-center">Tiempo (M)</th>
+              <th class="pb-3 font-bold uppercase text-center">CPU %</th>
+              <th class="pb-3 font-bold uppercase text-center">RAM %</th>
+              <th class="pb-3 font-bold uppercase text-center">GPU %</th>
+              <th class="pb-3 font-bold uppercase text-center">VRAM (MB)</th>
+              <th class="pb-3 font-bold uppercase text-right">Disco %</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-50">
+            @for (m of [
+              {name: 'PVT', time: 88.74, cpu: 37.08, ram: 72.65, gpu: 95.25, vram: 2633.07, disk: 28.48},
+              {name: 'DenseNet', time: 274.86, cpu: 20.87, ram: 65.71, gpu: 97.34, vram: 5455.37, disk: 28.31},
+              {name: 'EfficientNet', time: 123.82, cpu: 30.33, ram: 57.74, gpu: 96.12, vram: 3880.30, disk: 28.08},
+              {name: 'CaiT', time: 381.85, cpu: 19.02, ram: 70.70, gpu: 98.10, vram: 5501.44, disk: 28.66},
+              {name: 'ViT', time: 177.53, cpu: 37.09, ram: 75.91, gpu: 95.88, vram: 1387.56, disk: 76.55},
+              {name: 'Inception', time: 233.39, cpu: 15.10, ram: 68.28, gpu: 98.40, vram: 7473.42, disk: 29.59},
+              {name: 'DeiT', time: 153.90, cpu: 38.33, ram: 65.65, gpu: 95.74, vram: 1397.56, disk: 62.15},
+              {name: 'Swin', time: 530.34, cpu: 19.80, ram: 66.63, gpu: 98.35, vram: 4845.27, disk: 65.08}
+            ]; track m.name) {
+              <tr class="hover:bg-gray-50 transition-colors">
+                <td class="py-3 font-bold text-gray-800">{{m.name}}</td>
+                <td class="py-3 text-center text-gray-600">{{m.time}}</td>
+                <td class="py-3 text-center text-gray-600">{{m.cpu}}</td>
+                <td class="py-3 text-center text-gray-600">{{m.ram}}</td>
+                <td class="py-3 text-center text-gray-600 font-semibold">{{m.gpu}}</td>
+                <td class="py-3 text-center text-gray-600">{{m.vram}}</td>
+                <td class="py-3 text-right text-gray-600">{{m.disk}}</td>
+              </tr>
+            }
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+    <div class="flex flex-wrap gap-2 mb-6">
+      @for (m of ['Swin', 'DeiT', 'Inception', 'ViT', 'CaiT', 'EfficientNet', 'DenseNet', 'PVT']; track m) {
+        <button
+          (click)="selectModel(m)"
+          [class]="selectedModel === m ? 'bg-indigo-600 text-white' : 'bg-white text-gray-700 border-gray-200'"
+          class="px-4 py-2 rounded-xl text-xs font-bold border shadow-sm transition-all hover:scale-105">
+          {{m}}
+        </button>
+      }
+    </div>
+
+
+
+    <div class="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm">
+      <h4 class="text-base font-bold text-gray-900 mb-4">Evolución: {{selectedModel}}</h4>
+      <div class="overflow-x-auto">
+        <table class="w-full text-left uppercase text-xs">
+          <thead>
+            <tr class="text-gray-400 border-b border-gray-100">
+              <th class="pb-3">Época</th>
+              <th class="pb-3">Perdida</th>
+              <th class="pb-3">F1</th>
+              <th class="pb-3">AUC</th>
+              <th class="pb-3">Accuracy</th>
+              <th class="pb-3">MCC</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-50">
+            @for (e of modelData[selectedModel]; track e.e; let i = $index) {
+              <tr [class.text-indigo-600]="isAntepenultimate(i, modelData[selectedModel].length)"
+                  [class.font-bold]="isAntepenultimate(i, modelData[selectedModel].length)"
+                  class="hover:bg-gray-50 transition-colors">
+                <td class="py-3">{{e.e}}</td>
+                <td class="py-3">{{e.p}}</td>
+                <td class="py-3">{{e.f1}}</td>
+                <td class="py-3">{{e.auc}}</td>
+                <td class="py-3">{{e.acc}}</td>
+                <td class="py-3">{{e.mcc}}</td>
+              </tr>
+            }
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+</div>

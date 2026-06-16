@@ -1,0 +1,677 @@
+{
+    "modelo": "DenseNet",
+    "resumen_final": {
+        "epoca_actual": 13,
+        "mejor_mcc": 0.8113383830502645,
+        "mejor_epoca": 10,
+        "epocas_sin_mejora": 3,
+        "estado": "early_stopping",
+        "ruta_mejor_modelo": "MEJOR_MODELO_densenet.pth",
+        "total_modelos_guardados": 4
+    },
+    "series": [
+        {
+            "epoca": 1,
+            "perdida": 0.2836418512126379,
+            "auc": 0.9580595925048082,
+            "mcc": 0.7616541574433877,
+            "tiempo_seg": 1302.4252812862396,
+            "detalles_clase": {
+                "0": {
+                    "precision": 0.9355231555089476,
+                    "recall": 0.9277088225427709,
+                    "f1-score": 0.9315996024995368,
+                    "support": 29810.0
+                },
+                "1": {
+                    "precision": 0.8213989723189127,
+                    "recall": 0.8387069476178387,
+                    "f1-score": 0.8299627349997907,
+                    "support": 11817.0
+                },
+                "accuracy": 0.9024431258558148,
+                "macro avg": {
+                    "precision": 0.8784610639139301,
+                    "recall": 0.8832078850803048,
+                    "f1-score": 0.8807811687496637,
+                    "support": 41627.0
+                },
+                "weighted avg": {
+                    "precision": 0.9031257818630773,
+                    "recall": 0.9024431258558148,
+                    "f1-score": 0.9027471062051965,
+                    "support": 41627.0
+                }
+            },
+            "matriz_confusion": [
+                [
+                    27655,
+                    2155
+                ],
+                [
+                    1906,
+                    9911
+                ]
+            ],
+            "recursos": {
+                "cpu_uso_promedio": 19.98,
+                "ram_uso_promedio": 52.16,
+                "gpu_uso_promedio": 94.57,
+                "gpu_mem_promedio": 5237.79,
+                "disco_uso_porcentaje": 27.2
+            }
+        },
+        {
+            "epoca": 2,
+            "perdida": 0.2485451875733057,
+            "auc": 0.9640052069356809,
+            "mcc": 0.7685352778778511,
+            "tiempo_seg": 1260.2896349430084,
+            "detalles_clase": {
+                "0": {
+                    "precision": 0.9188134773496696,
+                    "recall": 0.9559543777255954,
+                    "f1-score": 0.9370160295930949,
+                    "support": 29810.0
+                },
+                "1": {
+                    "precision": 0.8762721447418017,
+                    "recall": 0.786917153253787,
+                    "f1-score": 0.8291943466048419,
+                    "support": 11817.0
+                },
+                "accuracy": 0.90796838590338,
+                "macro avg": {
+                    "precision": 0.8975428110457356,
+                    "recall": 0.8714357654896911,
+                    "f1-score": 0.8831051880989684,
+                    "support": 41627.0
+                },
+                "weighted avg": {
+                    "precision": 0.9067369182071137,
+                    "recall": 0.90796838590338,
+                    "f1-score": 0.9064077986883411,
+                    "support": 41627.0
+                }
+            },
+            "matriz_confusion": [
+                [
+                    28497,
+                    1313
+                ],
+                [
+                    2518,
+                    9299
+                ]
+            ],
+            "recursos": {
+                "cpu_uso_promedio": 19.81,
+                "ram_uso_promedio": 67.01,
+                "gpu_uso_promedio": 97.9,
+                "gpu_mem_promedio": 5399.05,
+                "disco_uso_porcentaje": 28.5
+            }
+        },
+        {
+            "epoca": 3,
+            "perdida": 0.236238520337227,
+            "auc": 0.9659276458443461,
+            "mcc": 0.7787709025135923,
+            "tiempo_seg": 1261.9889245033264,
+            "detalles_clase": {
+                "0": {
+                    "precision": 0.9238252748321821,
+                    "recall": 0.9556524656155653,
+                    "f1-score": 0.9394693884281168,
+                    "support": 29810.0
+                },
+                "1": {
+                    "precision": 0.8774791473586654,
+                    "recall": 0.8012185833968012,
+                    "f1-score": 0.8376166674039014,
+                    "support": 11817.0
+                },
+                "accuracy": 0.9118120450669037,
+                "macro avg": {
+                    "precision": 0.9006522110954238,
+                    "recall": 0.8784355245061832,
+                    "f1-score": 0.8885430279160091,
+                    "support": 41627.0
+                },
+                "weighted avg": {
+                    "precision": 0.910668617173582,
+                    "recall": 0.9118120450669037,
+                    "f1-score": 0.9105556160125414,
+                    "support": 41627.0
+                }
+            },
+            "matriz_confusion": [
+                [
+                    28488,
+                    1322
+                ],
+                [
+                    2349,
+                    9468
+                ]
+            ],
+            "recursos": {
+                "cpu_uso_promedio": 19.73,
+                "ram_uso_promedio": 67.11,
+                "gpu_uso_promedio": 97.85,
+                "gpu_mem_promedio": 5416.98,
+                "disco_uso_porcentaje": 28.5
+            }
+        },
+        {
+            "epoca": 4,
+            "perdida": 0.2263153476569414,
+            "auc": 0.9670933741117511,
+            "mcc": 0.7883004376155197,
+            "tiempo_seg": 1261.6017084121704,
+            "detalles_clase": {
+                "0": {
+                    "precision": 0.930314045256574,
+                    "recall": 0.9530023482053003,
+                    "f1-score": 0.941521533796212,
+                    "support": 29810.0
+                },
+                "1": {
+                    "precision": 0.8736699729486024,
+                    "recall": 0.8199204535838199,
+                    "f1-score": 0.8459422883834635,
+                    "support": 11817.0
+                },
+                "accuracy": 0.9152232925745309,
+                "macro avg": {
+                    "precision": 0.9019920091025881,
+                    "recall": 0.8864614008945602,
+                    "f1-score": 0.8937319110898377,
+                    "support": 41627.0
+                },
+                "weighted avg": {
+                    "precision": 0.914234025018188,
+                    "recall": 0.9152232925745309,
+                    "f1-score": 0.9143886646717869,
+                    "support": 41627.0
+                }
+            },
+            "matriz_confusion": [
+                [
+                    28409,
+                    1401
+                ],
+                [
+                    2128,
+                    9689
+                ]
+            ],
+            "recursos": {
+                "cpu_uso_promedio": 21.62,
+                "ram_uso_promedio": 66.77,
+                "gpu_uso_promedio": 97.87,
+                "gpu_mem_promedio": 5415.0,
+                "disco_uso_porcentaje": 28.5
+            }
+        },
+        {
+            "epoca": 5,
+            "perdida": 0.2198222990856998,
+            "auc": 0.9667913569670905,
+            "mcc": 0.7785832892725217,
+            "tiempo_seg": 1262.3976576328278,
+            "detalles_clase": {
+                "0": {
+                    "precision": 0.92011311417462,
+                    "recall": 0.9605166051660516,
+                    "f1-score": 0.9398808449178552,
+                    "support": 29810.0
+                },
+                "1": {
+                    "precision": 0.8879901027788352,
+                    "recall": 0.7896251163577896,
+                    "f1-score": 0.8359238521836506,
+                    "support": 11817.0
+                },
+                "accuracy": 0.9120042280250799,
+                "macro avg": {
+                    "precision": 0.9040516084767276,
+                    "recall": 0.8750708607619206,
+                    "f1-score": 0.8879023485507529,
+                    "support": 41627.0
+                },
+                "weighted avg": {
+                    "precision": 0.9109940898475248,
+                    "recall": 0.9120042280250799,
+                    "f1-score": 0.9103697155273132,
+                    "support": 41627.0
+                }
+            },
+            "matriz_confusion": [
+                [
+                    28633,
+                    1177
+                ],
+                [
+                    2486,
+                    9331
+                ]
+            ],
+            "recursos": {
+                "cpu_uso_promedio": 21.64,
+                "ram_uso_promedio": 67.45,
+                "gpu_uso_promedio": 97.87,
+                "gpu_mem_promedio": 5415.04,
+                "disco_uso_porcentaje": 28.5
+            }
+        },
+        {
+            "epoca": 6,
+            "perdida": 0.21198307490098992,
+            "auc": 0.9693370358892262,
+            "mcc": 0.7928465408726045,
+            "tiempo_seg": 1261.3775887489319,
+            "detalles_clase": {
+                "0": {
+                    "precision": 0.9311653471177125,
+                    "recall": 0.954780275075478,
+                    "f1-score": 0.9428249635616801,
+                    "support": 29810.0
+                },
+                "1": {
+                    "precision": 0.8781303679594973,
+                    "recall": 0.8219514259118219,
+                    "f1-score": 0.8491126846752338,
+                    "support": 11817.0
+                },
+                "accuracy": 0.9170730535469768,
+                "macro avg": {
+                    "precision": 0.9046478575386049,
+                    "recall": 0.88836585049365,
+                    "f1-score": 0.8959688241184569,
+                    "support": 41627.0
+                },
+                "weighted avg": {
+                    "precision": 0.9161098699343309,
+                    "recall": 0.9170730535469768,
+                    "f1-score": 0.9162220856314633,
+                    "support": 41627.0
+                }
+            },
+            "matriz_confusion": [
+                [
+                    28462,
+                    1348
+                ],
+                [
+                    2104,
+                    9713
+                ]
+            ],
+            "recursos": {
+                "cpu_uso_promedio": 20.69,
+                "ram_uso_promedio": 67.83,
+                "gpu_uso_promedio": 97.92,
+                "gpu_mem_promedio": 5415.24,
+                "disco_uso_porcentaje": 28.5
+            }
+        },
+        {
+            "epoca": 7,
+            "perdida": 0.20622515377014317,
+            "auc": 0.969689187198595,
+            "mcc": 0.7945283565282285,
+            "tiempo_seg": 1262.320185661316,
+            "detalles_clase": {
+                "0": {
+                    "precision": 0.9302553066614496,
+                    "recall": 0.9570613887957061,
+                    "f1-score": 0.9434679806213727,
+                    "support": 29810.0
+                },
+                "1": {
+                    "precision": 0.8831903632049644,
+                    "recall": 0.818989591266819,
+                    "f1-score": 0.8498792535675083,
+                    "support": 11817.0
+                },
+                "accuracy": 0.9178658082494535,
+                "macro avg": {
+                    "precision": 0.906722834933207,
+                    "recall": 0.8880254900312625,
+                    "f1-score": 0.8966736170944405,
+                    "support": 41627.0
+                },
+                "weighted avg": {
+                    "precision": 0.9168945927780257,
+                    "recall": 0.9178658082494535,
+                    "f1-score": 0.9169001763694326,
+                    "support": 41627.0
+                }
+            },
+            "matriz_confusion": [
+                [
+                    28530,
+                    1280
+                ],
+                [
+                    2139,
+                    9678
+                ]
+            ],
+            "recursos": {
+                "cpu_uso_promedio": 21.87,
+                "ram_uso_promedio": 67.68,
+                "gpu_uso_promedio": 97.84,
+                "gpu_mem_promedio": 5415.01,
+                "disco_uso_porcentaje": 28.5
+            }
+        },
+        {
+            "epoca": 8,
+            "perdida": 0.20034799047185006,
+            "auc": 0.9695177721007979,
+            "mcc": 0.7976187873176426,
+            "tiempo_seg": 1261.759874343872,
+            "detalles_clase": {
+                "0": {
+                    "precision": 0.9486611705389385,
+                    "recall": 0.9341496142234149,
+                    "f1-score": 0.9413494692718545,
+                    "support": 29810.0
+                },
+                "1": {
+                    "precision": 0.840055406176159,
+                    "recall": 0.8724718625708725,
+                    "f1-score": 0.8559568285595683,
+                    "support": 11817.0
+                },
+                "accuracy": 0.9166406418910803,
+                "macro avg": {
+                    "precision": 0.8943582883575487,
+                    "recall": 0.9033107383971437,
+                    "f1-score": 0.8986531489157115,
+                    "support": 41627.0
+                },
+                "weighted avg": {
+                    "precision": 0.9178303559840832,
+                    "recall": 0.9166406418910803,
+                    "f1-score": 0.9171083556845894,
+                    "support": 41627.0
+                }
+            },
+            "matriz_confusion": [
+                [
+                    27847,
+                    1963
+                ],
+                [
+                    1507,
+                    10310
+                ]
+            ],
+            "recursos": {
+                "cpu_uso_promedio": 21.27,
+                "ram_uso_promedio": 68.21,
+                "gpu_uso_promedio": 97.86,
+                "gpu_mem_promedio": 5406.48,
+                "disco_uso_porcentaje": 28.5
+            }
+        },
+        {
+            "epoca": 9,
+            "perdida": 0.19405268399322181,
+            "auc": 0.9701981665665855,
+            "mcc": 0.7970527820098805,
+            "tiempo_seg": 1260.9309928417206,
+            "detalles_clase": {
+                "0": {
+                    "precision": 0.9344229947051665,
+                    "recall": 0.9531365313653136,
+                    "f1-score": 0.9436869986880781,
+                    "support": 29810.0
+                },
+                "1": {
+                    "precision": 0.8754901960784314,
+                    "recall": 0.8312600490818313,
+                    "f1-score": 0.8528020141511482,
+                    "support": 11817.0
+                },
+                "accuracy": 0.9185384486030701,
+                "macro avg": {
+                    "precision": 0.904956595391799,
+                    "recall": 0.8921982902235724,
+                    "f1-score": 0.8982445064196132,
+                    "support": 41627.0
+                },
+                "weighted avg": {
+                    "precision": 0.9176932548398836,
+                    "recall": 0.9185384486030701,
+                    "f1-score": 0.9178867281359628,
+                    "support": 41627.0
+                }
+            },
+            "matriz_confusion": [
+                [
+                    28413,
+                    1397
+                ],
+                [
+                    1994,
+                    9823
+                ]
+            ],
+            "recursos": {
+                "cpu_uso_promedio": 20.44,
+                "ram_uso_promedio": 67.91,
+                "gpu_uso_promedio": 97.87,
+                "gpu_mem_promedio": 5394.0,
+                "disco_uso_porcentaje": 28.5
+            }
+        },
+        {
+            "epoca": 10,
+            "perdida": 0.19004763257340068,
+            "auc": 0.9720152997417256,
+            "mcc": 0.8113383830502645,
+            "tiempo_seg": 1304.3003549575806,
+            "detalles_clase": {
+                "0": {
+                    "precision": 0.9459260251943179,
+                    "recall": 0.9471318349547132,
+                    "f1-score": 0.9465285460457944,
+                    "support": 29810.0
+                },
+                "1": {
+                    "precision": 0.8662025638848798,
+                    "recall": 0.8634171109418635,
+                    "f1-score": 0.8648075945075436,
+                    "support": 11817.0
+                },
+                "accuracy": 0.9233670454272468,
+                "macro avg": {
+                    "precision": 0.9060642945395989,
+                    "recall": 0.9052744729482883,
+                    "f1-score": 0.9056680702766691,
+                    "support": 41627.0
+                },
+                "weighted avg": {
+                    "precision": 0.923294268346752,
+                    "recall": 0.9233670454272468,
+                    "f1-score": 0.9233297451634942,
+                    "support": 41627.0
+                }
+            },
+            "matriz_confusion": [
+                [
+                    28234,
+                    1576
+                ],
+                [
+                    1614,
+                    10203
+                ]
+            ],
+            "recursos": {
+                "cpu_uso_promedio": 20.34,
+                "ram_uso_promedio": 54.52,
+                "gpu_uso_promedio": 94.46,
+                "gpu_mem_promedio": 5463.53,
+                "disco_uso_porcentaje": 27.3
+            }
+        },
+        {
+            "epoca": 11,
+            "perdida": 0.1833238071453425,
+            "auc": 0.9709343386793973,
+            "mcc": 0.8025311515584527,
+            "tiempo_seg": 1264.6409149169922,
+            "detalles_clase": {
+                "0": {
+                    "precision": 0.9417770511494444,
+                    "recall": 0.9468634686346864,
+                    "f1-score": 0.944313410615413,
+                    "support": 29810.0
+                },
+                "1": {
+                    "precision": 0.8641043239533288,
+                    "recall": 0.8523313869848523,
+                    "f1-score": 0.8581774805095216,
+                    "support": 11817.0
+                },
+                "accuracy": 0.9200278665289355,
+                "macro avg": {
+                    "precision": 0.9029406875513866,
+                    "recall": 0.8995974278097694,
+                    "f1-score": 0.9012454455624672,
+                    "support": 41627.0
+                },
+                "weighted avg": {
+                    "precision": 0.919727453117482,
+                    "recall": 0.9200278665289355,
+                    "f1-score": 0.9198612933342897,
+                    "support": 41627.0
+                }
+            },
+            "matriz_confusion": [
+                [
+                    28226,
+                    1584
+                ],
+                [
+                    1745,
+                    10072
+                ]
+            ],
+            "recursos": {
+                "cpu_uso_promedio": 21.43,
+                "ram_uso_promedio": 69.92,
+                "gpu_uso_promedio": 97.81,
+                "gpu_mem_promedio": 5641.57,
+                "disco_uso_porcentaje": 28.5
+            }
+        },
+        {
+            "epoca": 12,
+            "perdida": 0.17749729935737507,
+            "auc": 0.9701581611467989,
+            "mcc": 0.8001596190494457,
+            "tiempo_seg": 1263.2094116210938,
+            "detalles_clase": {
+                "0": {
+                    "precision": 0.9468571235148766,
+                    "recall": 0.9383763837638376,
+                    "f1-score": 0.942597678297643,
+                    "support": 29810.0
+                },
+                "1": {
+                    "precision": 0.8479808010592519,
+                    "recall": 0.8671405602098672,
+                    "f1-score": 0.8574536630266516,
+                    "support": 11817.0
+                },
+                "accuracy": 0.9181540826867177,
+                "macro avg": {
+                    "precision": 0.8974189622870643,
+                    "recall": 0.9027584719868524,
+                    "f1-score": 0.9000256706621472,
+                    "support": 41627.0
+                },
+                "weighted avg": {
+                    "precision": 0.9187882859224938,
+                    "recall": 0.9181540826867177,
+                    "f1-score": 0.9184271440660792,
+                    "support": 41627.0
+                }
+            },
+            "matriz_confusion": [
+                [
+                    27973,
+                    1837
+                ],
+                [
+                    1570,
+                    10247
+                ]
+            ],
+            "recursos": {
+                "cpu_uso_promedio": 20.71,
+                "ram_uso_promedio": 69.04,
+                "gpu_uso_promedio": 97.83,
+                "gpu_mem_promedio": 5650.11,
+                "disco_uso_porcentaje": 28.5
+            }
+        },
+        {
+            "epoca": 13,
+            "perdida": 0.1714843322976329,
+            "auc": 0.9708615851650451,
+            "mcc": 0.8012768242237769,
+            "tiempo_seg": 1264.3411920070648,
+            "detalles_clase": {
+                "0": {
+                    "precision": 0.940162980209546,
+                    "recall": 0.9482053002348205,
+                    "f1-score": 0.9441670146137787,
+                    "support": 29810.0
+                },
+                "1": {
+                    "precision": 0.8664590901228161,
+                    "recall": 0.8477616992468477,
+                    "f1-score": 0.8570084263655418,
+                    "support": 11817.0
+                },
+                "accuracy": 0.9196915463521272,
+                "macro avg": {
+                    "precision": 0.903311035166181,
+                    "recall": 0.8979834997408341,
+                    "f1-score": 0.9005877204896602,
+                    "support": 41627.0
+                },
+                "weighted avg": {
+                    "precision": 0.9192400487190499,
+                    "recall": 0.9196915463521272,
+                    "f1-score": 0.9194245869267147,
+                    "support": 41627.0
+                }
+            },
+            "matriz_confusion": [
+                [
+                    28266,
+                    1544
+                ],
+                [
+                    1799,
+                    10018
+                ]
+            ],
+            "recursos": {
+                "cpu_uso_promedio": 21.72,
+                "ram_uso_promedio": 68.63,
+                "gpu_uso_promedio": 97.79,
+                "gpu_mem_promedio": 5650.05,
+                "disco_uso_porcentaje": 28.5
+            }
+        }
+    ]
+}

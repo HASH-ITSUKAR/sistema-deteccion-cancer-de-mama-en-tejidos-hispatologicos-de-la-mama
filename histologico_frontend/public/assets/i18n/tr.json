@@ -35,14 +35,12 @@
   "MENU_PREDICT_SUB": "Model Tahmini",
   "ERROR_ONLY_IMAGES": "Lütfen yalnızca resim dosyaları seçin.",
   "MENU": {
-    "HOME": {
-      "TITLE": "Ana Sayfa",
-      "SUB": "Ana sayfa"
-    },
-    "PREDICT": {
-      "TITLE": "Tahmin Et",
-      "SUB": "Model tahmini"
-    }
+    "HOME": { "TITLE": "Anasayfa", "SUB": "Sayfa başlangıcı" },
+    "PREDICT": { "TITLE": "Tahmin", "SUB": "Model tahmini" },
+    "METRICS": { "TITLE": "Metrikler", "SUB": "Model metrikleri" },
+    "EDA": { "TITLE": "EDA", "SUB": "Model EDA" },
+    "EVAL": { "TITLE": "Değerlendirme", "SUB": "Model değerlendirmesi" },
+    "TRAIN": { "TITLE": "Eğitim", "SUB": "Model eğitimi" }
   },
   "REPORT": {
     "TITLE_MAIN": "TIBBİ TEŞHİS RAPORU",
