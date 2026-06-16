@@ -1,4 +1,222 @@
-<div class="min-h-screen bg-gradient-to-br from-blue-50 to-purple-100 flex items-center justify-center p-4 md:p-8">
+<div class="min-h-screen bg-gradient-to-br from-blue-50 to-purple-100 dark:from-gray-950 dark:via-slate-900 dark:to-gray-950 flex items-center justify-center p-4 md:p-8 transition-colors duration-300">
+
+  <div class="space-y-8 p-6 bg-gray-50 dark:bg-gray-900/50 rounded-3xl border border-gray-200 dark:border-gray-800 mt-6 w-full max-w-7xl backdrop-blur-sm transition-colors duration-300">
+
+    <div class="flex justify-between items-center border-b border-gray-200 dark:border-gray-800 pb-4">
+      <div>
+        <h2 class="text-2xl font-black text-gray-900 dark:text-gray-100 tracking-tight">{{ 'EDA.TITULO' | translate }}</h2>
+        <p class="text-sm text-gray-500 dark:text-gray-400">{{ 'EDA.SUBTITULO' | translate }}</p>
+      </div>
+      <span class="text-xs font-bold bg-indigo-50 dark:bg-indigo-950/40 text-indigo-700 dark:text-indigo-400 px-3 py-1.5 rounded-xl border border-indigo-100 dark:border-indigo-900/50 uppercase tracking-wider">
+        {{ 'EDA.RESOLUCION' | translate }}
+      </span>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+      <div class="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-2xl p-5 shadow-sm transition-colors duration-300">
+        <p class="text-xs font-bold uppercase tracking-wider text-gray-400 dark:text-gray-500">{{ 'EDA.TOTAL_IMAGENES' | translate }}</p>
+        <h3 class="text-3xl font-black text-gray-900 dark:text-gray-100 mt-1">277,530</h3>
+        <p class="text-xs text-indigo-600 dark:text-indigo-400 font-medium mt-2">{{ 'EDA.FORMATO_CANALES' | translate }}</p>
+      </div>
+
+      <div class="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-2xl p-5 shadow-sm transition-colors duration-300">
+        <p class="text-xs font-bold uppercase tracking-wider text-gray-400 dark:text-gray-500">{{ 'EDA.TOTAL_BENIGNAS' | translate }}</p>
+        <h3 class="text-3xl font-black text-blue-600 dark:text-blue-400 mt-1">198,751</h3>
+        <p class="text-xs text-blue-500 dark:text-blue-400 font-medium mt-2">71.7% {{ 'EDA.PORCENTAJE_DATASET' | translate }}</p>
+      </div>
+
+      <div class="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-2xl p-5 shadow-sm transition-colors duration-300">
+        <p class="text-xs font-bold uppercase tracking-wider text-gray-400 dark:text-gray-500">{{ 'EDA.TOTAL_MALIGNAS' | translate }}</p>
+        <h3 class="text-3xl font-black text-red-600 dark:text-red-400 mt-1">78,779</h3>
+        <p class="text-xs text-red-500 dark:text-red-400 font-medium mt-2">28.3% {{ 'EDA.PORCENTAJE_DATASET' | translate }}</p>
+      </div>
+    </div>
+
+    <div class="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-2xl p-6 shadow-sm space-y-6 transition-colors duration-300">
+      <div>
+        <h4 class="text-base font-bold text-gray-900 dark:text-gray-100 mb-1">{{ 'EDA.PARTICION_TITULO' | translate }}</h4>
+        <p class="text-xs text-gray-400 dark:text-gray-500">{{ 'EDA.PARTICION_SUBTITULO' | translate }}</p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-2">
+        <div class="border-l-4 border-indigo-500 pl-4">
+          <p class="text-xs font-bold uppercase text-gray-400 dark:text-gray-500">{{ 'EDA.ENTRENAMIENTO' | translate }} (70%)</p>
+          <h4 class="text-xl font-black text-gray-800 dark:text-gray-200 mt-0.5">194,278</h4>
+        </div>
+        <div class="border-l-4 border-amber-500 pl-4">
+          <p class="text-xs font-bold uppercase text-gray-400 dark:text-gray-500">{{ 'EDA.VALIDACION' | translate }} (15%)</p>
+          <h4 class="text-xl font-black text-gray-800 dark:text-gray-200 mt-0.5">41,629</h4>
+        </div>
+        <div class="border-l-4 border-emerald-500 pl-4">
+          <p class="text-xs font-bold uppercase text-gray-400 dark:text-gray-500">{{ 'EDA.PRUEBA' | translate }} (15%)</p>
+          <h4 class="text-xl font-black text-gray-800 dark:text-gray-200 mt-0.5">41,633</h4>
+        </div>
+      </div>
+
+      <div class="space-y-2 pt-2">
+        <div class="w-full bg-gray-100 dark:bg-gray-800 h-4 rounded-full overflow-hidden flex shadow-inner">
+          <div class="bg-indigo-500 h-full transition-all" style="width: 70%" title="Train: 70%"></div>
+          <div class="bg-amber-500 h-full transition-all" style="width: 15%" title="Validation: 15%"></div>
+          <div class="bg-emerald-500 h-full transition-all" style="width: 15%" title="Test: 15%"></div>
+        </div>
+
+        <div class="flex text-[10px] font-black uppercase tracking-wider px-1">
+          <span class="text-indigo-600 dark:text-indigo-400 text-center" style="width: 70%">{{ 'EDA.ENTRENAMIENTO' | translate }} (70%)</span>
+          <span class="text-amber-600 dark:text-amber-400 text-center" style="width: 15%">Val (15%)</span>
+          <span class="text-emerald-600 dark:text-emerald-400 text-center" style="width: 15%">Test (15%)</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+
+      <div class="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-2xl p-6 shadow-sm flex flex-col justify-between transition-colors duration-300">
+        <div>
+          <h4 class="text-base font-bold text-gray-900 dark:text-gray-100 mb-1">{{ 'EDA.DISTRIBUCION_TITULO' | translate }}</h4>
+          <p class="text-xs text-gray-400 dark:text-gray-500 mb-6">{{ 'EDA.DISTRIBUCION_SUBTITULO' | translate }}</p>
+
+          <div class="space-y-5">
+            <div>
+              <div class="flex justify-between text-xs font-bold text-gray-700 dark:text-gray-300 mb-1">
+                <span>{{ 'EDA.ENTRENAMIENTO' | translate }} ({{ 'EDA.LEYENDA_BENIGNO' | translate }}/ {{ 'EDA.LEYENDA_MALIGNO' | translate }})</span>
+                <span class="text-gray-400 dark:text-gray-500 font-normal">139,127 {{ 'EDA.VS' | translate }} 55,151</span>
+              </div>
+              <div class="w-full bg-gray-100 dark:bg-gray-800 h-3 rounded-full overflow-hidden flex">
+                <div class="bg-blue-500 h-full" style="width: 71.6%"></div>
+                <div class="bg-red-500 h-full" style="width: 28.4%"></div>
+              </div>
+            </div>
+
+            <div>
+              <div class="flex justify-between text-xs font-bold text-gray-700 dark:text-gray-300 mb-1">
+                <span>{{ 'EDA.VALIDACION' | translate }} ({{ 'EDA.LEYENDA_BENIGNO' | translate }} / {{ 'EDA.LEYENDA_MALIGNO' | translate }})</span>
+                <span class="text-gray-400 dark:text-gray-500 font-normal">29,811 {{ 'EDA.VS' | translate }} 11,818</span>
+              </div>
+              <div class="w-full bg-gray-100 dark:bg-gray-800 h-3 rounded-full overflow-hidden flex">
+                <div class="bg-blue-500 h-full" style="width: 71.6%"></div>
+                <div class="bg-red-500 h-full" style="width: 28.4%"></div>
+              </div>
+            </div>
+
+            <div>
+              <div class="flex justify-between text-xs font-bold text-gray-700 dark:text-gray-300 mb-1">
+                <span>{{ 'EDA.PRUEBA' | translate }} ({{ 'EDA.LEYENDA_BENIGNO' | translate }} / {{ 'EDA.LEYENDA_MALIGNO' | translate }})</span>
+                <span class="text-gray-400 dark:text-gray-500 font-normal">29,813 {{ 'EDA.VS' | translate }} 11,820</span>
+              </div>
+              <div class="w-full bg-gray-100 dark:bg-gray-800 h-3 rounded-full overflow-hidden flex flex-row">
+                <div class="bg-blue-500 h-full" style="width: 71.6%"></div>
+                <div class="bg-red-500 h-full" style="width: 28.4%"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex justify-start gap-4 mt-5 pt-2 text-[10px] font-bold">
+            <div class="flex items-center gap-1.5 text-blue-600 dark:text-blue-400">
+              <span class="w-2.5 h-2.5 rounded-full bg-blue-500"></span> {{ 'EDA.LEYENDA_BENIGNO' | translate }} (71.7%)
+            </div>
+            <div class="flex items-center gap-1.5 text-red-600 dark:text-red-400">
+              <span class="w-2.5 h-2.5 rounded-full bg-red-500"></span> {{ 'EDA.LEYENDA_MALIGNO' | translate }} (28.3%)
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-amber-50 dark:bg-amber-950/30 border border-amber-100 dark:border-amber-900/30 rounded-xl p-3 text-[11px] text-amber-800 dark:text-amber-400 font-medium mt-6 transition-colors duration-300">
+          ℹ️ <strong>{{ 'EDA.INFO_ESTRATIFICACION_TITULO' | translate }}</strong> {{ 'EDA.INFO_ESTRATIFICACION_TEXTO' | translate }}
+        </div>
+      </div>
+
+      <div class="lg:col-span-2 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-2xl p-6 shadow-sm transition-colors duration-300">
+        <h4 class="text-base font-bold text-gray-900 dark:text-gray-100 mb-1">{{ 'EDA.INSPECCION_TITULO' | translate }}</h4>
+        <p class="text-xs text-gray-400 dark:text-gray-500 mb-4">{{ 'EDA.INSPECCION_SUBTITULO' | translate }}</p>
+
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+          @for (item of [
+            {id: '01', folder: '0', labelKey: 'EDA.ETIQUETA_BENIGNO', color: 'border-blue-200 dark:border-blue-900/50 bg-blue-50/50 dark:bg-blue-950/20 text-blue-700 dark:text-blue-400'},
+            {id: '11', folder: '1', labelKey: 'EDA.ETIQUETA_MALIGNO', color: 'border-red-200 dark:border-red-900/50 bg-red-50/50 dark:bg-red-950/20 text-red-700 dark:text-red-400'},
+            {id: '02', folder: '0', labelKey: 'EDA.ETIQUETA_BENIGNO', color: 'border-blue-200 dark:border-blue-900/50 bg-blue-50/50 dark:bg-blue-950/20 text-blue-700 dark:text-blue-400'},
+            {id: '12', folder: '1', labelKey: 'EDA.ETIQUETA_MALIGNO', color: 'border-blue-200 dark:border-blue-900/50 bg-blue-50/50 dark:bg-blue-950/20 text-red-700 dark:text-red-400'},
+            {id: '03', folder: '0', labelKey: 'EDA.ETIQUETA_BENIGNO', color: 'border-red-200 dark:border-red-900/50 bg-red-50/50 dark:bg-blue-950/20 text-blue-700 dark:text-blue-400'},
+            {id: '13', folder: '1', labelKey: 'EDA.ETIQUETA_MALIGNO', color: 'border-blue-200 dark:border-blue-900/50 bg-blue-50/50 dark:bg-red-950/20 text-red-700 dark:text-red-400'},
+            {id: '04', folder: '0', labelKey: 'EDA.ETIQUETA_BENIGNO', color: 'border-red-200 dark:border-red-900/50 bg-red-50/50 dark:bg-blue-950/20 text-blue-700 dark:text-blue-400'},
+            {id: '14', folder: '1', labelKey: 'EDA.ETIQUETA_MALIGNO', color: 'border-red-200 dark:border-red-900/50 bg-red-50/50 dark:bg-red-950/20 text-red-700 dark:text-red-400'}
+          ]; track item.id) {
+
+            <div class="aspect-square border rounded-xl flex flex-col justify-between p-3 relative overflow-hidden group hover:shadow-md transition-all {{item.color}}">
+
+              <img
+                src="assets/image/eda/{{item.folder}}/{{item.id}}.png"
+                alt="Muestra histopatológica"
+                class="absolute inset-0 w-full h-full object-cover opacity-90 dark:opacity-75 group-hover:scale-105 transition-transform duration-300 pointer-events-none"
+                onerror="this.style.display='none'">
+
+              <span class="text-[10px] font-mono font-bold bg-gray-900/70 dark:bg-gray-950/80 text-white backdrop-blur-sm px-1.5 py-0.5 rounded w-fit z-10 select-none">
+                IMG_224x224_#{{item.id}}
+              </span>
+
+              <span class="text-[10px] font-black px-1.5 py-0.5 rounded bg-white/95 dark:bg-gray-900/95 text-gray-800 dark:text-gray-200 border border-gray-200 dark:border-gray-800 w-fit shadow-sm z-10 select-none">
+                {{ item.labelKey | translate }}
+              </span>
+            </div>
+          }
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="min-h-screen bg-gradient-to-br from-blue-50 to-purple-100 flex items-center justify-center p-4 md:p-8">
   <div class="space-y-8 p-6 bg-gray-50 rounded-3xl border border-gray-200 mt-6 w-full max-w-7xl">
 
     <div class="flex justify-between items-center border-b border-gray-200 pb-4">
@@ -159,4 +377,4 @@
 
     </div>
   </div>
-</div>
+</div> -->

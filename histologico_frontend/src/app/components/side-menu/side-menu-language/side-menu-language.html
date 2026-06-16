@@ -1,25 +1,49 @@
 <div class="px-6 py-4 mt-auto border-t border-slate-700">
-  <button
-    (click)="isOpen = !isOpen"
-    class="w-full px-3 py-2.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 transition-all flex items-center justify-between group"
-  >
-    <div class="flex items-center gap-2">
-      <span class="text-lg">{{ getCurrentFlag() }}</span>
-      <span class="text-sm font-medium group-hover:text-white">{{ getCurrentLanguageName() }}</span>
-    </div>
-    <svg
-      [ngClass]="{'rotate-180': isOpen}"
-      class="w-4 h-4 transition-transform duration-200"
-      fill="none"
-      stroke="currentColor"
-      viewBox="0 0 24 24"
+
+  <div class="flex gap-2 w-full">
+
+    <button
+      (click)="themeService.toggleTheme()"
+      [ngClass]="{
+        'bg-sky-400 border-sky-300 text-amber-100 hover:bg-sky-500': !themeService.darkMode(),
+        'bg-gray-950 border-gray-800 text-yellow-200 hover:bg-gray-900': themeService.darkMode()
+      }"
+      class="px-3 py-2.5 rounded-lg border transition-all duration-500 flex items-center justify-center min-w-[46px] relative overflow-hidden active:scale-95 shadow-inner"
+      [title]="themeService.darkMode() ? 'Cambiar a Modo Claro' : 'Cambiar a Modo Oscuro'"
     >
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-    </svg>
-  </button>
+      <div class="transition-transform duration-500 ease-out flex items-center justify-center"
+           [class.rotate-[360deg]]="themeService.darkMode()">
+
+        @if (themeService.darkMode()) {
+          <span class="text-lg animate-fadeIn select-none">🌙</span>
+        } @else {
+          <span class="text-lg animate-fadeIn select-none">☀️</span>
+        }
+      </div>
+    </button>
+
+    <button
+      (click)="isOpen = !isOpen"
+      class="flex-1 px-3 py-2.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 transition-all flex items-center justify-between group"
+    >
+      <div class="flex items-center gap-2">
+        <span class="text-lg">{{ getCurrentFlag() }}</span>
+        <span class="text-sm font-medium group-hover:text-white">{{ getCurrentLanguageName() }}</span>
+      </div>
+      <svg
+        [ngClass]="{'rotate-180': isOpen}"
+        class="w-4 h-4 transition-transform duration-200 text-slate-400 group-hover:text-slate-200"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+      </svg>
+    </button>
+  </div>
 
   @if (isOpen) {
-    <div class="mt-2 space-y-1 max-h-64 overflow-y-auto animate-fadeIn">
+    <div class="mt-2 space-y-1 max-h-64 overflow-y-auto animate-fadeIn border border-slate-700/50 rounded-lg p-1 bg-slate-900/60 backdrop-blur-sm">
       @for (lang of languages; track lang.code) {
         <button
           (click)="changeLanguage(lang.code)"

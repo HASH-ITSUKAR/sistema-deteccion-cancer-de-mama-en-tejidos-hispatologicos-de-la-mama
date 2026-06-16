@@ -2,6 +2,7 @@ import { Component, inject } from '@angular/core';
 import { NgClass } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
 import { LanguageService } from 'src/app/services/languaje-service';
+import { ThemeService } from 'src/app/services/theme-service';
 
 interface Language {
   code: string;
@@ -17,6 +18,8 @@ interface Language {
 })
 export class SideMenuLanguage {
   private languageService = inject(LanguageService);
+  public themeService = inject(ThemeService);
+
 
   currentLanguage: string = 'es';
   isOpen: boolean = false;

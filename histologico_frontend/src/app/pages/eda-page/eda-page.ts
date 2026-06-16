@@ -1,5 +1,6 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
+import { ThemeService } from 'src/app/services/theme-service';
 
 @Component({
   selector: 'app-eda-page',
@@ -7,4 +8,6 @@ import { TranslateModule } from '@ngx-translate/core';
   templateUrl: './eda-page.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class EdaPage {}
+export class EdaPage {
+  public themeService = inject(ThemeService);
+}
