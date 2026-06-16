@@ -13,7 +13,7 @@ interface Language {
 @Component({
   selector: 'app-side-menu-language',
   standalone: true,
-  imports: [NgClass, TranslateModule],
+  imports: [TranslateModule],
   templateUrl: './side-menu-language.html'
 })
 export class SideMenuLanguage {

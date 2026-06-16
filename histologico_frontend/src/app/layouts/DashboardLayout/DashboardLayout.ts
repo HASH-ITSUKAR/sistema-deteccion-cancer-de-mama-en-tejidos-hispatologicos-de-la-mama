@@ -11,5 +11,6 @@ import { SideMenu } from '../../components/side-menu/side-menu';
 })
 export default class DashboardLayout {
   // Por defecto, iniciamos con el menú expandido en pantallas grandes
-  menuAbierto = signal<boolean>(true);
+  // menuAbierto = signal<boolean>(true);
+  menuAbierto = signal(window.innerWidth >= 768);
 }

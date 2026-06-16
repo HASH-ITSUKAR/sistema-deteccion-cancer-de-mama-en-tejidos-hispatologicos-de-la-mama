@@ -26,31 +26,27 @@ export class PrediccionReportService {
 
 
   private readonly CONFIG_IDIOMAS: { [key: string]: { locale: string, font: string, footer: string } } = {
-  // --- ALFABETO LATINO / CIRÍLICO (Nativos en jsPDF) ---
-  'es': { locale: 'es-ES', font: 'helvetica',   footer: 'italic' },
-  'en': { locale: 'en-US', font: 'helvetica',   footer: 'italic' },
-  'it': { locale: 'it-IT', font: 'helvetica',   footer: 'italic' },
-  'fr': { locale: 'fr-FR', font: 'helvetica',   footer: 'italic' },
-  'pt': { locale: 'pt-BR', font: 'helvetica',   footer: 'italic' },
-  'de': { locale: 'de-DE', font: 'helvetica',   footer: 'italic' },
+    // --- ALFABETO LATINO / CIRÍLICO (Nativos en jsPDF) ---
+    'es': { locale: 'es-ES', font: 'Roboto',   footer: 'normal' },
+    'en': { locale: 'en-US', font: 'Roboto',   footer: 'normal' },
+    'it': { locale: 'it-IT', font: 'Roboto',   footer: 'normal' },
+    'fr': { locale: 'fr-FR', font: 'Roboto',   footer: 'normal' },
+    'pt': { locale: 'pt-BR', font: 'Roboto',   footer: 'normal' },
+    'de': { locale: 'de-DE', font: 'Roboto',   footer: 'normal' },
+    'ru': { locale: 'ru-RU', font: 'NotoSans',   footer: 'normal' },
+    'no': { locale: 'no-NO', font: 'Roboto',   footer: 'normal' },
+    'tr': { locale: 'tr-TR', font: 'Roboto',   footer: 'normal' },
+    'in': { locale: 'id-ID', font: 'Roboto',   footer: 'normal' },
+    'zh': { locale: 'zh-CN', font: 'NotoSansSC',  footer: 'normal' },
+    'ja': { locale: 'ja-JP', font: 'NotoSerifJP', footer: 'normal' },
+    'ko': { locale: 'ko-KR', font: 'NotoSansKR',  footer: 'normal' },
+    'ar': { locale: 'ar-SA', font: 'NotoSansArabic',     footer: 'normal' },
+    'hi': { locale: 'hi-IN', font: 'NotoSansDevanagari', footer: 'normal' },
+    'bn': { locale: 'bn-BD', font: 'NotoSansBengali',    footer: 'normal' }
+  };
 
-  'ru': { locale: 'ru-RU', font: 'NotoSans',   footer: 'normal' },
-
-  'no': { locale: 'no-NO', font: 'helvetica',   footer: 'italic' },
-  'tr': { locale: 'tr-TR', font: 'helvetica',   footer: 'italic' },
-  'in': { locale: 'id-ID', font: 'helvetica',   footer: 'italic' },
-
-  'zh': { locale: 'zh-CN', font: 'NotoSansSC',  footer: 'normal' },
-  'ja': { locale: 'ja-JP', font: 'NotoSerifJP', footer: 'normal' },
-  'ko': { locale: 'ko-KR', font: 'NotoSansKR',  footer: 'normal' },
-
-  'ar': { locale: 'ar-SA', font: 'NotoSansArabic',     footer: 'normal' },
-  'hi': { locale: 'hi-IN', font: 'NotoSansDevanagari', footer: 'normal' },
-  'bn': { locale: 'bn-BD', font: 'NotoSansBengali',    footer: 'normal' }
-};
-
-  fontPrincipal = 'helvetica';
-  estiloFooter = 'italic';
+  fontPrincipal = 'Roboto';
+  estiloFooter = 'normal';
 
   async generarReportePDF(resultados: ResultadoPredicciones, imagePreviewUrl: string) {
     const doc = new jsPDF({
@@ -66,57 +62,69 @@ export class PrediccionReportService {
     this.estiloFooter = this.CONFIG_IDIOMAS[idioma].footer;
 
     if (idioma === 'zh') {
-      const fuentesChinas = await import('./fonts/NotoSansSC');
-      doc.addFileToVFS('NotoSansSC-Regular.ttf', fuentesChinas.default.regular);
-      doc.addFileToVFS('NotoSansSC-Bold.ttf', fuentesChinas.default.bold);
+      const regular = await this.loadFontAsBase64('assets/fonts/chino/NotoSansSC-Regular.ttf');
+      const bold = await this.loadFontAsBase64('assets/fonts/chino/NotoSansSC-Bold.ttf');
+      doc.addFileToVFS('NotoSansSC-Regular.ttf', regular);
+      doc.addFileToVFS('NotoSansSC-Bold.ttf', bold);
       doc.addFont('NotoSansSC-Regular.ttf', 'NotoSansSC', 'normal');
       doc.addFont('NotoSansSC-Bold.ttf', 'NotoSansSC', 'bold');
     }
-    if (idioma === 'ja') {
-      const fuentesJaponesas = await import('./fonts/NotoSerifJP'); // Variable renombrada
-      doc.addFileToVFS('NotoSerifJP-Regular.ttf', fuentesJaponesas.default.regular);
-      doc.addFileToVFS('NotoSerifJP-Bold.ttf', fuentesJaponesas.default.bold);
+    else if (idioma === 'ja') {
+      const regular = await this.loadFontAsBase64('assets/fonts/japones/NotoSansJP-Regular.ttf');
+      const bold = await this.loadFontAsBase64('assets/fonts/japones/NotoSansJP-Bold.ttf');
+      doc.addFileToVFS('NotoSerifJP-Regular.ttf', regular);
+      doc.addFileToVFS('NotoSerifJP-Bold.ttf', bold);
       doc.addFont('NotoSerifJP-Regular.ttf', 'NotoSerifJP', 'normal');
       doc.addFont('NotoSerifJP-Bold.ttf', 'NotoSerifJP', 'bold');
     }
-    if (idioma === 'ko') {
-      const fuentesCoreanas = await import('./fonts/NotoSansKR'); // Variable renombrada
-      doc.addFileToVFS('NotoSansKR-Regular.ttf', fuentesCoreanas.default.regular);
-      doc.addFileToVFS('NotoSansKR-Bold.ttf', fuentesCoreanas.default.bold);
+    else if (idioma === 'ko') {
+      const regular = await this.loadFontAsBase64('assets/fonts/koreano/NotoSansKR-Regular.ttf');
+      const bold = await this.loadFontAsBase64('assets/fonts/koreano/NotoSansKR-Bold.ttf');
+      doc.addFileToVFS('NotoSansKR-Regular.ttf', regular);
+      doc.addFileToVFS('NotoSansKR-Bold.ttf', bold);
       doc.addFont('NotoSansKR-Regular.ttf', 'NotoSansKR', 'normal');
       doc.addFont('NotoSansKR-Bold.ttf', 'NotoSansKR', 'bold');
     }
-
-    if (idioma === 'ar') {
-        const fuentesArabes = await import('./fonts/NotoSansArabic');
-        doc.addFileToVFS('NotoSansArabic-Regular.ttf', fuentesArabes.default.regular);
-        doc.addFileToVFS('NotoSansArabic-Bold.ttf', fuentesArabes.default.bold);
-        doc.addFont('NotoSansArabic-Regular.ttf', 'NotoSansArabic', 'normal');
-        doc.addFont('NotoSansArabic-Bold.ttf', 'NotoSansArabic', 'bold');
+    else if (idioma === 'ar') {
+      const regular = await this.loadFontAsBase64('assets/fonts/arabe/NotoSansArabic-Regular.ttf');
+      const bold = await this.loadFontAsBase64('assets/fonts/arabe/NotoSansArabic-Bold.ttf');
+      doc.addFileToVFS('NotoSansArabic-Regular.ttf', regular);
+      doc.addFileToVFS('NotoSansArabic-Bold.ttf', bold);
+      doc.addFont('NotoSansArabic-Regular.ttf', 'NotoSansArabic', 'normal');
+      doc.addFont('NotoSansArabic-Bold.ttf', 'NotoSansArabic', 'bold');
     }
-
-    if (idioma === 'hi') {
-        const fuentesHindi = await import('./fonts/NotoSansDevanagari');
-        doc.addFileToVFS('NotoSansDevanagari-Regular.ttf', fuentesHindi.default.regular);
-        doc.addFileToVFS('NotoSansDevanagari-Bold.ttf', fuentesHindi.default.bold);
-        doc.addFont('NotoSansDevanagari-Regular.ttf', 'NotoSansDevanagari', 'normal');
-        doc.addFont('NotoSansDevanagari-Bold.ttf', 'NotoSansDevanagari', 'bold');
+    else if (idioma === 'hi') {
+      const regular = await this.loadFontAsBase64('assets/fonts/hindu/NotoSansDevanagari-Regular.ttf');
+      const bold = await this.loadFontAsBase64('assets/fonts/hindu/NotoSansDevanagari-Bold.ttf');
+      doc.addFileToVFS('NotoSansDevanagari-Regular.ttf', regular);
+      doc.addFileToVFS('NotoSansDevanagari-Bold.ttf', bold);
+      doc.addFont('NotoSansDevanagari-Regular.ttf', 'NotoSansDevanagari', 'normal');
+      doc.addFont('NotoSansDevanagari-Bold.ttf', 'NotoSansDevanagari', 'bold');
     }
-
-    if (idioma === 'bn') {
-        const fuentesBengali = await import('./fonts/NotoSansBengali');
-        doc.addFileToVFS('NotoSansBengali-Regular.ttf', fuentesBengali.default.regular);
-        doc.addFileToVFS('NotoSansBengali-Bold.ttf', fuentesBengali.default.bold);
-        doc.addFont('NotoSansBengali-Regular.ttf', 'NotoSansBengali', 'normal');
-        doc.addFont('NotoSansBengali-Bold.ttf', 'NotoSansBengali', 'bold');
+    else if (idioma === 'bn') {
+      const regular = await this.loadFontAsBase64('assets/fonts/bengali/NotoSansBengali-Regular.ttf');
+      const bold = await this.loadFontAsBase64('assets/fonts/bengali/NotoSansBengali-Bold.ttf');
+      doc.addFileToVFS('NotoSansBengali-Regular.ttf', regular);
+      doc.addFileToVFS('NotoSansBengali-Bold.ttf', bold);
+      doc.addFont('NotoSansBengali-Regular.ttf', 'NotoSansBengali', 'normal');
+      doc.addFont('NotoSansBengali-Bold.ttf', 'NotoSansBengali', 'bold');
     }
-
-    if (idioma === 'ru') {
-        const fuentesRusas = await import('./fonts/NotoSans');
-        doc.addFileToVFS('NotoSans-Regular.ttf', fuentesRusas.default.regular);
-        doc.addFileToVFS('NotoSans-Bold.ttf', fuentesRusas.default.bold);
-        doc.addFont('NotoSans-Regular.ttf', 'NotoSans', 'normal');
-        doc.addFont('NotoSans-Bold.ttf', 'NotoSans', 'bold');
+    else if (idioma === 'ru') {
+      const regular = await this.loadFontAsBase64('assets/fonts/ruso/NotoSans-Regular.ttf');
+      const bold = await this.loadFontAsBase64('assets/fonts/ruso/NotoSans-Bold.ttf');
+      doc.addFileToVFS('NotoSans-Regular.ttf', regular);
+      doc.addFileToVFS('NotoSans-Bold.ttf', bold);
+      doc.addFont('NotoSans-Regular.ttf', 'NotoSans', 'normal');
+      doc.addFont('NotoSans-Bold.ttf', 'NotoSans', 'bold');
+    }
+    else {
+      const regular = await this.loadFontAsBase64('assets/fonts/roboto/Roboto-Regular.ttf');
+      const bold = await this.loadFontAsBase64('assets/fonts/roboto/Roboto-Bold.ttf');
+      doc.addFileToVFS('Roboto-Regular.ttf', regular);
+      doc.addFileToVFS('Roboto-Bold.ttf', bold);
+      doc.addFont('Roboto-Regular.ttf', 'Roboto', 'normal');
+      doc.addFont('Roboto-Bold.ttf', 'Roboto', 'bold');
+      this.fontPrincipal = 'Roboto';
     }
 
     const localeActual = this.CONFIG_IDIOMAS[idioma].locale;
@@ -499,7 +507,7 @@ export class PrediccionReportService {
     doc.setLineWidth(0.25);
     doc.rect(x, y, w, h);
 
-    doc.setFont(this.fontPrincipal, 'italic');
+    doc.setFont(this.fontPrincipal, 'normal');
     doc.setFontSize(8);
     doc.setTextColor(153, 27, 27);
     doc.text(errorMsg, x + (w / 2), y + (h / 2), { align: 'center' });
@@ -593,5 +601,26 @@ export class PrediccionReportService {
 
   private mostrarError(mensaje: string) {
     alert(mensaje);
+  }
+
+  private async loadFontAsBase64(path: string): Promise<string> {
+    const response = await fetch(path);
+
+    if (!response.ok) {
+      throw new Error(`No se pudo cargar la fuente: ${path}`);
+    }
+
+    const buffer = await response.arrayBuffer();
+
+    let binary = '';
+    const bytes = new Uint8Array(buffer);
+    const chunkSize = 8192;
+
+    for (let i = 0; i < bytes.length; i += chunkSize) {
+      const chunk = bytes.subarray(i, i + chunkSize);
+      binary += String.fromCharCode(...chunk);
+    }
+
+    return btoa(binary);
   }
 }
