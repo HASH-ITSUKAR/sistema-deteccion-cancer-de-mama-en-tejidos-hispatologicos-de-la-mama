@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit, signal, effect, inject } from '@angular/core';
+import { TranslateModule } from '@ngx-translate/core';
 
 interface MetricasModel {
   auc: number;
@@ -16,7 +17,7 @@ interface MetricasModel {
 @Component({
   selector: 'app-evaluacion-page',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, TranslateModule],
   templateUrl: './evaluacion-page.html'
 })
 export class EvaluacionPage implements OnInit {

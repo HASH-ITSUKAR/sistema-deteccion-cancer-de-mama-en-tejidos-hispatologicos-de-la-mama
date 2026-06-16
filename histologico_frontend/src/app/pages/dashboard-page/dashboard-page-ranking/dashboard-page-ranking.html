@@ -32,8 +32,8 @@
     <div class="bg-gray-50 border border-gray-200 rounded-2xl p-6 flex flex-col justify-between">
       <div>
         <div class="mb-4">
-          <h3 class="text-lg font-bold text-gray-900">Ranking de Modelos</h3>
-          <p class="text-xs text-gray-500">Ordenado por rendimiento actual de: <span class="font-bold uppercase text-indigo-600">{{ metricaSeleccionada() }}</span></p>
+          <h3 class="text-lg font-bold text-gray-900">{{ 'DASHBOARD.RANKING.RANKING' | translate  }}</h3>
+          <p class="text-xs text-gray-500">{{ 'DASHBOARD.RANKING.ORDENADO' | translate  }}<span class="font-bold uppercase text-indigo-600">{{ metricaSeleccionada() }}</span></p>
         </div>
 
         <div class="space-y-2">
@@ -68,11 +68,11 @@
 
         <div class="flex justify-between items-center mb-6 flex-shrink-0">
           <div>
-            <h3 class="text-lg font-bold text-gray-900">Comparativa Global de Rendimiento</h3>
-            <p class="text-xs text-gray-500">Crecimiento escalonado (Menor a Izquierda / Mayor a Derecha)</p>
+            <h3 class="text-lg font-bold text-gray-900">{{ 'DASHBOARD.RANKING.COMPARATIVA' | translate  }}</h3>
+            <p class="text-xs text-gray-500">{{ 'DASHBOARD.RANKING.CRECIMIENTO' | translate  }}</p>
           </div>
           <span class="text-xs font-semibold bg-indigo-50 text-indigo-700 px-2.5 py-1 rounded-md border border-indigo-100 uppercase">
-            Métrica: {{ metricaSeleccionada() }}
+            {{ 'DASHBOARD.RANKING.METRICA' | translate  }}{{ metricaSeleccionada() }}
           </span>
         </div>
 
@@ -113,8 +113,8 @@
           </div>
 
           <div class="absolute bottom-3 left-4 right-4 border-t border-gray-200 pt-1 flex justify-between text-[9px] font-black text-gray-400 uppercase tracking-wider">
-            <span>◀ Menor Rendimiento</span>
-            <span>Mayor Rendimiento ▶</span>
+            <span>◀ {{ 'DASHBOARD.RANKING.RENDIMIENTO_MENOR' | translate  }}</span>
+            <span>{{ 'DASHBOARD.RANKING.RENDIMIENTO_MAYOR' | translate  }} ▶</span>
           </div>
         </div>
 

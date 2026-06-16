@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { inject, Injectable, signal } from '@angular/core';
 import { ResultadoPredicciones } from '../interfaces/prediccion/ResultadosPrediccion';
 import { Observable, tap } from 'rxjs';
+import { PrediccionReportService } from '../reports/prediccion-report';
 // import { PrediccionReportService } from '../reports/prediccion-report';
 
 @Injectable({ providedIn: 'root' })
@@ -10,7 +11,7 @@ export class PrediccionService {
   private apiUrl = 'http://localhost:5000';
   private http = inject(HttpClient);
   public prediccion = signal<ResultadoPredicciones | null>(null);
-  // prediccionReportService = inject(PrediccionReportService);
+  prediccionReportService = inject(PrediccionReportService);
 
   predecir(imagen: File): Observable<ResultadoPredicciones> {
     const formData = new FormData();
@@ -24,9 +25,9 @@ export class PrediccionService {
 
   };
 
-  // generarReportePDF(resultados :ResultadoPredicciones ,imagePreviewUrl :string){
-  //   this.prediccionReportService.generarReportePDF(resultados, imagePreviewUrl);
-  // }
+  generarReportePDF(resultados :ResultadoPredicciones ,imagePreviewUrl :string){
+    this.prediccionReportService.generarReportePDF(resultados, imagePreviewUrl);
+  }
 
   getUrlImagen(){
     return this.urlImagen

@@ -25,7 +25,7 @@ export class PrediccionFormulario {
     if (input.files && input.files.length > 0) {
       const file = input.files[0];
       if (!file.type.startsWith('image/')) {
-        alert(this.translate.getTranslation('ERROR_ONLY_IMAGES')); // 👈 usa traducción
+        alert(this.translate.getTranslation('ERROR')); // 👈 usa traducción
         return;
       }
       this.myForm.patchValue({ imagen: file });

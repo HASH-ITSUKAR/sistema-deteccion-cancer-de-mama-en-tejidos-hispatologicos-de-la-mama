@@ -1,8 +1,9 @@
 import { ChangeDetectionStrategy, Component, input } from '@angular/core';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-prediccion-datos-explicativa',
-  imports: [],
+  imports: [TranslateModule],
   templateUrl: './prediccion-datos-explicativa.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })

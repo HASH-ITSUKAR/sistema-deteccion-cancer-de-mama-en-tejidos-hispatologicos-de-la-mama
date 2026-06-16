@@ -1,39 +1,149 @@
 {
-  "IDIOMA": "ESPAÑOL",
-  "PAGE_TITLE": "Sistema de Predicción de Cáncer en Tejidos Histológicos de la Mama",
-  "PAGE_DESCRIPTION": "Este sistema utiliza diversos modelos de aprendizaje profundo para analizar imágenes histológicas y predecir la presencia de cáncer de mama. A continuación se muestran los modelos individuales y su desempeño (MCC):",
-  "ENSEMBLE_DESCRIPTION": "Además, se implementa un <strong>ensamblaje de modelos mediante stacking con XGBoost</strong>, logrando un MCC combinado de <strong>85.32%</strong>. Esto permite aprovechar las fortalezas de cada modelo para mejorar la precisión general de la predicción.",
-  "ANALYSIS_TITLE": "🔬 Análisis Histológico",
-  "ANALYSIS_SUBTITLE": "Detección de Cáncer de Mama",
-  "UPLOAD_IMAGE_TITLE": "Cargar imagen de tejido",
-  "UPLOAD_IMAGE_DESCRIPTION": "Haz clic aquí o arrastra tu imagen histológica",
-  "ANALYZE_BUTTON": "🧬 Analizar Muestra",
-  "INDIVIDUAL_MODELS_TITLE": "🔬 Análisis por Modelos Individuales",
-  "INDIVIDUAL_MODELS_SUBTITLE": "Resultados preliminares de cada modelo",
-  "BENIGN": "Benigno",
-  "MALIGNANT": "Maligno",
-  "FINAL_VERDICT_SEPARATOR": "⬇️ VEREDICTO FINAL ⬇️",
-  "DEFINITIVE_DIAGNOSIS": "DIAGNÓSTICO DEFINITIVO",
-  "ENSEMBLE_SYSTEM": "Sistema de Ensemble XGBoost - Resultado Final",
-  "RESULT_MALIGNANT": "🚨 MALIGNO",
-  "RESULT_BENIGN": "✅ BENIGNO",
-  "FINAL_PROBABILITIES": "Probabilidades Finales",
-  "BENIGN_TUMOR": "Tumor Benigno",
-  "MALIGNANT_TUMOR": "Tumor Maligno",
-  "SYSTEM_CONFIDENCE": "Confianza del Sistema",
-  "CERTAINTY_LEVEL": "Nivel de Certeza",
-  "HIGH_CONFIDENCE": "ALTA CONFIANZA",
-  "MODERATE_CONFIDENCE": "CONFIANZA MODERADA",
-  "REQUIRES_REVIEW": "REQUIERE REVISIÓN",
-  "IMPORTANT_NOTE_TITLE": "Nota Importante:",
-  "IMPORTANT_NOTE_TEXT": "Este diagnóstico automatizado debe ser validado por un patólogo certificado. El resultado final prevalece sobre las predicciones individuales de los modelos mostrados arriba.",
-  "GENERATE_PDF_BUTTON": "Generar Reporte Médico PDF",
-  "COMPANY_SLOGAN": "Predicción de cáncer en tejidos histológicos",
-  "MENU_HOME": "Inicio",
-  "MENU_HOME_SUB": "Inicio de página",
-  "MENU_PREDICT": "Predecir",
-  "MENU_PREDICT_SUB": "Predicción del modelo",
-  "ERROR_ONLY_IMAGES": "Por favor, selecciona solo archivos de imagen.",
+  "DASHBOARD": {
+    "TITULO": "Análisis Histológico Digital",
+    "SUBTITULO": "Plataforma inteligente para la detección automatizada de carcinoma mamario mediante arquitecturas avanzadas de aprendizaje profundo y modelos de ensamble",
+    "RANKING": {
+      "RANKING": "Ranking de Modelos",
+      "ORDENADO": "Ordenado por rendimiento actual de: ",
+      "COMPARATIVA": "Comparativa Global de Rendimiento",
+      "CRECIMIENTO": "Crecimiento escalonado (Menor a Izquierda / Mayor a Derecha)",
+      "METRICA": "Métrica: ",
+      "RENDIMIENTO_MENOR": "Menor Rendimiento",
+      "RENDIMIENTO_MAYOR": "Mayor Rendimiento"
+    },
+    "MODEL": {
+      "MEJOR_MODELO": "Mejor Modelo",
+      "ARQUITECTURA_ENSEMBLE": "Ensemble arquitectura",
+      "EXCELENTE_PERFORMANCE": "Excelente performance",
+      "EXCELENTE_DISCRIMINACION": "Excelente discriminación",
+      "EQUILIBRIO_METRICAS": "Equilibrio precisión/recall",
+      "PREDICCION_ROBUSTA": "Predicción altamente robusta"
+    }
+  },
+  "METRICAS": {
+    "TITULO": "MÉTRICAS DE LOS MODELOS",
+    "SUBTITULO": "Evaluación detallada del rendimiento para cada arquitectura implementada."
+  },
+  "EDA": {
+    "TITULO": "Análisis Exploratorio de Datos (EDA)",
+    "SUBTITULO": "Estructura, balance y consistencia del dataset histopatológico.",
+    "RESOLUCION": "Resolución: 224x224 px",
+    "TOTAL_IMAGENES": "Total de Imágenes",
+    "FORMATO_CANALES": "Formato: RGB Channels",
+    "TOTAL_BENIGNAS": "Total Benignas",
+    "TOTAL_MALIGNAS": "Total Malignas",
+    "PORCENTAJE_DATASET": "del Dataset total",
+    "PARTICION_TITULO": "Partición Estructurada del Dataset",
+    "PARTICION_SUBTITULO": "División balanceada para asegurar el entrenamiento y validación libre de sesgo.",
+    "ENTRENAMIENTO": "Entrenamiento",
+    "VALIDACION": "Validación",
+    "PRUEBA": "Prueba / Test",
+    "DISTRIBUCION_TITULO": "Distribución Interna por Clases",
+    "DISTRIBUCION_SUBTITULO": "Proporción estratificada",
+    "VS": "vs",
+    "LEYENDA_BENIGNO": "Benigno",
+    "LEYENDA_MALIGNO": "Maligno",
+    "INFO_ESTRATIFICACION_TITULO": "Estratificación Perfecta:",
+    "INFO_ESTRATIFICACION_TEXTO": "La tasa de desbalance (~2.5 a 1) se preserva matemáticamente idéntica en los tres subconjuntos para asegurar pruebas sin sesgo.",
+    "INSPECCION_TITULO": "Inspección Visual del Dataset",
+    "INSPECCION_SUBTITULO": "Muestras aleatorias cargadas en memoria con sus dimensiones normalizadas al formato de entrada de red.",
+    "ETIQUETA_BENIGNO": "Benigno (0)",
+    "ETIQUETA_MALIGNO": "Maligno (1)"
+  },
+  "EVALUACION": {
+    "TITULO": "Evaluación Avanzada del Modelo",
+    "SUBTITULO": "Métricas avanzadas de clasificación histopatológica calculadas sobre el subset de Test.",
+    "MATRIZ_TITULO": "Matriz de Confusión",
+    "PREDICHO_BENIGNO": "Predicho Benigno",
+    "PREDICHO_MALIGNO": "Predicho Maligno",
+    "REAL_BENIGNO": "Real Benigno",
+    "REAL_MALIGNO": "Real Maligno",
+    "CURVA_ROC": "Curva ROC",
+    "CARGANDO": "Cargando..."
+  },
+  "ENTRENAMIENTO": {
+    "TITULO": "Entrenamiento de Modelos",
+    "SUBTITULO": "Configuración de hiperparámetros y métricas de desempeño.",
+    "HIPERPARAMETROS": {
+      "LEARNING_RATE": "Learning Rate",
+      "BATCH_SIZE": "Batch Size",
+      "EPOCAS": "Épocas",
+      "INPUT_SIZE": "Input Size",
+      "EARLY_STOP": "Early Stop (MCC)",
+      "PACIENCIA": "Paciencia: "
+    },
+    "HARDWARE": {
+      "TITULO": "Especificaciones del Equipo",
+      "MODELO": "Modelo",
+      "PROCESADOR": "Procesador",
+      "NUCLEOS_HILOS": "núcleos, 20 hilos",
+      "RAM": "Memoria RAM",
+      "GRAFICA": "Tarjeta Gráfica",
+      "ALMACENAMIENTO": "Almacenamiento"
+    },
+    "COMPARATIVA": {
+      "TITULO": "Comparativa de Modelos",
+      "TABLA": {
+        "MODELO": "Modelo",
+        "TIEMPO": "Tiempo (M)",
+        "CPU": "CPU %",
+        "RAM": "RAM %",
+        "GPU": "GPU %",
+        "VRAM": "VRAM (MB)",
+        "DISCO": "Disco %"
+      }
+    },
+    "EVOLUCION": {
+      "TITULO": "Evolución: ",
+      "TABLA": {
+        "EPOCA": "Época",
+        "PERDIDA": "Perdida",
+        "F1": "F1",
+        "AUC": "AUC",
+        "ACCURACY": "Accuracy",
+        "MCC": "MCC"
+      }
+    }
+  },
+  "PREDICCION": {
+    "TITULO": "🔬 Análisis Histológico",
+    "SUBTITULO": "Detección de Cáncer de Mama",
+    "FORMULARIO": {
+      "CARGAR": "Cargar imagen de tejido",
+      "CLICK": "Haz clic aquí o arrastra tu imagen histológica",
+      "ANALIZAR": "🧬 Analizar Muestra",
+      "ERROR": "Solo se puede subir imagen"
+    },
+    "DATOS": {
+      "ANALISIS": "🔬 Análisis por Modelos Individuales",
+      "RESULTADOS": "Resultados preliminares de cada modelo",
+      "VEREDICTO": "⬇️ VEREDICTO FINAL ⬇️",
+      "EXPLICACION": "IA EXPLICATIVA POR MODELO",
+      "MODELOS": {
+        "ORIGINAL": "Imagen original",
+        "PROCESADO": "Imagen procesada",
+        "MALIGNO": "Maligno",
+        "BENIGNO": "Benigno"
+      },
+      "DEFINITIVO": {
+        "DIAGNOSTICO": "DIAGNOSTICO DEFINITIVO",
+        "SISTEMA_ENSEMBLE": "Sistema de Ensemble XGBoost - Resultado Final",
+        "MALIGNO_ALERT": "🚨 MALIGNO",
+        "BENIGNO_OK": "✅ BENIGNO",
+        "PROBABILIDADES": "Probabilidades Finales",
+        "TUMOR_BENIGNO": "Tumor Benigno:",
+        "TUMOR_MALIGNO": "Tumor Maligno:",
+        "CONFIANZA_SISTEMA": "Confianza del Sistema",
+        "NIVEL_CERTEZA": "Nivel de Certeza",
+        "ALTA_CONFIANZA": "ALTA CONFIANZA",
+        "CONFIANZA_MODERADA": "CONFIANZA MODERADA",
+        "REQUIERE_REVISION": "REQUIERE REVISION",
+        "NOTA_TITULO": "Nota Importante:",
+        "NOTA_TEXTO": "Este diagnóstico automatizado debe ser validado por un patólogo certificado. El resultado final prevalece sobre las predicciones individuales de los modelos mostrados arriba.",
+        "BOTON_REPORTE": "Generar Reporte Médico PDF"
+      }
+    }
+  },
   "MENU": {
     "HOME": { "TITLE": "Inicio", "SUB": "Inicio de página" },
     "PREDICT": { "TITLE": "Predecir", "SUB": "Predicción del modelo" },
@@ -69,8 +179,19 @@
     "FILENAME": "reporte-diagnostico-{{date}}.pdf",
     "ERROR_GENERATING": "Error al generar el reporte PDF. Por favor, inténtelo nuevamente.",
     "MALIGNANT_ICON": "⚠ MALIGNO",
-    "BENIGN_ICON": "✓ BENIGNO"
+    "BENIGN_ICON": "✓ BENIGNO",
+    "VISUAL_ANALYSIS": "Análisis Visual del Espécimen",
+    "XAI_SECTION": "Interpretabilidad e IA Explicativa (XAI)",
+    "XAI_DESC": "A continuación se presentan los mapas de activación térmica (Heatmaps) generados de manera individual por las arquitecturas de Deep Learning, indicando las regiones de interés (ROI) críticas para las clasificaciones de Benigno (Clase 0) y Maligno (Clase 1).",
+    "LABEL_ORIGINAL": "Imagen Original",
+    "LABEL_PROCESSED": "Procesada (Model Input)",
+    "XAI_ROI_TITLE": "Regiones de Interés - Arquitectura {{architecture}}",
+    "XAI_HEATMAP_BENIGN": "Mapa de Calor: Benigno (Clase 0)",
+    "XAI_HEATMAP_MALIGNANT": "Mapa de Calor: Maligno (Clase 1)",
+    "XAI_ERROR_CLASS_0": "Heatmap Clase 0 N/D",
+    "XAI_ERROR_CLASS_1": "Heatmap Clase 1 N/D",
+    "XAI_NO_ATTRIBUTION_0": "Sin Atribución Clase 0",
+    "XAI_NO_ATTRIBUTION_1": "Sin Atribución Clase 1",
+    "LABEL_PAGE": "Pág."
   }
 }
-
-

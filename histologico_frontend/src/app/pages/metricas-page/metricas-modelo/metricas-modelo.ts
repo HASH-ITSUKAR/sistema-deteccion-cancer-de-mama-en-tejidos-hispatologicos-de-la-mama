@@ -1,8 +1,9 @@
 import { ChangeDetectionStrategy, Component, input } from '@angular/core';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-metricas-modelo',
-  imports: [],
+  imports: [TranslateModule],
   templateUrl: './metricas-modelo.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })

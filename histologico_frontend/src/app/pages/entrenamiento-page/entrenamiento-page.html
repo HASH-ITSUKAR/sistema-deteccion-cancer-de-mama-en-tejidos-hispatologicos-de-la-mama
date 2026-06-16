@@ -1,60 +1,60 @@
 <div class="min-h-screen bg-gradient-to-br from-blue-50 to-purple-100 p-4 md:p-8 font-sans w-full">
-  <div class="space-y-8 p-6 bg-gray-50 rounded-3xl border border-gray-200 mt-6">
+  <div class="space-y-8 p-6 bg-gray-50 rounded-3xl border border-gray-200 mt-6 max-w-7xl mx-auto">
 
     <div class="flex justify-between items-center border-b border-gray-200 pb-4">
       <div>
-        <h2 class="text-2xl font-black text-gray-900 tracking-tight">Entrenamiento de Modelos</h2>
-        <p class="text-sm text-gray-500">Configuración de hiperparámetros y métricas de desempeño.</p>
+        <h2 class="text-2xl font-black text-gray-900 tracking-tight">{{ 'ENTRENAMIENTO.TITULO' | translate }}</h2>
+        <p class="text-sm text-gray-500">{{ 'ENTRENAMIENTO.SUBTITULO' | translate }}</p>
       </div>
     </div>
 
     <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
       <div class="bg-white border border-gray-200 rounded-2xl p-4 shadow-sm">
-        <p class="text-[10px] font-bold uppercase tracking-wider text-gray-400">Learning Rate</p>
+        <p class="text-[10px] font-bold uppercase tracking-wider text-gray-400">{{ 'ENTRENAMIENTO.HIPERPARAMETROS.LEARNING_RATE' | translate }}</p>
         <h3 class="text-xl font-black text-gray-900 mt-1">0.0001</h3>
       </div>
       <div class="bg-white border border-gray-200 rounded-2xl p-4 shadow-sm">
-        <p class="text-[10px] font-bold uppercase tracking-wider text-gray-400">Batch Size</p>
+        <p class="text-[10px] font-bold uppercase tracking-wider text-gray-400">{{ 'ENTRENAMIENTO.HIPERPARAMETROS.BATCH_SIZE' | translate }}</p>
         <h3 class="text-xl font-black text-gray-900 mt-1">32</h3>
       </div>
       <div class="bg-white border border-gray-200 rounded-2xl p-4 shadow-sm">
-        <p class="text-[10px] font-bold uppercase tracking-wider text-gray-400">Épocas</p>
+        <p class="text-[10px] font-bold uppercase tracking-wider text-gray-400">{{ 'ENTRENAMIENTO.HIPERPARAMETROS.EPOCAS' | translate }}</p>
         <h3 class="text-xl font-black text-gray-900 mt-1">30</h3>
       </div>
       <div class="bg-white border border-gray-200 rounded-2xl p-4 shadow-sm">
-        <p class="text-[10px] font-bold uppercase tracking-wider text-gray-400">Input Size</p>
+        <p class="text-[10px] font-bold uppercase tracking-wider text-gray-400">{{ 'ENTRENAMIENTO.HIPERPARAMETROS.INPUT_SIZE' | translate }}</p>
         <h3 class="text-xl font-black text-gray-900 mt-1">224x224</h3>
       </div>
       <div class="bg-white border border-indigo-200 rounded-2xl p-4 shadow-sm bg-indigo-50/30">
-        <p class="text-[10px] font-bold uppercase tracking-wider text-indigo-600">Early Stop (MCC)</p>
-        <h3 class="text-xl font-black text-indigo-700 mt-1">Paciencia: 3</h3>
+        <p class="text-[10px] font-bold uppercase tracking-wider text-indigo-600">{{ 'ENTRENAMIENTO.HIPERPARAMETROS.EARLY_STOP' | translate }}</p>
+        <h3 class="text-xl font-black text-indigo-700 mt-1">{{ 'ENTRENAMIENTO.HIPERPARAMETROS.PACIENCIA' | translate }}3</h3>
       </div>
     </div>
 
     <div class="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm">
-      <h4 class="text-base font-bold text-gray-900 mb-4">Especificaciones del Equipo</h4>
+      <h4 class="text-base font-bold text-gray-900 mb-4">{{ 'ENTRENAMIENTO.HARDWARE.TITULO' | translate }}</h4>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 text-sm">
         <div class="space-y-1">
-          <p class="text-[10px] font-bold text-gray-400 uppercase">Modelo</p>
+          <p class="text-[10px] font-bold text-gray-400 uppercase">{{ 'ENTRENAMIENTO.HARDWARE.MODELO' | translate }}</p>
           <p class="font-bold text-gray-800">Laptop Acer Nitro V15</p>
         </div>
         <div class="space-y-1">
-          <p class="text-[10px] font-bold text-gray-400 uppercase">Procesador</p>
+          <p class="text-[10px] font-bold text-gray-400 uppercase">{{ 'ENTRENAMIENTO.HARDWARE.PROCESADOR' | translate }}</p>
           <p class="font-semibold text-gray-800">Intel Core i9-13900H</p>
-          <p class="text-[10px] text-gray-500">(2.60 GHz, 14 núcleos, 20 hilos)</p>
+          <p class="text-[10px] text-gray-500">(2.60 GHz, 14 {{ 'ENTRENAMIENTO.HARDWARE.NUCLEOS_HILOS' | translate }})</p>
         </div>
         <div class="space-y-1">
-          <p class="text-[10px] font-bold text-gray-400 uppercase">Memoria RAM</p>
+          <p class="text-[10px] font-bold text-gray-400 uppercase">{{ 'ENTRENAMIENTO.HARDWARE.RAM' | translate }}</p>
           <p class="font-semibold text-gray-800">31.7 GB DDR5</p>
           <p class="text-[10px] text-gray-500">@ 5200 MT/s</p>
         </div>
         <div class="space-y-1">
-          <p class="text-[10px] font-bold text-gray-400 uppercase">Tarjeta Gráfica</p>
+          <p class="text-[10px] font-bold text-gray-400 uppercase">{{ 'ENTRENAMIENTO.HARDWARE.GRAFICA' | translate }}</p>
           <p class="font-semibold text-gray-800">NVIDIA GeForce RTX 4060</p>
           <p class="text-[10px] text-gray-500">8 GB VRAM</p>
         </div>
         <div class="space-y-1 lg:col-span-1">
-          <p class="text-[10px] font-bold text-gray-400 uppercase">Almacenamiento</p>
+          <p class="text-[10px] font-bold text-gray-400 uppercase">{{ 'ENTRENAMIENTO.HARDWARE.ALMACENAMIENTO' | translate }}</p>
           <p class="font-semibold text-gray-800">SSD KINGSTON SNV3S2000G</p>
           <p class="text-[10px] text-gray-500">1.8 TB (NVMe)</p>
         </div>
@@ -62,18 +62,18 @@
     </div>
 
     <div class="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm">
-      <h4 class="text-base font-bold text-gray-900 mb-4">Comparativa de Modelos</h4>
+      <h4 class="text-base font-bold text-gray-900 mb-4">{{ 'ENTRENAMIENTO.COMPARATIVA.TITULO' | translate }}</h4>
       <div class="overflow-x-auto">
         <table class="w-full text-left text-xs">
           <thead>
             <tr class="text-gray-400 border-b border-gray-100">
-              <th class="pb-3 font-bold uppercase">Modelo</th>
-              <th class="pb-3 font-bold uppercase text-center">Tiempo (M)</th>
-              <th class="pb-3 font-bold uppercase text-center">CPU %</th>
-              <th class="pb-3 font-bold uppercase text-center">RAM %</th>
-              <th class="pb-3 font-bold uppercase text-center">GPU %</th>
-              <th class="pb-3 font-bold uppercase text-center">VRAM (MB)</th>
-              <th class="pb-3 font-bold uppercase text-right">Disco %</th>
+              <th class="pb-3 font-bold uppercase">{{ 'ENTRENAMIENTO.COMPARATIVA.TABLA.MODELO' | translate }}</th>
+              <th class="pb-3 font-bold uppercase text-center">{{ 'ENTRENAMIENTO.COMPARATIVA.TABLA.TIEMPO' | translate }}</th>
+              <th class="pb-3 font-bold uppercase text-center">{{ 'ENTRENAMIENTO.COMPARATIVA.TABLA.CPU' | translate }}</th>
+              <th class="pb-3 font-bold uppercase text-center">{{ 'ENTRENAMIENTO.COMPARATIVA.TABLA.RAM' | translate }}</th>
+              <th class="pb-3 font-bold uppercase text-center">{{ 'ENTRENAMIENTO.COMPARATIVA.TABLA.GPU' | translate }}</th>
+              <th class="pb-3 font-bold uppercase text-center">{{ 'ENTRENAMIENTO.COMPARATIVA.TABLA.VRAM' | translate }}</th>
+              <th class="pb-3 font-bold uppercase text-right">{{ 'ENTRENAMIENTO.COMPARATIVA.TABLA.DISCO' | translate }}</th>
             </tr>
           </thead>
           <tbody class="divide-y divide-gray-50">
@@ -102,41 +102,31 @@
       </div>
     </div>
 
-
-
-
-
-
-
-
-
-
-
     <div class="flex flex-wrap gap-2 mb-6">
       @for (m of ['Swin', 'DeiT', 'Inception', 'ViT', 'CaiT', 'EfficientNet', 'DenseNet', 'PVT']; track m) {
         <button
           (click)="selectModel(m)"
           [class]="selectedModel === m ? 'bg-indigo-600 text-white' : 'bg-white text-gray-700 border-gray-200'"
-          class="px-4 py-2 rounded-xl text-xs font-bold border shadow-sm transition-all hover:scale-105">
+          class="px-4 py-2 rounded-xl text-xs font-bold border shadow-sm transition-all hover:scale-105 cursor-pointer">
           {{m}}
         </button>
       }
     </div>
 
-
-
     <div class="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm">
-      <h4 class="text-base font-bold text-gray-900 mb-4">Evolución: {{selectedModel}}</h4>
+      <h4 class="text-base font-bold text-gray-900 mb-4">
+        {{ 'ENTRENAMIENTO.EVOLUCION.TITULO' | translate }}{{selectedModel}}
+      </h4>
       <div class="overflow-x-auto">
         <table class="w-full text-left uppercase text-xs">
           <thead>
             <tr class="text-gray-400 border-b border-gray-100">
-              <th class="pb-3">Época</th>
-              <th class="pb-3">Perdida</th>
-              <th class="pb-3">F1</th>
-              <th class="pb-3">AUC</th>
-              <th class="pb-3">Accuracy</th>
-              <th class="pb-3">MCC</th>
+              <th class="pb-3">{{ 'ENTRENAMIENTO.EVOLUCION.TABLA.EPOCA' | translate }}</th>
+              <th class="pb-3">{{ 'ENTRENAMIENTO.EVOLUCION.TABLA.PERDIDA' | translate }}</th>
+              <th class="pb-3">{{ 'ENTRENAMIENTO.EVOLUCION.TABLA.F1' | translate }}</th>
+              <th class="pb-3">{{ 'ENTRENAMIENTO.EVOLUCION.TABLA.AUC' | translate }}</th>
+              <th class="pb-3">{{ 'ENTRENAMIENTO.EVOLUCION.TABLA.ACCURACY' | translate }}</th>
+              <th class="pb-3">{{ 'ENTRENAMIENTO.EVOLUCION.TABLA.MCC' | translate }}</th>
             </tr>
           </thead>
           <tbody class="divide-y divide-gray-50">
@@ -157,13 +147,5 @@
       </div>
     </div>
 
-
-
-
-
-
-
-
-
-
+  </div>
 </div>

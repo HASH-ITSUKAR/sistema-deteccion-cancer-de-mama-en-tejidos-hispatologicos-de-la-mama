@@ -1,39 +1,149 @@
 {
-  "IDIOMA": "FRANCES",
-  "PAGE_TITLE": "Système de prédiction du cancer dans les tissus histologiques du sein",
-  "PAGE_DESCRIPTION": "Ce système utilise divers modèles d'apprentissage profond pour analyser les images histologiques et prédire la présence d'un cancer du sein. Ci-dessous figurent les modèles individuels et leurs performances (MCC) :",
-  "ENSEMBLE_DESCRIPTION": "De plus, un <strong>ensemble de modèles utilisant le stacking avec XGBoost</strong> est implémenté, atteignant un MCC combiné de <strong>85,32%</strong>. Cela permet de tirer parti des forces de chaque modèle afin d'améliorer la précision globale de la prédiction.",
-  "ANALYSIS_TITLE": "🔬 Analyse histologique",
-  "ANALYSIS_SUBTITLE": "Détection du cancer du sein",
-  "UPLOAD_IMAGE_TITLE": "Téléverser une image de tissu",
-  "UPLOAD_IMAGE_DESCRIPTION": "Cliquez ici ou faites glisser votre image histologique",
-  "ANALYZE_BUTTON": "🧬 Analyser l’échantillon",
-  "INDIVIDUAL_MODELS_TITLE": "🔬 Analyse par modèles individuels",
-  "INDIVIDUAL_MODELS_SUBTITLE": "Résultats préliminaires de chaque modèle",
-  "BENIGN": "Bénin",
-  "MALIGNANT": "Malin",
-  "FINAL_VERDICT_SEPARATOR": "⬇️ VERDICT FINAL ⬇️",
-  "DEFINITIVE_DIAGNOSIS": "DIAGNOSTIC DÉFINITIF",
-  "ENSEMBLE_SYSTEM": "Système d’ensemble XGBoost - Résultat final",
-  "RESULT_MALIGNANT": "🚨 MALIN",
-  "RESULT_BENIGN": "✅ BÉNIN",
-  "FINAL_PROBABILITIES": "Probabilités finales",
-  "BENIGN_TUMOR": "Tumeur bénigne",
-  "MALIGNANT_TUMOR": "Tumeur maligne",
-  "SYSTEM_CONFIDENCE": "Confiance du système",
-  "CERTAINTY_LEVEL": "Niveau de certitude",
-  "HIGH_CONFIDENCE": "HAUTE CONFIANCE",
-  "MODERATE_CONFIDENCE": "CONFIANCE MODÉRÉE",
-  "REQUIRES_REVIEW": "NÉCESSITE UNE VÉRIFICATION",
-  "IMPORTANT_NOTE_TITLE": "Remarque importante :",
-  "IMPORTANT_NOTE_TEXT": "Ce diagnostic automatisé doit être validé par un pathologiste certifié. Le résultat final prévaut sur les prédictions individuelles des modèles affichées ci-dessus.",
-  "GENERATE_PDF_BUTTON": "Générer le rapport médical PDF",
-  "COMPANY_SLOGAN": "Prédiction du cancer dans les tissus histologiques",
-  "MENU_HOME": "Accueil",
-  "MENU_HOME_SUB": "Page d’accueil",
-  "MENU_PREDICT": "Prédire",
-  "MENU_PREDICT_SUB": "Prédiction du modèle",
-  "ERROR_ONLY_IMAGES": "Veuillez sélectionner uniquement des fichiers image.",
+  "DASHBOARD": {
+    "TITULO": "Analyse Histologique Numérique",
+    "SUBTITULO": "Plateforme intelligente pour la détection automatisée du carcinome mammaire via des architectures avancées de deep learning et des modèles d'ensemble",
+    "RANKING": {
+      "RANKING": "Classement des Modèles",
+      "ORDENADO": "Trié par performance actuelle de : ",
+      "COMPARATIVA": "Comparaison Globale des Performances",
+      "CRECIMIENTO": "Croissance progressive (Inférieure à Gauche / Supérieure à Droite)",
+      "METRICA": "Métrique : ",
+      "RENDIMIENTO_MENOR": "Performance Inférieure",
+      "RENDIMIENTO_MAYOR": "Performance Supérieure"
+    },
+    "MODEL": {
+      "MEJOR_MODELO": "Meilleur Modèle",
+      "ARQUITECTURA_ENSEMBLE": "Architecture d'Ensemble",
+      "EXCELENTE_PERFORMANCE": "Excellente performance",
+      "EXCELENTE_DISCRIMINACION": "Excellente discrimination",
+      "EQUILIBRIO_METRICAS": "Équilibre précision/recall",
+      "PREDICCION_ROBUSTA": "Prédiction hautement robuste"
+    }
+  },
+  "METRICAS": {
+    "TITULO": "MÉTRIQUES DES MODÈLES",
+    "SUBTITULO": "Évaluation détaillée des performances pour chaque architecture implémentée."
+  },
+  "EDA": {
+    "TITULO": "Analyse Exploratoire des Données (EDA)",
+    "SUBTITULO": "Structure, équilibre et cohérence du dataset histopathologique.",
+    "RESOLUCION": "Résolution : 224x224 px",
+    "TOTAL_IMAGENES": "Total d'Images",
+    "FORMATO_CANALES": "Format : RGB Channels",
+    "TOTAL_BENIGNAS": "Total Bénignes",
+    "TOTAL_MALIGNAS": "Total Malignes",
+    "PORCENTAJE_DATASET": "du Dataset total",
+    "PARTICION_TITULO": "Partition Structurée du Dataset",
+    "PARTICION_SUBTITULO": "Division équilibrée pour garantir un entraînement et une validation sans biais.",
+    "ENTRENAMIENTO": "Entraînement",
+    "VALIDACION": "Validation",
+    "PRUEBA": "Test",
+    "DISTRIBUCION_TITULO": "Distribution Interne par Classes",
+    "DISTRIBUCION_SUBTITULO": "Proportion stratifiée",
+    "VS": "vs",
+    "LEYENDA_BENIGNO": "Bénigne",
+    "LEYENDA_MALIGNO": "Maligne",
+    "INFO_ESTRATIFICACION_TITULO": "Stratification Parfaite :",
+    "INFO_ESTRATIFICACION_TEXTO": "Le taux de déséquilibre (~2.5 pour 1) est mathématiquement préservé à l'identique dans les trois sous-ensembles pour assurer des tests sans biais.",
+    "INSPECCION_TITULO": "Inspection Visuelle du Dataset",
+    "INSPECCION_SUBTITULO": "Échantillons aléatoires chargés en mémoire avec leurs dimensions normalisées au format d'entrée du réseau.",
+    "ETIQUETA_BENIGNO": "Bénigne (0)",
+    "ETIQUETA_MALIGNO": "Maligne (1)"
+  },
+  "EVALUACION": {
+    "TITULO": "Évaluation Avancée du Modèle",
+    "SUBTITULO": "Metriques avancées de classification histopathologique calculées sur le sous-ensemble de Test.",
+    "MATRIZ_TITULO": "Matrice de Confusion",
+    "PREDICHO_BENIGNO": "Prédit Bénigne",
+    "PREDICHO_MALIGNO": "Prédit Maligne",
+    "REAL_BENIGNO": "Réel Bénigne",
+    "REAL_MALIGNO": "Réel Maligne",
+    "CURVA_ROC": "Courbe ROC",
+    "CARGANDO": "Chargement..."
+  },
+  "ENTRENAMIENTO": {
+    "TITULO": "Entraînement des Modèles",
+    "SUBTITULO": "Configuration des hyperparamètres et métriques de performance.",
+    "HIPERPARAMETROS": {
+      "LEARNING_RATE": "Learning Rate",
+      "BATCH_SIZE": "Batch Size",
+      "EPOCAS": "Époques",
+      "INPUT_SIZE": "Input Size",
+      "EARLY_STOP": "Early Stop (MCC)",
+      "PACIENCIA": "Patience : "
+    },
+    "HARDWARE": {
+      "TITULO": "Spécifications Matérielles",
+      "MODELO": "Modèle",
+      "PROCESADOR": "Processeur",
+      "NUCLEOS_HILOS": "cœurs, 20 threads",
+      "RAM": "Mémoire RAM",
+      "GRAFICA": "Carte Graphique",
+      "ALMACENAMIENTO": "Stockage"
+    },
+    "COMPARATIVA": {
+      "TITULO": "Comparaison des Modèles",
+      "TABLA": {
+        "MODELO": "Modèle",
+        "TIEMPO": "Temps (M)",
+        "CPU": "CPU %",
+        "RAM": "RAM %",
+        "GPU": "GPU %",
+        "VRAM": "VRAM (MB)",
+        "DISCO": "Disque %"
+      }
+    },
+    "EVOLUCION": {
+      "TITULO": "Évolution : ",
+      "TABLA": {
+        "EPOCA": "Époque",
+        "PERDIDA": "Loss",
+        "F1": "F1",
+        "AUC": "AUC",
+        "ACCURACY": "Accuracy",
+        "MCC": "MCC"
+      }
+    }
+  },
+  "PREDICCION": {
+    "TITULO": "🔬 Analyse Histologique",
+    "SUBTITULO": "Détection du Cancer du Sein",
+    "FORMULARIO": {
+      "CARGAR": "Charger l'image du tissu",
+      "CLICK": "Cliquez ici ou glissez votre image histologique",
+      "ANALIZAR": "🧬 Analyser l'Échantillon",
+      "ERROR": "Seules les images peuvent être téléchargées"
+    },
+    "DATOS": {
+      "ANALISIS": "🔬 Analyse par Modèles Individuels",
+      "RESULTADOS": "Résultats préliminaires de chaque modèle",
+      "VEREDICTO": "⬇️ VERDICT FINAL ⬇️",
+      "EXPLICACION": "IA EXPLICATIVE PAR MODÈLE",
+      "MODELOS": {
+        "ORIGINAL": "Image originale",
+        "PROCESADO": "Image traitée",
+        "MALIGNO": "Malin",
+        "BENIGNO": "Bénin"
+      },
+      "DEFINITIVO": {
+        "DIAGNOSTICO": "DIAGNOSTIC DÉFINITIF",
+        "SISTEMA_ENSEMBLE": "Système d'Ensemble XGBoost - Résultat Final",
+        "MALIGNO_ALERT": "🚨 MALIN",
+        "BENIGNO_OK": "✅ BÉNIN",
+        "PROBABILIDADES": "Probabilités Finales",
+        "TUMOR_BENIGNO": "Tumeur Bénigne :",
+        "TUMOR_MALIGNO": "Tumeur Maligne :",
+        "CONFIANZA_SISTEMA": "Confiance du Système",
+        "NIVEL_CERTEZA": "Niveau de Certitude",
+        "ALTA_CONFIANZA": "HAUTE CONFIANCE",
+        "CONFIANZA_MODERADA": "CONFIANCE MODÉRÉE",
+        "REQUIERE_REVISION": "NÉCESSITE UNE RÉVISION",
+        "NOTA_TITULO": "Note Importante :",
+        "NOTA_TEXTO": "Ce diagnostic automatisé doit être validé par un pathologiste certifié. Le résultat final prévaut sur les prédictions individuelles des modèles présentés ci-dessus.",
+        "BOTON_REPORTE": "Générer le Rapport Médical PDF"
+      }
+    }
+  },
   "MENU": {
     "HOME": { "TITLE": "Accueil", "SUB": "Accueil de la page" },
     "PREDICT": { "TITLE": "Prédire", "SUB": "Prédiction du modèle" },
@@ -44,7 +154,7 @@
   },
   "REPORT": {
     "TITLE_MAIN": "RAPPORT DE DIAGNOSTIC MÉDICAL",
-    "TITLE_SUB": "Analyse d'image histopathologique",
+    "TITLE_SUB": "Analyse d'Image Histopathologique",
     "IMAGE_ANALYZED": "IMAGE ANALYSÉE :",
     "IMAGE_RESOLUTION": "Image histopathologique • Résolution : {{width}}x{{height}}px • Format : {{format}}",
     "DIAGNOSIS_RESULT": "RÉSULTAT DU DIAGNOSTIC",
@@ -59,9 +169,9 @@
     "MODEL": "MODÈLE D'IA",
     "PREDICTION": "PRÉDICTION",
     "CONFIDENCE": "CONFIANCE",
-    "NOTICE_TITLE": "⚠️ AVIS MÉDICAL IMPORTANT :",
+    "NOTICE_TITLE": "⚠️  AVIS MÉDICAL IMPORTANT :",
     "NOTICE_1": "Cette analyse automatisée est un outil d'aide au diagnostic.",
-    "NOTICE_2": "Le diagnostic final doit être établi par un pathologiste certifié.",
+    "NOTICE_2": "Le diagnostic définitif doit être établi par un pathologiste certifié.",
     "NOTICE_3": "Ce rapport ne remplace pas le jugement médical professionnel.",
     "IMAGE_UNAVAILABLE": "⚠️ Image non disponible",
     "IMAGE_ERROR": "Erreur lors du traitement de l'image histopathologique",
@@ -69,6 +179,19 @@
     "FILENAME": "rapport-diagnostic-{{date}}.pdf",
     "ERROR_GENERATING": "Erreur lors de la génération du rapport PDF. Veuillez réessayer.",
     "MALIGNANT_ICON": "⚠ MALIN",
-    "BENIGN_ICON": "✓ BÉNIN"
+    "BENIGN_ICON": "✓ BÉNIN",
+    "VISUAL_ANALYSIS": "Analyse Visuelle du Spécimen",
+    "XAI_SECTION": "Interprétabilité et IA Explicative (XAI)",
+    "XAI_DESC": "Ci-dessous sont présentées les cartes d'activation thermique (Heatmaps) générées individuellement par les architectures de Deep Learning, indiquant les régions d'intérêt (ROI) critiques pour les classifications Bénin (Classe 0) et Malin (Classe 1).",
+    "LABEL_ORIGINAL": "Image Originale",
+    "LABEL_PROCESSED": "Traitée (Model Input)",
+    "XAI_ROI_TITLE": "Régions d'Intérêt - Architecture {{architecture}}",
+    "XAI_HEATMAP_BENIGN": "Carte de Chaleur : Bénin (Classe 0)",
+    "XAI_HEATMAP_MALIGNANT": "Carte de Chaleur : Malin (Classe 1)",
+    "XAI_ERROR_CLASS_0": "Heatmap Classe 0 N/D",
+    "XAI_ERROR_CLASS_1": "Heatmap Classe 1 N/D",
+    "XAI_NO_ATTRIBUTION_0": "Sans Attribution Classe 0",
+    "XAI_NO_ATTRIBUTION_1": "Sans Attribution Classe 1",
+    "LABEL_PAGE": "P."
   }
 }

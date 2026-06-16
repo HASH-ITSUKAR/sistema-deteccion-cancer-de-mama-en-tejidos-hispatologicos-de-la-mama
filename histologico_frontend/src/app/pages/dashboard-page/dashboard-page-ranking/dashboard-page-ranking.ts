@@ -1,5 +1,6 @@
 import { NgClass } from '@angular/common';
 import { ChangeDetectionStrategy, Component, computed, signal } from '@angular/core';
+import { TranslateModule } from '@ngx-translate/core';
 
 interface ModeloData {
   nombre: string;
@@ -12,7 +13,7 @@ interface ModeloData {
 
 @Component({
   selector: 'app-dashboard-page-ranking',
-  imports: [NgClass],
+  imports: [NgClass, TranslateModule],
   templateUrl: './dashboard-page-ranking.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
