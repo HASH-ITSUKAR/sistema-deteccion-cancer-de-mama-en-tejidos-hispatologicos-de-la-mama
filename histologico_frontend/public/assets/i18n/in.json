@@ -1,0 +1,197 @@
+{
+  "DASHBOARD": {
+    "TITULO": "Analisis Histologis Digital",
+    "SUBTITULO": "Platform cerdas untuk deteksi otomatis karsinoma payudara menggunakan arsitektur deep learning tingkat lanjut dan model ensemble",
+    "RANKING": {
+      "RANKING": "Peringkat Model",
+      "ORDENADO": "Diurutkan berdasarkan performa saat ini dari: ",
+      "COMPARATIVA": "Perbandingan Performa Global",
+      "CRECIMIENTO": "Pertumbuhan bertahap (Lebih Rendah di Kiri / Lebih Tinggi di Kanan)",
+      "METRICA": "Metrik: ",
+      "RENDIMIENTO_MENOR": "Performa Lebih Rendah",
+      "RENDIMIENTO_MAYOR": "Performa Lebih Tinggi"
+    },
+    "MODEL": {
+      "MEJOR_MODELO": "Model Terbaik",
+      "ARQUITECTURA_ENSEMBLE": "Arsitektur Ensemble",
+      "EXCELENTE_PERFORMANCE": "Performa luar biasa",
+      "EXCELENTE_DISCRIMINACION": "Diskriminasi luar biasa",
+      "EQUILIBRIO_METRICAS": "Keseimbangan presisi/recall",
+      "PREDICCION_ROBUSTA": "Prediksi yang sangat kuat"
+    }
+  },
+  "METRICAS": {
+    "TITULO": "METRIK MODEL",
+    "SUBTITULO": "Evaluasi performa mendetail untuk setiap arsitektur yang diimplementasikan."
+  },
+  "EDA": {
+    "TITULO": "Analisis Data Eksploratif (EDA)",
+    "SUBTITULO": "Struktur, keseimbangan, dan konsistensi dataset histopatologi.",
+    "RESOLUCION": "Resolusi: 224x224 px",
+    "TOTAL_IMAGENES": "Total Gambar",
+    "FORMATO_CANALES": "Format: RGB Channels",
+    "TOTAL_BENIGNAS": "Total Jinak (Benign)",
+    "TOTAL_MALIGNAS": "Total Ganas (Malignant)",
+    "PORCENTAJE_DATASET": "dari total Dataset",
+    "PARTICION_TITULO": "Partisi Dataset Terstruktur",
+    "PARTICION_SUBTITULO": "Pembagian yang seimbang untuk memastikan pelatihan dan validasi bebas dari bias.",
+    "ENTRENAMIENTO": "Pelatihan (Train)",
+    "VALIDACION": "Validasi (Val)",
+    "PRUEBA": "Pengujian (Test)",
+    "DISTRIBUCION_TITULO": "Distribusi Internal per Kelas",
+    "DISTRIBUCION_SUBTITULO": "Proporsi berstrata",
+    "VS": "vs",
+    "LEYENDA_BENIGNO": "Jinak",
+    "LEYENDA_MALIGNO": "Ganas",
+    "INFO_ESTRATIFICACION_TITULO": "Stratifikasi Sempurna:",
+    "INFO_ESTRATIFICACION_TEXTO": "Rasio ketidakseimbangan (~2.5 banding 1) dipertahankan secara matematis identik di ketiga subset untuk memastikan pengujian bebas bias.",
+    "INSPECCION_TITULO": "Inspeksi Visual Dataset",
+    "INSPECCION_SUBTITULO": "Sampel acak dimuat ke dalam memori dengan dimensi yang dinormalisasi ke format input jaringan.",
+    "ETIQUETA_BENIGNO": "Jinak (0)",
+    "ETIQUETA_MALIGNO": "Ganas (1)"
+  },
+  "EVALUACION": {
+    "TITULO": "Evaluasi Model Tingkat Lanjut",
+    "SUBTITULO": "Metrik klasifikasi histopatologi tingkat lanjut dihitung pada subset Pengujian.",
+    "MATRIZ_TITULO": "Confusion Matrix",
+    "PREDICHO_BENIGNO": "Prediksi Jinak",
+    "PREDICHO_MALIGNO": "Prediksi Ganas",
+    "REAL_BENIGNO": "Aktual Jinak",
+    "REAL_MALIGNO": "Aktual Ganas",
+    "CURVA_ROC": "Kurva ROC",
+    "CARGANDO": "Memuat..."
+  },
+  "ENTRENAMIENTO": {
+    "TITULO": "Pelatihan Model",
+    "SUBTITULO": "Konfigurasi hiperparameter dan metrik performa.",
+    "HIPERPARAMETROS": {
+      "LEARNING_RATE": "Learning Rate",
+      "BATCH_SIZE": "Batch Size",
+      "EPOCAS": "Epoch",
+      "INPUT_SIZE": "Input Size",
+      "EARLY_STOP": "Early Stop (MCC)",
+      "PACIENCIA": "Kesabaran (Patience): "
+    },
+    "HARDWARE": {
+      "TITULO": "Spesifikasi Perangkat Keras",
+      "MODELO": "Model",
+      "PROCESADOR": "Prosesor",
+      "NUCLEOS_HILOS": "core, 20 thread",
+      "RAM": "Memori RAM",
+      "GRAFICA": "Kartu Grafis (GPU)",
+      "ALMACENAMIENTO": "Penyimpanan"
+    },
+    "COMPARATIVA": {
+      "TITULO": "Perbandingan Model",
+      "TABLA": {
+        "MODELO": "Model",
+        "TIEMPO": "Waktu (M)",
+        "CPU": "CPU %",
+        "RAM": "RAM %",
+        "GPU": "GPU %",
+        "VRAM": "VRAM (MB)",
+        "DISCO": "Diskon %"
+      }
+    },
+    "EVOLUCION": {
+      "TITULO": "Evolusi: ",
+      "TABLA": {
+        "EPOCA": "Epoch",
+        "PERDIDA": "Loss",
+        "F1": "F1",
+        "AUC": "AUC",
+        "ACCURACY": "Accuracy",
+        "MCC": "MCC"
+      }
+    }
+  },
+  "PREDICCION": {
+    "TITULO": "🔬 Analisis Histologis",
+    "SUBTITULO": "Deteksi Kanker Payudara",
+    "FORMULARIO": {
+      "CARGAR": "Muat gambar jaringan",
+      "CLICK": "Klik di sini atau seret gambar histologis Anda",
+      "ANALIZAR": "🧬 Analisis Sampel",
+      "ERROR": "Hanya file gambar yang dapat diunggah"
+    },
+    "DATOS": {
+      "ANALISIS": "🔬 Analisis oleh Model Individual",
+      "RESULTADOS": "Hasil awal dari masing-masing model",
+      "VEREDICTO": "⬇️ VEREDIKTO FINAL ⬇️",
+      "EXPLICACION": "AI YANG DAPAT DIJELASKAN PER MODEL",
+      "MODELOS": {
+        "ORIGINAL": "Gambar asli",
+        "PROCESADO": "Gambar terproses",
+        "MALIGNO": "Maligno (Ganas)",
+        "BENIGNO": "Benigno (Jinak)"
+      },
+      "DEFINITIVO": {
+        "DIAGNOSTICO": "DIAGNOSIS DEFINITIF",
+        "SISTEMA_ENSEMBLE": "Sistem Ensemble XGBoost - Hasil Akhir",
+        "MALIGNO_ALERT": "🚨 GANAS",
+        "BENIGNO_OK": "✅ JINAK",
+        "PROBABILIDADES": "Probabilitas Akhir",
+        "TUMOR_BENIGNO": "Tumor Jinak:",
+        "TUMOR_MALIGNO": "Tumor Ganas:",
+        "CONFIANZA_SISTEMA": "Kepercayaan Sistem",
+        "NIVEL_CERTEZA": "Tingkat Kepastian",
+        "ALTA_CONFIANZA": "KEPERCAYAAN TINGGI",
+        "CONFIANZA_MODERADA": "KEPERCAYAAN MODERAT",
+        "REQUIERE_REVISION": "MEMERLUKAN TINJAUAN",
+        "NOTA_TITULO": "Nota Penting:",
+        "NOTA_TEXTO": "Diagnosis otomatis ini harus divalidasi oleh ahli patologi bersertifikat. Hasil akhir lebih diutamakan daripada prediksi individual dari model yang ditampilkan di atas.",
+        "BOTON_REPORTE": "Hasilkan Laporan Medis PDF"
+      }
+    }
+  },
+  "MENU": {
+    "HOME": { "TITLE": "Beranda", "SUB": "Halaman beranda" },
+    "PREDICT": { "TITLE": "Prediksi", "SUB": "Prediksi model" },
+    "METRICS": { "TITLE": "Metrik", "SUB": "Metrik model" },
+    "EDA": { "TITLE": "EDA", "SUB": "EDA model" },
+    "EVAL": { "TITLE": "Evaluasi", "SUB": "Evaluasi model" },
+    "TRAIN": { "TITLE": "Pelatihan", "SUB": "Pelatihan model" }
+  },
+  "REPORT": {
+    "TITLE_MAIN": "LAPORAN DIAGNOSIS MEDIS",
+    "TITLE_SUB": "Analisis Gambar Histopatologi",
+    "IMAGE_ANALYZED": "GAMBAR YANG DIANALISIS:",
+    "IMAGE_RESOLUTION": "Gambar histopatologi • Resolusi: {{width}}x{{height}}px • Format: {{format}}",
+    "DIAGNOSIS_RESULT": "HASIL DIAGNOSIS",
+    "DIAGNOSIS": "DIAGNOSIS:",
+    "MALIGNANT": "GANAS (MALIGNANT)",
+    "BENIGN": "JINAK (BENIGN)",
+    "CONFIDENCE_LEVEL": "TINGKAT KEPERCAYAAN:",
+    "DATE": "Tanggal Analisis:",
+    "AI_SYSTEM": "Sistem IP (AI):",
+    "ENSEMBLE_MODELS": "{{model}} (Ensemble 8 Model)",
+    "DETAILED_ANALYSIS": "ANALISIS RINCI PER MODEL",
+    "MODEL": "MODEL AI",
+    "PREDICTION": "PREDIKSI",
+    "CONFIDENCE": "KEPERCAYAAN",
+    "NOTICE_TITLE": "⚠️  PEMBERITAHUAN MEDIS PENTING:",
+    "NOTICE_1": "Analisis otomatis ini adalah alat bantu pendukung diagnosis.",
+    "NOTICE_2": "Diagnosis pasti harus dilakukan oleh dokter spesialis patologi bersertifikat.",
+    "NOTICE_3": "Laporan ini tidak menggantikan keputusan medis profesional.",
+    "IMAGE_UNAVAILABLE": "⚠️ Gambar tidak tersedia",
+    "IMAGE_ERROR": "Gagal memproses gambar histopatologi",
+    "GENERATED": "Laporan dibuat pada {{date}}",
+    "FILENAME": "laporan-diagnosis-{{date}}.pdf",
+    "ERROR_GENERATING": "Gagal membuat laporan PDF. Silakan coba lagi.",
+    "MALIGNANT_ICON": "⚠ GANAS",
+    "BENIGN_ICON": "✓ JINAK",
+    "VISUAL_ANALYSIS": "Analisis Visual Spesimen",
+    "XAI_SECTION": "Interpretabilitas dan AI yang Dapat Dijelaskan (XAI)",
+    "XAI_DESC": "Berikut adalah peta aktivasi termal (Heatmaps) yang dihasilkan secara individual oleh arsitektur Deep Learning, yang menunjukkan area penting (ROI) untuk klasifikasi Jinak (Kelas 0) dan Ganas (Kelas 1).",
+    "LABEL_ORIGINAL": "Gambar Asli",
+    "LABEL_PROCESSED": "Diproses (Model Input)",
+    "XAI_ROI_TITLE": "Area Penting (ROI) - Arsitektur {{architecture}}",
+    "XAI_HEATMAP_BENIGN": "Peta Panas: Jinak (Kelas 0)",
+    "XAI_HEATMAP_MALIGNANT": "Peta Panas: Ganas (Kelas 1)",
+    "XAI_ERROR_CLASS_0": "Heatmap Kelas 0 T/A",
+    "XAI_ERROR_CLASS_1": "Heatmap Kelas 1 T/A",
+    "XAI_NO_ATTRIBUTION_0": "Tanpa Atribusi Kelas 0",
+    "XAI_NO_ATTRIBUTION_1": "Tanpa Atribusi Kelas 1",
+    "LABEL_PAGE": "Hal."
+  }
+}

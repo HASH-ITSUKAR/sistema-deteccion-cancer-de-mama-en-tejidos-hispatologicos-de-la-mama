@@ -1,0 +1,197 @@
+{
+  "DASHBOARD": {
+    "TITULO": "デジタル組織学分析",
+    "SUBTITULO": "高度なディープラーニングアーキテクチャとアンサンブルモデルによる乳がん自動検出のためのインテリジェントプラットフォーム",
+    "RANKING": {
+      "RANKING": "モデルランキング",
+      "ORDENADO": "現在のパフォーマンス順：",
+      "COMPARATIVA": "グローバル性能比較",
+      "CRECIMIENTO": "段階的成長（左が低 / 右が高）",
+      "METRICA": "指標：",
+      "RENDIMIENTO_MENOR": "低いパフォーマンス",
+      "RENDIMIENTO_MAYOR": "高いパフォーマンス"
+    },
+    "MODEL": {
+      "MEJOR_MODELO": "最高モデル",
+      "ARQUITECTURA_ENSEMBLE": "アンサンブルアーキテクチャ",
+      "EXCELENTE_PERFORMANCE": "優れたパフォーマンス",
+      "EXCELENTE_DISCRIMINACION": "優れた識別能",
+      "EQUILIBRIO_METRICAS": "適合率/再現率のバランス",
+      "PREDICCION_ROBUSTA": "高度に堅牢な予測"
+    }
+  },
+  "METRICAS": {
+    "TITULO": "モデル指標",
+    "SUBTITULO": "実装された各アーキテクチャの詳細な性能評価。"
+  },
+  "EDA": {
+    "TITULO": "探索的データ解析 (EDA)",
+    "SUBTITULO": "病理組織データセットの構造、バランス、および一貫性。",
+    "RESOLUCION": "解像度: 224x224 px",
+    "TOTAL_IMAGENES": "総画像数",
+    "FORMATO_CANALES": "形式: RGB Channels",
+    "TOTAL_BENIGNAS": "良性合計",
+    "TOTAL_MALIGNAS": "悪性合計",
+    "PORCENTAJE_DATASET": "全データセットに対する割合",
+    "PARTICION_TITULO": "データセットの構造化分割",
+    "PARTICION_SUBTITULO": "バイアスのない訓練と検証を保証するためのバランスのとれた分割。",
+    "ENTRENAMIENTO": "訓練データ",
+    "VALIDACION": "検証データ",
+    "PRUEBA": "テストデータ",
+    "DISTRIBUCION_TITULO": "クラス内分布",
+    "DISTRIBUCION_SUBTITULO": "層化比率",
+    "VS": "vs",
+    "LEYENDA_BENIGNO": "良性",
+    "LEYENDA_MALIGNO": "悪性",
+    "INFO_ESTRATIFICACION_TITULO": "完全な層化：",
+    "INFO_ESTRATIFICACION_TEXTO": "不均衡比率（~2.5対1）は、バイアスのないテストを確実にするために、3つのサブセット間で数学的に同一に維持されています。",
+    "INSPECCION_TITULO": "データセットの目視検査",
+    "INSPECCION_SUBTITULO": "ネットワーク入力フォーマットにサイズが正規化され、メモリに読み込まれたランダムサンプル。",
+    "ETIQUETA_BENIGNO": "良性 (0)",
+    "ETIQUETA_MALIGNO": "悪性 (1)"
+  },
+  "EVALUACION": {
+    "TITULO": "高度なモデル評価",
+    "SUBTITULO": "テストサブセットで計算された高度な病理組織分類指標。",
+    "MATRIZ_TITULO": "混同行列",
+    "PREDICHO_BENIGNO": "予測：良性",
+    "PREDICHO_MALIGNO": "予測：悪性",
+    "REAL_BENIGNO": "実績：良性",
+    "REAL_MALIGNO": "実績：悪性",
+    "CURVA_ROC": "ROC曲線",
+    "CARGANDO": "読み込み中..."
+  },
+  "ENTRENAMIENTO": {
+    "TITULO": "モデル訓練",
+    "SUBTITULO": "ハイパーパラメータ構成と性能指標。",
+    "HIPERPARAMETROS": {
+      "LEARNING_RATE": "学習率 (Learning Rate)",
+      "BATCH_SIZE": "バッチサイズ (Batch Size)",
+      "EPOCAS": "エポック数 (Epochs)",
+      "INPUT_SIZE": "入力サイズ (Input Size)",
+      "EARLY_STOP": "早期終了 (MCC)",
+      "PACIENCIA": "忍耐回数 (Patience): "
+    },
+    "HARDWARE": {
+      "TITULO": "ハードウェア仕様",
+      "MODELO": "モデル",
+      "PROCESADOR": "プロセッサ",
+      "NUCLEOS_HILOS": "コア, 20 スレッド",
+      "RAM": "メモリ (RAM)",
+      "GRAFICA": "グラフィックカード (GPU)",
+      "ALMACENAMIENTO": "ストレージ"
+    },
+    "COMPARATIVA": {
+      "TITULO": "モデル比較",
+      "TABLA": {
+        "MODELO": "モデル",
+        "TIEMPO": "時間 (M)",
+        "CPU": "CPU %",
+        "RAM": "RAM %",
+        "GPU": "GPU %",
+        "VRAM": "ビデオメモリ VRAM (MB)",
+        "DISCO": "ディスク %"
+      }
+    },
+    "EVOLUCION": {
+      "TITULO": "推移：",
+      "TABLA": {
+        "EPOCA": "エポック",
+        "PERDIDA": "損失 (Loss)",
+        "F1": "F1スコア",
+        "AUC": "AUC",
+        "ACCURACY": "正解率",
+        "MCC": "MCC"
+      }
+    }
+  },
+  "PREDICCION": {
+    "TITULO": "🔬 組織学的分析",
+    "SUBTITULO": "乳がん検出",
+    "FORMULARIO": {
+      "CARGAR": "組織画像を読み込む",
+      "CLICK": "ここをクリックするか、病理組織画像をドラッグしてください",
+      "ANALIZAR": "🧬 検体を分析",
+      "ERROR": "画像ファイルのみアップロード可能です"
+    },
+    "DATOS": {
+      "ANALISIS": "🔬 個別モデルによる分析",
+      "RESULTADOS": "各モデルの予備的な結果",
+      "VEREDICTO": "⬇️ 最終判定 ⬇️",
+      "EXPLICACION": "モデル別説明可能な AI",
+      "MODELOS": {
+        "ORIGINAL": "オリジナル画像",
+        "PROCESADO": "処理済み画像",
+        "MALIGNO": "悪性",
+        "BENIGNO": "良性"
+      },
+      "DEFINITIVO": {
+        "DIAGNOSTICO": "最終診断",
+        "SISTEMA_ENSEMBLE": "XGBoost アンサンブルシステム - 最終結果",
+        "MALIGNO_ALERT": "🚨 悪性",
+        "BENIGNO_OK": "✅ 良性",
+        "PROBABILIDADES": "最終確率",
+        "TUMOR_BENIGNO": "良性腫瘍：",
+        "TUMOR_MALIGNO": "悪性腫瘍：",
+        "CONFIANZA_SISTEMA": "システム信頼度",
+        "NIVEL_CERTEZA": "確実性の度合い",
+        "ALTA_CONFIANZA": "高い信頼度",
+        "CONFIANZA_MODERADA": "中程度の信頼度",
+        "REQUIERE_REVISION": "要再確認",
+        "NOTA_TITULO": "重要な注意事項：",
+        "NOTA_TEXTO": "この自動診断は、資格を持つ病理医によって検証される必要があります。最終的な判定結果は、上記に表示されている個別モデルの予測よりも優先されます。",
+        "BOTON_REPORTE": "PDF医療レポートを生成"
+      }
+    }
+  },
+  "MENU": {
+    "HOME": { "TITLE": "ホーム", "SUB": "ページホーム" },
+    "PREDICT": { "TITLE": "予測", "SUB": "モデル予測" },
+    "METRICS": { "TITLE": "メトリクス", "SUB": "モデルメトリクス" },
+    "EDA": { "TITLE": "EDA", "SUB": "モデルEDA" },
+    "EVAL": { "TITLE": "評価", "SUB": "モデル評価" },
+    "TRAIN": { "TITLE": "トレーニング", "SUB": "モデルトレーニング" }
+  },
+  "REPORT": {
+      "TITLE_MAIN": "医療診断報告書",
+      "TITLE_SUB": "組織病理学的画像解析",
+      "IMAGE_ANALYZED": "解析画像:",
+      "IMAGE_RESOLUTION": "組織病理画像 • 解像度: {{width}}x{{height}}px • フォーマット: {{format}}",
+      "DIAGNOSIS_RESULT": "診断結果",
+      "DIAGNOSIS": "診断:",
+      "MALIGNANT": "悪性",
+      "BENIGN": "良性",
+      "CONFIDENCE_LEVEL": "信頼度:",
+      "DATE": "解析日時:",
+      "AI_SYSTEM": "AIシステム:",
+      "ENSEMBLE_MODELS": "{{model}} (8モデルアンサンブル)",
+      "DETAILED_ANALYSIS": "モデル別詳細解析",
+      "MODEL": "AIモデル",
+      "PREDICTION": "予測",
+      "CONFIDENCE": "信頼度",
+      "NOTICE_TITLE": "⚠️  医療に関する重要な注意:",
+      "NOTICE_1": "この自動解析は、診断を支援するためのツールです。",
+      "NOTICE_2": "確定診断は、資格を持つ病理医によって行われなければなりません。",
+      "NOTICE_3": "本報告書は、専門医による医学的判断に代わるものではありません。",
+      "IMAGE_UNAVAILABLE": "⚠️ 画像が利用できません",
+      "IMAGE_ERROR": "組織病理画像の処理中にエラーが発生しました",
+      "GENERATED": "報告書作成日: {{date}}",
+      "FILENAME": "医学診断報告書-{{date}}.pdf",
+      "ERROR_GENERATING": "PDF報告書の作成中にエラーが発生しました。もう一度お試しください。",
+      "MALIGNANT_ICON": "悪性",
+      "BENIGN_ICON": "良性",
+      "VISUAL_ANALYSIS": "検体の目視解析",
+      "XAI_SECTION": "説明可能なAI (XAI) と解釈可能性",
+      "XAI_DESC": "以下は、ディープラーニングの各アーキテクチャによって個別に生成された熱活性化マップ（ヒートマップ）であり、良性（クラス0）および悪性（クラス1）の分類において重要な関心領域（ROI）を示しています。",
+      "LABEL_ORIGINAL": "オリジナル画像",
+      "LABEL_PROCESSED": "処理済み (Model Input)",
+      "XAI_ROI_TITLE": "関心領域 - {{architecture}} アーキテクチャ",
+      "XAI_HEATMAP_BENIGN": "ヒートマップ: 良性 (クラス0)",
+      "XAI_HEATMAP_MALIGNANT": "ヒートマップ: 悪性 (クラス1)",
+      "XAI_ERROR_CLASS_0": "ヒートマップ クラス0 N/D",
+      "XAI_ERROR_CLASS_1": "ヒートマップ クラス1 N/D",
+      "XAI_NO_ATTRIBUTION_0": "クラス0 属性なし",
+      "XAI_NO_ATTRIBUTION_1": "クラス1 属性なし",
+      "LABEL_PAGE": "ページ"
+  }
+}

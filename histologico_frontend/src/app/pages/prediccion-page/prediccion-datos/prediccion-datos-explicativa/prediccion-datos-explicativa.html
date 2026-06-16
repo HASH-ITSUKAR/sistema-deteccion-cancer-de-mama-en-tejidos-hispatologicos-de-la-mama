@@ -1,0 +1,163 @@
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10 w-full justify-center items-stretch transition-colors duration-300">
+
+  <div class="w-full bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800/80 rounded-2xl p-6 shadow-md hover:shadow-lg transition-all text-center flex flex-col justify-between">
+    <div>
+      <h3 class="text-xl font-black text-gray-800 dark:text-gray-200 mb-4 tracking-wide">CaiT</h3>
+      <div class="flex flex-row gap-4 justify-center items-center">
+        <div class="w-1/2">
+          <div class="overflow-hidden rounded-xl border border-gray-100 dark:border-gray-800 bg-gray-50 dark:bg-gray-950 p-1">
+            <img [src]="obtenerImagenSrc('cait_0', cait_0())" (click)="conmutarImagen('cait_0')" alt="CaiT - Clase 0" class="max-h-64 object-contain mx-auto block cursor-pointer hover:scale-102 transition-transform duration-300">
+          </div>
+          <p class="text-xs font-bold text-gray-500 dark:text-gray-400 mt-3">{{ 'PREDICCION.DATOS.MODELOS.BENIGNO' | translate }}</p>
+        </div>
+        <div class="w-1/2">
+          <div class="overflow-hidden rounded-xl border border-gray-100 dark:border-gray-800 bg-gray-50 dark:bg-gray-950 p-1">
+            <img [src]="obtenerImagenSrc('cait_1', cait_1())" (click)="conmutarImagen('cait_1')" alt="CaiT - Clase 1" class="max-h-64 object-contain mx-auto block cursor-pointer hover:scale-102 transition-transform duration-300">
+          </div>
+          <p class="text-xs font-bold text-gray-500 dark:text-gray-400 mt-3">{{ 'PREDICCION.DATOS.MODELOS.MALIGNO' | translate }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="w-full bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800/80 rounded-2xl p-6 shadow-md hover:shadow-lg transition-all text-center flex flex-col justify-between">
+    <div>
+      <h3 class="text-xl font-black text-gray-800 dark:text-gray-200 mb-4 tracking-wide">DeiT</h3>
+      <div class="flex flex-row gap-4 justify-center items-center">
+        <div class="w-1/2">
+          <div class="overflow-hidden rounded-xl border border-gray-100 dark:border-gray-800 bg-gray-50 dark:bg-gray-950 p-1">
+            <img [src]="obtenerImagenSrc('deit_0', deit_0())" (click)="conmutarImagen('deit_0')" alt="DeiT - Clase 0" class="max-h-64 object-contain mx-auto block cursor-pointer hover:scale-102 transition-transform duration-300">
+          </div>
+          <p class="text-xs font-bold text-gray-500 dark:text-gray-400 mt-3">{{ 'PREDICCION.DATOS.MODELOS.BENIGNO' | translate }}</p>
+        </div>
+        <div class="w-1/2">
+          <div class="overflow-hidden rounded-xl border border-gray-100 dark:border-gray-800 bg-gray-50 dark:bg-gray-950 p-1">
+            <img [src]="obtenerImagenSrc('deit_1', deit_1())" (click)="conmutarImagen('deit_1')" alt="DeiT - Clase 1" class="max-h-64 object-contain mx-auto block cursor-pointer hover:scale-102 transition-transform duration-300">
+          </div>
+          <p class="text-xs font-bold text-gray-500 dark:text-gray-400 mt-3">{{ 'PREDICCION.DATOS.MODELOS.MALIGNO' | translate }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="w-full bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800/80 rounded-2xl p-6 shadow-md hover:shadow-lg transition-all text-center flex flex-col justify-between">
+    <div>
+      <h3 class="text-xl font-black text-gray-800 dark:text-gray-200 mb-4 tracking-wide">DenseNet</h3>
+      <div class="flex flex-row gap-4 justify-center items-center">
+        <div class="w-1/2">
+          <div class="overflow-hidden rounded-xl border border-gray-100 dark:border-gray-800 bg-gray-50 dark:bg-gray-950 p-1">
+            <img [src]="obtenerImagenSrc('densenet_0', densenet_0())" (click)="conmutarImagen('densenet_0')" alt="DenseNet - Clase 0" class="max-h-64 object-contain mx-auto block cursor-pointer hover:scale-102 transition-transform duration-300">
+          </div>
+          <p class="text-xs font-bold text-gray-500 dark:text-gray-400 mt-3">{{ 'PREDICCION.DATOS.MODELOS.BENIGNO' | translate }}</p>
+        </div>
+        <div class="w-1/2">
+          <div class="overflow-hidden rounded-xl border border-gray-100 dark:border-gray-800 bg-gray-50 dark:bg-gray-950 p-1">
+            <img [src]="obtenerImagenSrc('densenet_1', densenet_1())" (click)="conmutarImagen('densenet_1')" alt="DenseNet - Clase 1" class="max-h-64 object-contain mx-auto block cursor-pointer hover:scale-102 transition-transform duration-300">
+          </div>
+          <p class="text-xs font-bold text-gray-500 dark:text-gray-400 mt-3">{{ 'PREDICCION.DATOS.MODELOS.MALIGNO' | translate }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="w-full bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800/80 rounded-2xl p-6 shadow-md hover:shadow-lg transition-all text-center flex flex-col justify-between">
+    <div>
+      <h3 class="text-xl font-black text-gray-800 dark:text-gray-200 mb-4 tracking-wide">EfficientNet</h3>
+      <div class="flex flex-row gap-4 justify-center items-center">
+        <div class="w-1/2">
+          <div class="overflow-hidden rounded-xl border border-gray-100 dark:border-gray-800 bg-gray-50 dark:bg-gray-950 p-1">
+            <img [src]="obtenerImagenSrc('efficientnet_0', efficientnet_0())" (click)="conmutarImagen('efficientnet_0')" alt="EfficientNet - Clase 0" class="max-h-64 object-contain mx-auto block cursor-pointer hover:scale-102 transition-transform duration-300">
+          </div>
+          <p class="text-xs font-bold text-gray-500 dark:text-gray-400 mt-3">{{ 'PREDICCION.DATOS.MODELOS.BENIGNO' | translate }}</p>
+        </div>
+        <div class="w-1/2">
+          <div class="overflow-hidden rounded-xl border border-gray-100 dark:border-gray-800 bg-gray-50 dark:bg-gray-950 p-1">
+            <img [src]="obtenerImagenSrc('efficientnet_1', efficientnet_1())" (click)="conmutarImagen('efficientnet_1')" alt="EfficientNet - Clase 1" class="max-h-64 object-contain mx-auto block cursor-pointer hover:scale-102 transition-transform duration-300">
+          </div>
+          <p class="text-xs font-bold text-gray-500 dark:text-gray-400 mt-3">{{ 'PREDICCION.DATOS.MODELOS.MALIGNO' | translate }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="w-full bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800/80 rounded-2xl p-6 shadow-md hover:shadow-lg transition-all text-center flex flex-col justify-between">
+    <div>
+      <h3 class="text-xl font-black text-gray-800 dark:text-gray-200 mb-4 tracking-wide">Inception</h3>
+      <div class="flex flex-row gap-4 justify-center items-center">
+        <div class="w-1/2">
+          <div class="overflow-hidden rounded-xl border border-gray-100 dark:border-gray-800 bg-gray-50 dark:bg-gray-950 p-1">
+            <img [src]="obtenerImagenSrc('inception_0', inception_0())" (click)="conmutarImagen('inception_0')" alt="Inception - Clase 0" class="max-h-64 object-contain mx-auto block cursor-pointer hover:scale-102 transition-transform duration-300">
+          </div>
+          <p class="text-xs font-bold text-gray-500 dark:text-gray-400 mt-3">{{ 'PREDICCION.DATOS.MODELOS.BENIGNO' | translate }}</p>
+        </div>
+        <div class="w-1/2">
+          <div class="overflow-hidden rounded-xl border border-gray-100 dark:border-gray-800 bg-gray-50 dark:bg-gray-950 p-1">
+            <img [src]="obtenerImagenSrc('inception_1', inception_1())" (click)="conmutarImagen('inception_1')" alt="Inception - Clase 1" class="max-h-64 object-contain mx-auto block cursor-pointer hover:scale-102 transition-transform duration-300">
+          </div>
+          <p class="text-xs font-bold text-gray-500 dark:text-gray-400 mt-3">{{ 'PREDICCION.DATOS.MODELOS.MALIGNO' | translate }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="w-full bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800/80 rounded-2xl p-6 shadow-md hover:shadow-lg transition-all text-center flex flex-col justify-between">
+    <div>
+      <h3 class="text-xl font-black text-gray-800 dark:text-gray-200 mb-4 tracking-wide">PVT</h3>
+      <div class="flex flex-row gap-4 justify-center items-center">
+        <div class="w-1/2">
+          <div class="overflow-hidden rounded-xl border border-gray-100 dark:border-gray-800 bg-gray-50 dark:bg-gray-950 p-1">
+            <img [src]="obtenerImagenSrc('pvt_0', pvt_0())" (click)="conmutarImagen('pvt_0')" alt="PVT - Clase 0" class="max-h-64 object-contain mx-auto block cursor-pointer hover:scale-102 transition-transform duration-300">
+          </div>
+          <p class="text-xs font-bold text-gray-500 dark:text-gray-400 mt-3">{{ 'PREDICCION.DATOS.MODELOS.BENIGNO' | translate }}</p>
+        </div>
+        <div class="w-1/2">
+          <div class="overflow-hidden rounded-xl border border-gray-100 dark:border-gray-800 bg-gray-50 dark:bg-gray-950 p-1">
+            <img [src]="obtenerImagenSrc('pvt_1', pvt_1())" (click)="conmutarImagen('pvt_1')" alt="PVT - Clase 1" class="max-h-64 object-contain mx-auto block cursor-pointer hover:scale-102 transition-transform duration-300">
+          </div>
+          <p class="text-xs font-bold text-gray-500 dark:text-gray-400 mt-3">{{ 'PREDICCION.DATOS.MODELOS.MALIGNO' | translate }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="w-full bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800/80 rounded-2xl p-6 shadow-md hover:shadow-lg transition-all text-center flex flex-col justify-between">
+    <div>
+      <h3 class="text-xl font-black text-gray-800 dark:text-gray-200 mb-4 tracking-wide">Swin</h3>
+      <div class="flex flex-row gap-4 justify-center items-center">
+        <div class="w-1/2">
+          <div class="overflow-hidden rounded-xl border border-gray-100 dark:border-gray-800 bg-gray-50 dark:bg-gray-950 p-1">
+            <img [src]="obtenerImagenSrc('swin_0', swin_0())" (click)="conmutarImagen('swin_0')" alt="Swin - Clase 0" class="max-h-64 object-contain mx-auto block cursor-pointer hover:scale-102 transition-transform duration-300">
+          </div>
+          <p class="text-xs font-bold text-gray-500 dark:text-gray-400 mt-3">{{ 'PREDICCION.DATOS.MODELOS.BENIGNO' | translate }}</p>
+        </div>
+        <div class="w-1/2">
+          <div class="overflow-hidden rounded-xl border border-gray-100 dark:border-gray-800 bg-gray-50 dark:bg-gray-950 p-1">
+            <img [src]="obtenerImagenSrc('swin_1', swin_1())" (click)="conmutarImagen('swin_1')" alt="Swin - Clase 1" class="max-h-64 object-contain mx-auto block cursor-pointer hover:scale-102 transition-transform duration-300">
+          </div>
+          <p class="text-xs font-bold text-gray-500 dark:text-gray-400 mt-3">{{ 'PREDICCION.DATOS.MODELOS.MALIGNO' | translate }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="w-full bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800/80 rounded-2xl p-6 shadow-md hover:shadow-lg transition-all text-center flex flex-col justify-between">
+    <div>
+      <h3 class="text-xl font-black text-gray-800 dark:text-gray-200 mb-4 tracking-wide">ViT</h3>
+      <div class="flex flex-row gap-4 justify-center items-center">
+        <div class="w-1/2">
+          <div class="overflow-hidden rounded-xl border border-gray-100 dark:border-gray-800 bg-gray-50 dark:bg-gray-950 p-1">
+            <img [src]="obtenerImagenSrc('vit_0', vit_0())" (click)="conmutarImagen('vit_0')" alt="ViT - Clase 0" class="max-h-64 object-contain mx-auto block cursor-pointer hover:scale-102 transition-transform duration-300">
+          </div>
+          <p class="text-xs font-bold text-gray-500 dark:text-gray-400 mt-3">{{ 'PREDICCION.DATOS.MODELOS.BENIGNO' | translate }}</p>
+        </div>
+        <div class="w-1/2">
+          <div class="overflow-hidden rounded-xl border border-gray-100 dark:border-gray-800 bg-gray-50 dark:bg-gray-950 p-1">
+            <img [src]="obtenerImagenSrc('vit_1', vit_1())" (click)="conmutarImagen('vit_1')" alt="ViT - Clase 1" class="max-h-64 object-contain mx-auto block cursor-pointer hover:scale-102 transition-transform duration-300">
+          </div>
+          <p class="text-xs font-bold text-gray-500 dark:text-gray-400 mt-3">{{ 'PREDICCION.DATOS.MODELOS.MALIGNO' | translate }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

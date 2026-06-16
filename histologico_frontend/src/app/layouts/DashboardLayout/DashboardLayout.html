@@ -1,0 +1,16 @@
+<div class="min-h-screen bg-slate-100 dark:bg-gray-950 antialiased text-gray-800 dark:text-slate-200 selection:bg-blue-600 selection:text-white transition-colors duration-300">
+  <div class="flex flex-col md:flex-row relative min-h-screen w-full">
+
+    <app-side-menu [(isOpen)]="menuAbierto" />
+
+    <div
+      [class]="menuAbierto() ? 'md:ml-[260px]' : 'md:ml-0'"
+      class="flex-1 min-h-screen w-full p-4 md:p-6 pt-20 md:pt-6 transition-all duration-300 ease-in-out"
+    >
+      <main class="w-full h-full">
+        <router-outlet />
+      </main>
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,197 @@
+{
+  "DASHBOARD": {
+    "TITULO": "Digital histologisk analyse",
+    "SUBTITULO": "Intelligent plattform for automatisert deteksjon av brystkreft ved bruk av avanserte dype læringsarkitekturer og ensemblemodeller",
+    "RANKING": {
+      "RANKING": "Modellrangering",
+      "ORDENADO": "Sortert etter gjeldende ytelse for: ",
+      "COMPARATIVA": "Global ytelsessammenligning",
+      "CRECIMIENTO": "Trinnvis vekst (Lavere til venstre / Høyere til høyre)",
+      "METRICA": "Metrikk: ",
+      "RENDIMIENTO_MENOR": "Lavere ytelse",
+      "RENDIMIENTO_MAYOR": "Høyere ytelse"
+    },
+    "MODEL": {
+      "MEJOR_MODELO": "Beste modell",
+      "ARQUITECTURA_ENSEMBLE": "Ensemble-arkitektur",
+      "EXCELENTE_PERFORMANCE": "Utmerket ytelse",
+      "EXCELENTE_DISCRIMINACION": "Utmerket diskriminering",
+      "EQUILIBRIO_METRICAS": "Balanse mellom presisjon/gjenkalling",
+      "PREDICCION_ROBUSTA": "Svært robust prediksjon"
+    }
+  },
+  "METRICAS": {
+    "TITULO": "MODELLMETRIKKER",
+    "SUBTITULO": "Detaljert ytelsesvurdering for hver implementert arkitektur."
+  },
+  "EDA": {
+    "TITULO": "Eksplorativ dataanalyse (EDA)",
+    "SUBTITULO": "Struktur, balanse og konsistens i det histopatologiske datasettet.",
+    "RESOLUCION": "Oppløsning: 224x224 px",
+    "TOTAL_IMAGENES": "Totalt antall bilder",
+    "FORMATO_CANALES": "Format: RGB Channels",
+    "TOTAL_BENIGNAS": "Totalt benigne (Godartede)",
+    "TOTAL_MALIGNAS": "Totalt maligne (Ondartede)",
+    "PORCENTAJE_DATASET": "av det totale datasettet",
+    "PARTICION_TITULO": "Strukturert partisjonering av datasettet",
+    "PARTICION_SUBTITULO": "Balansert oppdeling for å sikre en trenings- og valideringsprosess fri for skjevhet (bias).",
+    "ENTRENAMIENTO": "Trening",
+    "VALIDACION": "Validering",
+    "PRUEBA": "Test",
+    "DISTRIBUCION_TITULO": "Intern distribusjon etter klasser",
+    "DISTRIBUCION_SUBTITULO": "Stratifisert proporsjon",
+    "VS": "vs",
+    "LEYENDA_BENIGNO": "Benign",
+    "LEYENDA_MALIGNO": "Malign",
+    "INFO_ESTRATIFICACION_TITULO": "Perfekt stratifisering:",
+    "INFO_ESTRATIFICACION_TEXTO": "Ubalanseforholdet (~2.5 til 1) opprettholdes matematisk identisk i de tre delmengdene for å sikre objektive tester.",
+    "INSPECCION_TITULO": "Visuell inspeksjon av datasettet",
+    "INSPECCION_SUBTITULO": "Tilfeldige prøver lastet inn i minnet med dimensjoner normalisert til nettverkets inputformat.",
+    "ETIQUETA_BENIGNO": "Benign (0)",
+    "ETIQUETA_MALIGNO": "Malign (1)"
+  },
+  "EVALUACION": {
+    "TITULO": "Avansert modellevaluering",
+    "SUBTITULO": "Avanserte histopatologiske klassifiseringsmetrikker beregnet på test-delmengden.",
+    "MATRIZ_TITULO": "Forvirringsmatrise (Confusion Matrix)",
+    "PREDICHO_BENIGNO": "Predikert Benign",
+    "PREDICHO_MALIGNO": "Predikert Malign",
+    "REAL_BENIGNO": "Faktisk Benign",
+    "REAL_MALIGNO": "Faktisk Malign",
+    "CURVA_ROC": "ROC-kurve",
+    "CARGANDO": "Laster..."
+  },
+  "ENTRENAMIENTO": {
+    "TITULO": "Modelltrening",
+    "SUBTITULO": "Konfigurasjon av hyperparamtere og ytelsesmetrikker.",
+    "HIPERPARAMETROS": {
+      "LEARNING_RATE": "Learning Rate",
+      "BATCH_SIZE": "Batch Size",
+      "EPOCAS": "Epoker",
+      "INPUT_SIZE": "Input Size",
+      "EARLY_STOP": "Early Stop (MCC)",
+      "PACIENCIA": "Tålmodighet (Patience): "
+    },
+    "HARDWARE": {
+      "TITULO": "Maskinvarespesifikasjoner",
+      "MODELO": "Modell",
+      "PROCESADOR": "Prosessor",
+      "NUCLEOS_HILOS": "kjerner, 20 tråder",
+      "RAM": "RAM-minne",
+      "GRAFICA": "Grafikkort (GPU)",
+      "ALMACENAMIENTO": "Lagring"
+    },
+    "COMPARATIVA": {
+      "TITULO": "Modellsammenligning",
+      "TABLA": {
+        "MODELO": "Modell",
+        "TIEMPO": "Tid (M)",
+        "CPU": "CPU %",
+        "RAM": "RAM %",
+        "GPU": "GPU %",
+        "VRAM": "VRAM (MB)",
+        "DISCO": "Disk %"
+      }
+    },
+    "EVOLUCION": {
+      "TITULO": "Evolusjon: ",
+      "TABLA": {
+        "EPOCA": "Epoke",
+        "PERDIDA": "Loss",
+        "F1": "F1",
+        "AUC": "AUC",
+        "ACCURACY": "Accuracy",
+        "MCC": "MCC"
+      }
+    }
+  },
+  "PREDICCION": {
+    "TITULO": "🔬 Histologisk Analyse",
+    "SUBTITULO": "Deteksjon av Brystkreft",
+    "FORMULARIO": {
+      "CARGAR": "Last opp vevsbilde",
+      "CLICK": "Klikk her eller dra det histologiske bildet ditt hit",
+      "ANALIZAR": "🧬 Analyser Prøve",
+      "ERROR": "Kun bildefiler kan lastes opp"
+    },
+    "DATOS": {
+      "ANALISIS": "🔬 Analyse etter Individuelle Modeller",
+      "RESULTADOS": "Foreløpige resultater fra hver modell",
+      "VEREDICTO": "⬇️ ENDELIG KJENNELSE ⬇️",
+      "EXPLICACION": "FORKLARBAR AI PER MODELL",
+      "MODELOS": {
+        "ORIGINAL": "Originalbilde",
+        "PROCESADO": "Behandlet bilde",
+        "MALIGNO": "Malign (Ondartet)",
+        "BENIGNO": "Benign (Godartet)"
+      },
+      "DEFINITIVO": {
+        "DIAGNOSTICO": "ENDELIG DIAGNOSE",
+        "SISTEMA_ENSEMBLE": "XGBoost Ensemble-system - Endelig Resultat",
+        "MALIGNO_ALERT": "🚨 MALIGN",
+        "BENIGNO_OK": "✅ BENIGN",
+        "PROBABILIDADES": "Endelige Sannsynligheter",
+        "TUMOR_BENIGNO": "Godartet Svulst:",
+        "TUMOR_MALIGNO": "Ondartet Svulst:",
+        "CONFIANZA_SISTEMA": "Systemkonfidens",
+        "NIVEL_CERTEZA": "Sikkerhetsnivå",
+        "ALTA_CONFIANZA": "HØY KONFIDENS",
+        "CONFIANZA_MODERADA": "MODERAT KONFIDENS",
+        "REQUIERE_REVISION": "KREVER REVIEW",
+        "NOTA_TITULO": "Viktig Merknad:",
+        "NOTA_TEXTO": "Denne automatiserte diagnosen må valideres av en sertifisert patolog. Det endelige resultatet overstyrer de individuelle prediksjonene til modellene som vises ovenfor.",
+        "BOTON_REPORTE": "Generer Medisinsk PDF-rapport"
+      }
+    }
+  },
+  "MENU": {
+    "HOME": { "TITLE": "Hjem", "SUB": "Sidehjem" },
+    "PREDICT": { "TITLE": "Forutsi", "SUB": "Modellforutsigelse" },
+    "METRICS": { "TITLE": "Metrikker", "SUB": "Modellmetrikker" },
+    "EDA": { "TITLE": "EDA", "SUB": "Modell-EDA" },
+    "EVAL": { "TITLE": "Evaluering", "SUB": "Modellevaluering" },
+    "TRAIN": { "TITLE": "Trening", "SUB": "Modelltrening" }
+  },
+  "REPORT": {
+    "TITLE_MAIN": "MEDISINSK DIAGNOSERAPPORT",
+    "TITLE_SUB": "Histopatologisk bildeanalyse",
+    "IMAGE_ANALYZED": "ANALYSERT BILDE:",
+    "IMAGE_RESOLUTION": "Histopatologisk bilde • Oppløsning: {{width}}x{{height}}px • Format: {{format}}",
+    "DIAGNOSIS_RESULT": "DIAGNOSERESULTAT",
+    "DIAGNOSIS": "DIAGNOSE:",
+    "MALIGNANT": "MALIGN (ONDARTET)",
+    "BENIGN": "BENIGN (GODARTET)",
+    "CONFIDENCE_LEVEL": "KONFIDENSNIVÅ:",
+    "DATE": "Dato for analyse:",
+    "AI_SYSTEM": "AI-system:",
+    "ENSEMBLE_MODELS": "{{model}} (Ensemble av 8 modeller)",
+    "DETAILED_ANALYSIS": "DETALJERT ANALYSE PER MODELL",
+    "MODEL": "AI-MODELL",
+    "PREDICTION": "PREDIKSJON",
+    "CONFIDENCE": "KONFIDENS",
+    "NOTICE_TITLE": "⚠️  VIKTIG MEDISINSK MERKNAD:",
+    "NOTICE_1": "Denne automatiserte analysen er et verktøy for diagnosestøtte.",
+    "NOTICE_2": "Den endelige diagnosen må stilles av en sertifisert patolog.",
+    "NOTICE_3": "Denne rapporten erstatter ikke profesjonell medisinsk vurdering.",
+    "IMAGE_UNAVAILABLE": "⚠️ Bilde ikke tilgjengelig",
+    "IMAGE_ERROR": "Feil under behandling av det histopatologiske bildet",
+    "GENERATED": "Rapport generert {{date}}",
+    "FILENAME": "diagnoserapport-{{date}}.pdf",
+    "ERROR_GENERATING": "Feil under generering av PDF-rapporten. Vennligst prøv igjen.",
+    "MALIGNANT_ICON": "⚠ MALIGN",
+    "BENIGN_ICON": "✓ BENIGN",
+    "VISUAL_ANALYSIS": "Visuell analyse av prøven",
+    "XAI_SECTION": "Tolkbarhet og forklart AI (XAI)",
+    "XAI_DESC": "Nedenfor vises termiske aktiveringskart (Heatmaps) generert individuelt av Deep Learning-arkitekturene, som indikerer kritiske områder av interesse (ROI) for klassifiseringene Benign (Klasse 0) og Malign (Klasse 1).",
+    "LABEL_ORIGINAL": "Originalbilde",
+    "LABEL_PROCESSED": "Behandlet (Model Input)",
+    "XAI_ROI_TITLE": "Områder av interesse - {{architecture}}-arkitektur",
+    "XAI_HEATMAP_BENIGN": "Varmekart: Benign (Klasse 0)",
+    "XAI_HEATMAP_MALIGNANT": "Varmekart: Malign (Klasse 1)",
+    "XAI_ERROR_CLASS_0": "Heatmap Klasse 0 ikke tilgjengelig",
+    "XAI_ERROR_CLASS_1": "Heatmap Klasse 1 ikke tilgjengelig",
+    "XAI_NO_ATTRIBUTION_0": "Ingen attribusjon Klasse 0",
+    "XAI_NO_ATTRIBUTION_1": "Ingen attribusjon Klasse 1",
+    "LABEL_PAGE": "S."
+  }
+}

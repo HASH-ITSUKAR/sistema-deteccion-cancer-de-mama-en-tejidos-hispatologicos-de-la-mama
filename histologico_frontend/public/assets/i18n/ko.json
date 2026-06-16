@@ -1,0 +1,197 @@
+{
+  "DASHBOARD": {
+    "TITULO": "디지털 조직학 분석",
+    "SUBTITULO": "고급 딥러닝 아키텍처 및 앙상블 모델을 활용한 유방암 자동 검출 지능형 플랫폼",
+    "RANKING": {
+      "RANKING": "모델 랭킹",
+      "ORDENADO": "현재 성능 기준 정렬: ",
+      "COMPARATIVA": "글로벌 성능 비교",
+      "CRECIMIENTO": "단계별 성장 (왼쪽 낮음 / 오른쪽 높음)",
+      "METRICA": "지표: ",
+      "RENDIMIENTO_MENOR": "낮은 성능",
+      "RENDIMIENTO_MAYOR": "높은 성능"
+    },
+    "MODEL": {
+      "MEJOR_MODELO": "최고의 모델",
+      "ARQUITECTURA_ENSEMBLE": "앙상블 아키텍처",
+      "EXCELENTE_PERFORMANCE": "우수한 성능",
+      "EXCELENTE_DISCRIMINACION": "뛰어난 판별력",
+      "EQUILIBRIO_METRICAS": "정밀도/재현율 균형 (Precision/Recall)",
+      "PREDICCION_ROBUSTA": "고도의 견고한 예측"
+    }
+  },
+  "METRICAS": {
+    "TITULO": "모델 평가 지표",
+    "SUBTITULO": "구현된 각 아키텍처에 대한 세부 성능 평가."
+  },
+  "EDA": {
+    "TITULO": "탐색적 데이터 분석 (EDA)",
+    "SUBTITULO": "조직병리 데이터셋의 구조, 균형 및 일관성 분석.",
+    "RESOLUCION": "해상도: 224x224 px",
+    "TOTAL_IMAGENES": "총 이미지 수",
+    "FORMATO_CANALES": "포맷: RGB Channels",
+    "TOTAL_BENIGNAS": "총 양성 종양 (Benign)",
+    "TOTAL_MALIGNAS": "총 악성 종양 (Malignant)",
+    "PORCENTAJE_DATASET": "전체 데이터셋 대비",
+    "PARTICION_TITULO": "데이터셋 구조적 분할",
+    "PARTICION_SUBTITULO": "편향 없는 훈련 및 검증을 보장하기 위한 균형 있는 분할.",
+    "ENTRENAMIENTO": "훈련 데이터 (Train)",
+    "VALIDACION": "검증 데이터 (Val)",
+    "PRUEBA": "테스트 데이터 (Test)",
+    "DISTRIBUCION_TITULO": "클래스별 내부 분포",
+    "DISTRIBUCION_SUBTITULO": "층화 추출 비율",
+    "VS": "vs",
+    "LEYENDA_BENIGNO": "양성",
+    "LEYENDA_MALIGNO": "악성",
+    "INFO_ESTRATIFICACION_TITULO": "완벽한 층화 분할:",
+    "INFO_ESTRATIFICACION_TEXTO": "불균형 비율(~2.5 대 1)이 세 개의 서브셋에서 수학적으로 동일하게 유지되어 편향 없는 테스트가 가능합니다.",
+    "INSPECCION_TITULO": "데이터셋 시각적 검사",
+    "INSPECCION_SUBTITULO": "네트워크 입력 포맷으로 크기가 정규화되어 메모리에 로드된 무작위 샘플.",
+    "ETIQUETA_BENIGNO": "양성 (0)",
+    "ETIQUETA_MALIGNO": "악성 (1)"
+  },
+  "EVALUACION": {
+    "TITULO": "고급 모델 평가",
+    "SUBTITULO": "테스트 서브셋을 기반으로 계산된 고급 조직병리 분류 지표.",
+    "MATRIZ_TITULO": "혼동 행렬 (Confusion Matrix)",
+    "PREDICHO_BENIGNO": "양성 예측",
+    "PREDICHO_MALIGNO": "악성 예측",
+    "REAL_BENIGNO": "실제 양성",
+    "REAL_MALIGNO": "실제 악성",
+    "CURVA_ROC": "ROC 곡선",
+    "CARGANDO": "로딩 중..."
+  },
+  "ENTRENAMIENTO": {
+    "TITULO": "모델 훈련",
+    "SUBTITULO": "하이퍼파라미터 설정 및 성능 지표.",
+    "HIPERPARAMETROS": {
+      "LEARNING_RATE": "학습률 (Learning Rate)",
+      "BATCH_SIZE": "배치 크기 (Batch Size)",
+      "EPOCAS": "에포크 (Epochs)",
+      "INPUT_SIZE": "입력 크기 (Input Size)",
+      "EARLY_STOP": "조기 종료 (MCC)",
+      "PACIENCIA": "임계값 (Patience): "
+    },
+    "HARDWARE": {
+      "TITULO": "하드웨어 사양",
+      "MODELO": "모델",
+      "PROCESADOR": "프로세서",
+      "NUCLEOS_HILOS": "코어, 20 스레드",
+      "RAM": "메모리 (RAM)",
+      "GRAFICA": "그래픽 카드 (GPU)",
+      "ALMACENAMIENTO": "스토리지"
+    },
+    "COMPARATIVA": {
+      "TITULO": "모델 비교",
+      "TABLA": {
+        "MODELO": "모델",
+        "TIEMPO": "시간 (M)",
+        "CPU": "CPU %",
+        "RAM": "RAM %",
+        "GPU": "GPU %",
+        "VRAM": "비디오 메모리 VRAM (MB)",
+        "DISCO": "디스크 %"
+      }
+    },
+    "EVOLUCION": {
+      "TITULO": "진행 추이: ",
+      "TABLA": {
+        "EPOCA": "에포크",
+        "PERDIDA": "손실 (Loss)",
+        "F1": "F1 스코어",
+        "AUC": "AUC",
+        "ACCURACY": "정확도",
+        "MCC": "MCC"
+      }
+    }
+  },
+  "PREDICCION": {
+    "TITULO": "🔬 조직학적 분석",
+    "SUBTITULO": "유방암 검출",
+    "FORMULARIO": {
+      "CARGAR": "조직 이미지 로드",
+      "CLICK": "여기를 클릭하거나 조직 이미지를 드래그하세요",
+      "ANALIZAR": "🧬 검체 분석",
+      "ERROR": "이미지 파일만 업로드할 수 있습니다"
+    },
+    "DATOS": {
+      "ANALISIS": "🔬 개별 모델별 분석",
+      "RESULTADOS": "각 모델의 예비 결과",
+      "VEREDICTO": "⬇️ 최종 판정 ⬇️",
+      "EXPLICACION": "모델별 설명 가능한 AI (XAI)",
+      "MODELOS": {
+        "ORIGINAL": "원본 이미지",
+        "PROCESADO": "처리된 이미지",
+        "MALIGNO": "악성",
+        "BENIGNO": "양성"
+      },
+      "DEFINITIVO": {
+        "DIAGNOSTICO": "최종 진단",
+        "SISTEMA_ENSEMBLE": "XGBoost 앙상블 시스템 - 최종 결과",
+        "MALIGNO_ALERT": "🚨 악성",
+        "BENIGNO_OK": "✅ 양성",
+        "PROBABILIDADES": "최종 확률",
+        "TUMOR_BENIGNO": "양성 종양:",
+        "TUMOR_MALIGNO": "악성 종양:",
+        "CONFIANZA_SISTEMA": "시스템 신뢰도",
+        "NIVEL_CERTEZA": "확신도 수준",
+        "ALTA_CONFIANZA": "높은 신뢰도",
+        "CONFIANZA_MODERADA": "보통의 신뢰도",
+        "REQUIERE_REVISION": "추가 검토 필요",
+        "NOTA_TITULO": "중요 참고 사항:",
+        "NOTA_TEXTO": "이 자동화된 진단은 반드시 공인된 병리 전문의의 검증을 거쳐야 합니다. 최종 결과는 위에 표시된 개별 모델의 예측보다 우선합니다.",
+        "BOTON_REPORTE": "PDF 의료 보고서 생성"
+      }
+    }
+  },
+  "MENU": {
+    "HOME": { "TITLE": "홈", "SUB": "페이지 홈" },
+    "PREDICT": { "TITLE": "예측", "SUB": "모델 예측" },
+    "METRICS": { "TITLE": "지표", "SUB": "모델 지표" },
+    "EDA": { "TITLE": "EDA", "SUB": "모델 EDA" },
+    "EVAL": { "TITLE": "평가", "SUB": "모델 평가" },
+    "TRAIN": { "TITLE": "훈련", "SUB": "모델 훈련" }
+  },
+  "REPORT": {
+    "TITLE_MAIN": "의료 진단 보고서",
+    "TITLE_SUB": "조직병리학적 이미지 분석",
+    "IMAGE_ANALYZED": "분석 이미지:",
+    "IMAGE_RESOLUTION": "조직병리 이미지 • 해상도: {{width}}x{{height}}px • 포맷: {{format}}",
+    "DIAGNOSIS_RESULT": "진단 결과",
+    "DIAGNOSIS": "진단:",
+    "MALIGNANT": "악성",
+    "BENIGN": "양성",
+    "CONFIDENCE_LEVEL": "신뢰도:",
+    "DATE": "분석 일시:",
+    "AI_SYSTEM": "AI 시스템:",
+    "ENSEMBLE_MODELS": "{{model}} (8개 모델 앙상블)",
+    "DETAILED_ANALYSIS": "모델별 상세 분석",
+    "MODEL": "AI 모델",
+    "PREDICTION": "예측",
+    "CONFIDENCE": "신뢰도",
+    "NOTICE_TITLE": "⚠️  의료 상의 중요 고지:",
+    "NOTICE_1": "본 자동 분석은 진단을 보조하는 도구입니다.",
+    "NOTICE_2": "최종 확진은 반드시 공인된 병리 전문의에 의해 수행되어야 합니다.",
+    "NOTICE_3": "본 보고서는 전문의의 의학적 판단을 대체할 수 없습니다.",
+    "IMAGE_UNAVAILABLE": "⚠️ 이미지 사용 불가",
+    "IMAGE_ERROR": "조직병리 이미지를 처리하는 중 오류가 발생했습니다",
+    "GENERATED": "보고서 생성일: {{date}}",
+    "FILENAME": "진단보고서-{{date}}.pdf",
+    "ERROR_GENERATING": "PDF 보고서 생성 중 오류가 발생했습니다. 다시 시도해 주세요.",
+    "MALIGNANT_ICON": "⚠ 악성",
+    "BENIGN_ICON": "✓ 양성",
+    "VISUAL_ANALYSIS": "검체의 시각적 분석",
+    "XAI_SECTION": "설명 가능한 인공지능 (XAI) 및 해석 가능성",
+    "XAI_DESC": "아래는 딥러닝 아키텍처별로 개별 생성된 열 활성화 맵(Heatmaps)으로, 양성(클래스 0) 및 악성(클래스 1) 분류에 치명적인 관심 영역(ROI)을 나타냅니다.",
+    "LABEL_ORIGINAL": "원본 이미지",
+    "LABEL_PROCESSED": "처리됨 (Model Input)",
+    "XAI_ROI_TITLE": "관심 영역 - {{architecture}} 아키텍처",
+    "XAI_HEATMAP_BENIGN": "히트맵: 양성 (클래스 0)",
+    "XAI_HEATMAP_MALIGNANT": "히트맵: 악성 (클래스 1)",
+    "XAI_ERROR_CLASS_0": "히트맵 클래스 0 N/D",
+    "XAI_ERROR_CLASS_1": "히트맵 클래스 1 N/D",
+    "XAI_NO_ATTRIBUTION_0": "클래스 0 기여 없음",
+    "XAI_NO_ATTRIBUTION_1": "클래스 1 기여 없음",
+    "LABEL_PAGE": "페이지"
+  }
+}

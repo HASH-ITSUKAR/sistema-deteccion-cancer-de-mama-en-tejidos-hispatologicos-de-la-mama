@@ -1,0 +1,58 @@
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+
+  <div class="bg-gradient-to-br from-indigo-600 to-blue-700 text-white rounded-2xl p-6 shadow-lg shadow-indigo-100 dark:shadow-none flex flex-col justify-between relative overflow-hidden group">
+    <div class="absolute -right-6 -bottom-6 text-white/10 text-9xl font-bold select-none pointer-events-none transition-transform duration-500 group-hover:scale-110">🏆</div>
+    <div>
+      <p class="text-xs font-bold uppercase tracking-wider text-indigo-200">{{ 'DASHBOARD.MODEL.MEJOR_MODELO' | translate }}</p>
+      <h3 class="text-3xl font-black mt-2 tracking-tight">XGBoost</h3>
+    </div>
+    <p class="text-sm font-medium text-indigo-100 mt-6 bg-white/10 backdrop-blur-sm rounded-lg px-3 py-1.5 w-fit">
+      {{ 'DASHBOARD.MODEL.ARQUITECTURA_ENSEMBLE' | translate }}
+    </p>
+  </div>
+
+  <div class="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-2xl p-6 shadow-sm hover:shadow-md dark:hover:border-gray-700 transition-all flex flex-col justify-between">
+    <div>
+      <p class="text-xs font-bold uppercase tracking-wider text-gray-400 dark:text-gray-500">Accuracy</p>
+      <h3 class="text-4xl font-black text-gray-900 dark:text-gray-50 mt-2 tracking-tight">93.05%</h3>
+    </div>
+    <div class="flex items-center gap-2 text-emerald-600 dark:text-emerald-400 font-semibold text-sm mt-6">
+      <span class="flex h-2 w-2 rounded-full bg-emerald-500 animate-pulse"></span>
+      {{ 'DASHBOARD.MODEL.EXCELENTE_PERFORMANCE' | translate }}
+    </div>
+  </div>
+
+  <div class="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-2xl p-6 shadow-sm hover:shadow-md dark:hover:border-gray-700 transition-all flex flex-col justify-between">
+    <div>
+      <p class="text-xs font-bold uppercase tracking-wider text-gray-400 dark:text-gray-500">AUC</p>
+      <h3 class="text-4xl font-black text-gray-900 dark:text-gray-50 mt-2 tracking-tight">97.75%</h3>
+    </div>
+    <div class="flex items-center gap-2 text-blue-600 dark:text-blue-400 font-semibold text-sm mt-6">
+      <span class="flex h-2 w-2 rounded-full bg-blue-500 animate-pulse"></span>
+      {{ 'DASHBOARD.MODEL.EXCELENTE_DISCRIMINACION' | translate }}
+    </div>
+  </div>
+
+  <div class="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-2xl p-6 shadow-sm hover:shadow-md dark:hover:border-gray-700 transition-all flex flex-col justify-between">
+    <div>
+      <p class="text-xs font-bold uppercase tracking-wider text-gray-400 dark:text-gray-500">F1 - Score</p>
+      <h3 class="text-4xl font-black text-gray-900 dark:text-gray-50 mt-2 tracking-tight">89.44%</h3>
+    </div>
+    <div class="flex items-center gap-2 text-amber-600 dark:text-amber-400 font-semibold text-sm mt-6">
+      <span class="flex h-2 w-2 rounded-full bg-amber-500 animate-pulse"></span>
+      {{ 'DASHBOARD.MODEL.EQUILIBRIO_METRICAS' | translate }}
+    </div>
+  </div>
+
+  <div class="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-2xl p-6 shadow-sm hover:shadow-md dark:hover:border-gray-700 transition-all flex flex-col justify-between">
+    <div>
+      <p class="text-xs font-bold uppercase tracking-wider text-gray-400 dark:text-gray-500">MCC</p>
+      <h3 class="text-4xl font-black text-gray-900 dark:text-gray-50 mt-2 tracking-tight">82.96%</h3>
+    </div>
+    <div class="flex items-center gap-2 text-indigo-600 dark:text-indigo-400 font-semibold text-sm mt-6">
+      <span class="flex h-2 w-2 rounded-full bg-indigo-500 animate-pulse"></span>
+      {{ 'DASHBOARD.MODEL.PREDICCION_ROBUSTA' | translate }}
+    </div>
+  </div>
+
+</div>

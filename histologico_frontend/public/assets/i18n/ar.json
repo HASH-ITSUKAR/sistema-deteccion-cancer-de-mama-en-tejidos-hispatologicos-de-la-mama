@@ -1,0 +1,197 @@
+{
+  "DASHBOARD": {
+    "TITULO": "التحليل النسيجي الرقمي",
+    "SUBTITULO": "منصة ذكية للكشف المؤتمت عن سرطان الثدي باستخدام البنيات المتقدمة للتعلم العميق ونماذج التجميع (Ensemble)",
+    "RANKING": {
+      "RANKING": "ترتيب النماذج",
+      "ORDENADO": "مرتب حسب الأداء الحالي لـ: ",
+      "COMPARATIVA": "مقارنة الأداء العالمي",
+      "CRECIMIENTO": "نمو تدريجي (الأقل جهة اليسار / الأعلى جهة اليمين)",
+      "METRICA": "المقياس: ",
+      "RENDIMIENTO_MENOR": "أداء أقل",
+      "RENDIMIENTO_MAYOR": "أداء أعلى"
+    },
+    "MODEL": {
+      "MEJOR_MODELO": "النموذج الأفضل",
+      "ARQUITECTURA_ENSEMBLE": "بنية التجميع (Ensemble)",
+      "EXCELENTE_PERFORMANCE": "أداء ممتاز",
+      "EXCELENTE_DISCRIMINACION": "تمميز ممتاز",
+      "EQUILIBRIO_METRICAS": "توازن الدقة والاستدعاء (Precision/Recall)",
+      "PREDICCION_ROBUSTA": "تنبؤ قوي للغاية"
+    }
+  },
+  "METRICAS": {
+    "TITULO": "مقاييس النماذج",
+    "SUBTITULO": "تقييم مفصل للأداء لكل بنية تم تطبيقها."
+  },
+  "EDA": {
+    "TITULO": "التحليل الاستكشافي للبيانات (EDA)",
+    "SUBTITULO": "هيكل وتوازن واتساق مجموعة البيانات النسيجية المرضية.",
+    "RESOLUCION": "الدقة: 224x224 بكسل",
+    "TOTAL_IMAGENES": "إجمالي الصور",
+    "FORMATO_CANALES": "الصيغة: RGB Channels",
+    "TOTAL_BENIGNAS": "إجمالي الحميدة",
+    "TOTAL_MALIGNAS": "إجمالي الخبيثة",
+    "PORCENTAJE_DATASET": "من إجمالي مجموعة البيانات",
+    "PARTICION_TITULO": "تقسيم هيكلي لمجموعة البيانات",
+    "PARTICION_SUBTITULO": "تقسيم متوازن لضمان التدريب والتحقق دون أي انحياز (Bias).",
+    "ENTRENAMIENTO": "التدريب",
+    "VALIDACION": "التحقق",
+    "PRUEBA": "الاختبار (Test)",
+    "DISTRIBUCION_TITULO": "التوزيع الداخلي حسب الفئات",
+    "DISTRIBUCION_SUBTITULO": "النسبة الطبقية",
+    "VS": "ضد",
+    "LEYENDA_BENIGNO": "حميد",
+    "LEYENDA_MALIGNO": "خبيث",
+    "INFO_ESTRATIFICACION_TITULO": "تقسيم طبقي مثالي:",
+    "INFO_ESTRATIFICACION_TEXTO": "يتم الحفاظ على معدل عدم التوازن (~2.5 إلى 1) متطابقًا رياضيًا في المجموعات الفرعية الثلاث لضمان اختبارات غير متحيزة.",
+    "INSPECCION_TITULO": "الفحص البصري لمجموعة البيانات",
+    "INSPECCION_SUBTITULO": "عينات عشوائية محملة في الذاكرة مع تسوية أبعادها لتناسب صيغة إدخال الشبكة.",
+    "ETIQUETA_BENIGNO": "حميد (0)",
+    "ETIQUETA_MALIGNO": "خبيث (1)"
+  },
+  "EVALUACION": {
+    "TITULO": "تقييم متقدم للنموذج",
+    "SUBTITULO": "مقاييس متقدمة للتصنيف النسيجي المرضي تم حسابها على مجموعة الاختبار الفرعية.",
+    "MATRIZ_TITULO": "مصفوفة الارتباك (Confusion Matrix)",
+    "PREDICHO_BENIGNO": "متوقع حميد",
+    "PREDICHO_MALIGNO": "متوقع خبيث",
+    "REAL_BENIGNO": "حميد فعلي",
+    "REAL_MALIGNO": "خبيث فعلي",
+    "CURVA_ROC": "منحنى ROC",
+    "CARGANDO": "جاري التحميل..."
+  },
+  "ENTRENAMIENTO": {
+    "TITULO": "تدريب النماذج",
+    "SUBTITULO": "تكوين المعلمات الفائقة (Hyperparameters) ومقاييس الأداء.",
+    "HIPERPARAMETROS": {
+      "LEARNING_RATE": "معدل التعلم (Learning Rate)",
+      "BATCH_SIZE": "حجم الدفعة (Batch Size)",
+      "EPOCAS": "الحقبات (Epochs)",
+      "INPUT_SIZE": "حجم الإدخال (Input Size)",
+      "EARLY_STOP": "التوقف المبكر (MCC)",
+      "PACIENCIA": "الصبر (Patience): "
+    },
+    "HARDWARE": {
+      "TITULO": "مواصفات الجهاز",
+      "MODELO": "الموديل",
+      "PROCESADOR": "المعالج",
+      "NUCLEOS_HILOS": "نوى، 20 مسارًا",
+      "RAM": "ذاكرة الوصول العشوائي (RAM)",
+      "GRAFICA": "بطاقة الرسوميات (GPU)",
+      "ALMACENAMIENTO": "وحدة التخزين"
+    },
+    "COMPARATIVA": {
+      "TITULO": "مقارنة النماذج",
+      "TABLA": {
+        "MODELO": "النموذج",
+        "TIEMPO": "الوقت (د)",
+        "CPU": "CPU %",
+        "RAM": "RAM %",
+        "GPU": "GPU %",
+        "VRAM": "ذاكرة الفيديو VRAM (ميغابايت)",
+        "DISCO": "القرص %"
+      }
+    },
+    "EVOLUCION": {
+      "TITULO": "التطور: ",
+      "TABLA": {
+        "EPOCA": "الحقبة",
+        "PERDIDA": "الخسارة (Loss)",
+        "F1": "مقياس F1",
+        "AUC": "AUC",
+        "ACCURACY": "الدقة (Accuracy)",
+        "MCC": "MCC"
+      }
+    }
+  },
+  "PREDICCION": {
+    "TITULO": "🔬 التحليل النسيجي",
+    "SUBTITULO": "الكشف عن سرطان الثدي",
+    "FORMULARIO": {
+      "CARGAR": "تحميل صورة النسيج",
+      "CLICK": "انقر هنا أو اسحب صورتك النسيجية",
+      "ANALIZAR": "🧬 تحليل العينة",
+      "ERROR": "يمكن تحميل الصور فقط"
+    },
+    "DATOS": {
+      "ANALISIS": "🔬 التحليل بواسطة النماذج الفردية",
+      "RESULTADOS": "النتائج الأولية لكل نموذج",
+      "VEREDICTO": "⬇️ القرار النهائي ⬇️",
+      "EXPLICACION": "الذكاء الاصطناعي القابل للتفسير حسب النموذج",
+      "MODELOS": {
+        "ORIGINAL": "الصورة الأصلية",
+        "PROCESADO": "الصورة المعالجة",
+        "MALIGNO": "خبيث",
+        "BENIGNO": "حميد"
+      },
+      "DEFINITIVO": {
+        "DIAGNOSTICO": "التشخيص النهائي",
+        "SISTEMA_ENSEMBLE": "نظام تجميع XGBoost - النتيجة النهائية",
+        "MALIGNO_ALERT": "🚨 خبيث",
+        "BENIGNO_OK": "✅ حميد",
+        "PROBABILIDADES": "الاحتمالات النهائية",
+        "TUMOR_BENIGNO": "ورم حميد:",
+        "TUMOR_MALIGNO": "ورم خبيث:",
+        "CONFIANZA_SISTEMA": "ثقة النظام",
+        "NIVEL_CERTEZA": "مستوى اليقين",
+        "ALTA_CONFIANZA": "ثقة عالية",
+        "CONFIANZA_MODERADA": "ثقة متوسطة",
+        "REQUIERE_REVISION": "يتطلب مراجعة",
+        "NOTA_TITULO": "ملاحظة مهمة:",
+        "NOTA_TEXTO": "يجب التحقق من هذا التشخيص المؤتمت من قبل طبيب علم أمراض (باتولوجي) معتمد. النتيجة النهائية تسود وتلغي التنبؤات الفردية للنماذج الموضحة أعلاه.",
+        "BOTON_REPORTE": "إنشاء تقرير طبي PDF"
+      }
+    }
+  },
+  "MENU": {
+    "HOME": { "TITLE": "الرئيسية", "SUB": "الصفحة الرئيسية" },
+    "PREDICT": { "TITLE": "تنبؤ", "SUB": "تنبؤ النموذج" },
+    "METRICS": { "TITLE": "المقاييس", "SUB": "مقاييس النموذج" },
+    "EDA": { "TITLE": "EDA", "SUB": "تحليل البيانات الاستكشافي" },
+    "EVAL": { "TITLE": "تقييم", "SUB": "تقييم النموذج" },
+    "TRAIN": { "TITLE": "تدريب", "SUB": "تدريب النموذج" }
+  },
+  "REPORT": {
+    "TITLE_MAIN": "تقرير التشخيص الطبي",
+    "TITLE_SUB": "تحليل صور التشريح المرضي النسيجي",
+    "IMAGE_ANALYZED": "الصورة المحللة:",
+    "IMAGE_RESOLUTION": "صورة التشريح المرضي النسيجي • الدقة: {{width}}x{{height}} بكسل • الصيغة: {{format}}",
+    "DIAGNOSIS_RESULT": "نتيجة التشخيص",
+    "DIAGNOSIS": "التشخيص:",
+    "MALIGNANT": "خبيث",
+    "BENIGN": "حميد",
+    "CONFIDENCE_LEVEL": "مستوى الثقة:",
+    "DATE": "تاريخ التحليل:",
+    "AI_SYSTEM": "نظام الذكاء الاصطناعي:",
+    "ENSEMBLE_MODELS": "{{model}} (مجموعة من 8 نماذج)",
+    "DETAILED_ANALYSIS": "تحليل مفصل حسب النموذج",
+    "MODEL": "نموذج الذكاء الاصطناعي",
+    "PREDICTION": "التنبؤ",
+    "CONFIDENCE": "الثقة",
+    "NOTICE_TITLE": "⚠️  تنبيه طبي هام:",
+    "NOTICE_1": "هذا التحليل الآلي هو أداة مساعدة لدعم اتخاذ القرار التشخيصي.",
+    "NOTICE_2": "يجب أن يتم التشخيص النهائي من قبل طبيب علم أمراض معتمد.",
+    "NOTICE_3": "هذا التقرير لا يغني عن التقييم الطبي المهني المتخصص.",
+    "IMAGE_UNAVAILABLE": "⚠️ الصورة غير متوفرة",
+    "IMAGE_ERROR": "حدث خطأ أثناء معالجة صورة التشريح المرضي",
+    "GENERATED": "تم إنشاء التقرير في {{date}}",
+    "FILENAME": "تقرير-التشخيص-{{date}}.pdf",
+    "ERROR_GENERATING": "حدث خطأ أثناء إنشاء تقرير PDF. يرجى المحاولة مرة أخرى.",
+    "MALIGNANT_ICON": "⚠ خبيث",
+    "BENIGN_ICON": "✓ حميد",
+    "VISUAL_ANALYSIS": "التحليل البصري للعينة",
+    "XAI_SECTION": "الذكاء الاصطناعي القابل للتفسير والتوضيح (XAI)",
+    "XAI_DESC": "يوضح ما يلي خرائط التنشيط الحراري (Heatmaps) التي تم إنشاؤها بشكل فردي بواسطة بنيات التعلم العميق، مما يشير إلى المناطق ذات الأهمية (ROI) الحرجة لتصنيفات حميد (الفئة 0) وخبيث (الفئة 1).",
+    "LABEL_ORIGINAL": "الصورة الأصلية",
+    "LABEL_PROCESSED": "المعالجة (Model Input)",
+    "XAI_ROI_TITLE": "المناطق ذات الأهمية - بنية {{architecture}}",
+    "XAI_HEATMAP_BENIGN": "الخريطة الحرارية: حميد (الفئة 0)",
+    "XAI_HEATMAP_MALIGNANT": "الخريطة الحرارية: خبيث (الفئة 1)",
+    "XAI_ERROR_CLASS_0": "الخريطة الحرارية للفئة 0 غير متوفرة",
+    "XAI_ERROR_CLASS_1": "الخريطة الحرارية للفئة 1 غير متوفرة",
+    "XAI_NO_ATTRIBUTION_0": "بدون إسناد للفئة 0",
+    "XAI_NO_ATTRIBUTION_1": "بدون إsnاد للفئة 1",
+    "LABEL_PAGE": "الصفحة"
+  }
+}

@@ -1,0 +1,60 @@
+@if (prediccionService.prediccion(); as resultados) {
+  <div class="mt-8 space-y-8 mx-auto w-full animate-fade-in">
+
+    <div class="space-y-4">
+      <div class="text-center p-4 bg-gray-50 dark:bg-gray-900/40 border border-gray-100 dark:border-gray-800 rounded-2xl">
+        <h3 class="text-xl md:text-2xl font-black text-gray-800 dark:text-gray-100">
+          {{ 'PREDICCION.DATOS.ANALISIS' | translate }}
+        </h3>
+        <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">
+          {{ 'PREDICCION.DATOS.RESULTADOS' | translate }}
+        </p>
+      </div>
+
+      <app-prediccion-datos-modelos
+        [resultados]="resultados.resultados_individuales"
+        [imagen]="resultados.imagen_procesada_modelo"
+        [original]="prediccionService.urlImagen"
+      />
+    </div>
+
+    <div class="flex items-center my-8">
+      <div class="flex-grow border-t border-gray-200 dark:border-gray-800"></div>
+      <div class="mx-4 text-gray-800 dark:text-gray-200 text-lg md:text-xl font-black uppercase tracking-wider">
+        {{ 'PREDICCION.DATOS.VEREDICTO' | translate }}
+      </div>
+      <div class="flex-grow border-t border-gray-200 dark:border-gray-800"></div>
+    </div>
+
+    <app-prediccion-datos-definitivo [xgboost]="resultados.XGBoost_ensamble"/>
+
+    <div class="flex items-center my-8">
+      <div class="flex-grow border-t border-gray-200 dark:border-gray-800"></div>
+      <div class="mx-4 text-gray-800 dark:text-gray-200 text-lg md:text-xl font-black uppercase tracking-wider">
+        {{ 'PREDICCION.DATOS.EXPLICACION' | translate }}
+      </div>
+      <div class="flex-grow border-t border-gray-200 dark:border-gray-800"></div>
+    </div>
+
+    <app-prediccion-datos-explicativa
+      [cait_0]="resultados.resultados_individuales['CaiT'].mapa_calor_clase_0"
+      [deit_0]="resultados.resultados_individuales['DeiT'].mapa_calor_clase_0"
+      [densenet_0]="resultados.resultados_individuales['DenseNet'].mapa_calor_clase_0"
+      [efficientnet_0]="resultados.resultados_individuales['EfficientNet'].mapa_calor_clase_0"
+      [inception_0]="resultados.resultados_individuales['Inception'].mapa_calor_clase_0"
+      [pvt_0]="resultados.resultados_individuales['PVT'].mapa_calor_clase_0"
+      [swin_0]="resultados.resultados_individuales['Swin'].mapa_calor_clase_0"
+      [vit_0]="resultados.resultados_individuales['ViT'].mapa_calor_clase_0"
+
+      [cait_1]="resultados.resultados_individuales['CaiT'].mapa_calor_clase_1"
+      [deit_1]="resultados.resultados_individuales['DeiT'].mapa_calor_clase_1"
+      [densenet_1]="resultados.resultados_individuales['DenseNet'].mapa_calor_clase_1"
+      [efficientnet_1]="resultados.resultados_individuales['EfficientNet'].mapa_calor_clase_1"
+      [inception_1]="resultados.resultados_individuales['Inception'].mapa_calor_clase_1"
+      [pvt_1]="resultados.resultados_individuales['PVT'].mapa_calor_clase_1"
+      [swin_1]="resultados.resultados_individuales['Swin'].mapa_calor_clase_1"
+      [vit_1]="resultados.resultados_individuales['ViT'].mapa_calor_clase_1"
+    />
+
+  </div>
+}

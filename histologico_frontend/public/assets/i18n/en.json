@@ -1,0 +1,197 @@
+{
+  "DASHBOARD": {
+    "TITULO": "Digital Histological Analysis",
+    "SUBTITULO": "Intelligent platform for automated breast carcinoma detection using advanced deep learning architectures and assembly models",
+    "RANKING": {
+      "RANKING": "Model Ranking",
+      "ORDENADO": "Sorted by current performance of: ",
+      "COMPARATIVA": "Global Performance Comparison",
+      "CRECIMIENTO": "Staggered growth (Lower to Left / Higher to Right)",
+      "METRICA": "Metric: ",
+      "RENDIMIENTO_MENOR": "Lower Performance",
+      "RENDIMIENTO_MAYOR": "Higher Performance"
+    },
+    "MODEL": {
+      "MEJOR_MODELO": "Best Model",
+      "ARQUITECTURA_ENSEMBLE": "Ensemble Architecture",
+      "EXCELENTE_PERFORMANCE": "Excellent performance",
+      "EXCELENTE_DISCRIMINACION": "Excellent discrimination",
+      "EQUILIBRIO_METRICAS": "Precision/Recall balance",
+      "PREDICCION_ROBUSTA": "Highly robust prediction"
+    }
+  },
+  "METRICAS": {
+    "TITULO": "MODEL METRICS",
+    "SUBTITULO": "Detailed performance evaluation for each implemented architecture."
+  },
+  "EDA": {
+    "TITULO": "Exploratory Data Analysis (EDA)",
+    "SUBTITULO": "Structure, balance, and consistency of the histopathological dataset.",
+    "RESOLUCION": "Resolution: 224x224 px",
+    "TOTAL_IMAGENES": "Total Images",
+    "FORMATO_CANALES": "Format: RGB Channels",
+    "TOTAL_BENIGNAS": "Total Benign",
+    "TOTAL_MALIGNAS": "Total Malignant",
+    "PORCENTAJE_DATASET": "of the total Dataset",
+    "PARTICION_TITULO": "Structured Dataset Partition",
+    "PARTICION_SUBTITULO": "Balanced split to ensure bias-free training and validation.",
+    "ENTRENAMIENTO": "Training",
+    "VALIDACION": "Validation",
+    "PRUEBA": "Test",
+    "DISTRIBUCION_TITULO": "Internal Distribution by Classes",
+    "DISTRIBUCION_SUBTITULO": "Stratified proportion",
+    "VS": "vs",
+    "LEYENDA_BENIGNO": "Benign",
+    "LEYENDA_MALIGNO": "Malignant",
+    "INFO_ESTRATIFICACION_TITULO": "Perfect Stratification:",
+    "INFO_ESTRATIFICACION_TEXTO": "The imbalance ratio (~2.5 to 1) is mathematically preserved identically across all three subsets to ensure bias-free testing.",
+    "INSPECCION_TITULO": "Visual Dataset Inspection",
+    "INSPECCION_SUBTITULO": "Random samples loaded into memory with dimensions normalized to the network input format.",
+    "ETIQUETA_BENIGNO": "Benign (0)",
+    "ETIQUETA_MALIGNO": "Malignant (1)"
+  },
+  "EVALUACION": {
+    "TITULO": "Advanced Model Evaluation",
+    "SUBTITULO": "Advanced histopathological classification metrics calculated on the Test subset.",
+    "MATRIZ_TITULO": "Confusion Matrix",
+    "PREDICHO_BENIGNO": "Predicted Benign",
+    "PREDICHO_MALIGNO": "Predicted Malignant",
+    "REAL_BENIGNO": "Actual Benign",
+    "REAL_MALIGNO": "Actual Malignant",
+    "CURVA_ROC": "ROC Curve",
+    "CARGANDO": "Loading..."
+  },
+  "ENTRENAMIENTO": {
+    "TITULO": "Entrenamiento de Modelos",
+    "SUBTITULO": "Configuración de hiperparámetros y métricas de desempeño.",
+    "HIPERPARAMETROS": {
+      "LEARNING_RATE": "Learning Rate",
+      "BATCH_SIZE": "Batch Size",
+      "EPOCAS": "Épocas",
+      "INPUT_SIZE": "Input Size",
+      "EARLY_STOP": "Early Stop (MCC)",
+      "PACIENCIA": "Paciencia: "
+    },
+    "HARDWARE": {
+      "TITULO": "Especificaciones del Equipo",
+      "MODELO": "Modelo",
+      "PROCESADOR": "Procesador",
+      "NUCLEOS_HILOS": "núcleos, 20 hilos",
+      "RAM": "Memoria RAM",
+      "GRAFICA": "Tarjeta Gráfica",
+      "ALMACENAMIENTO": "Almacenamiento"
+    },
+    "COMPARATIVA": {
+      "TITULO": "Comparativa de Modelos",
+      "TABLA": {
+        "MODELO": "Modelo",
+        "TIEMPO": "Tiempo (M)",
+        "CPU": "CPU %",
+        "RAM": "RAM %",
+        "GPU": "GPU %",
+        "VRAM": "VRAM (MB)",
+        "DISCO": "Disco %"
+      }
+    },
+    "EVOLUCION": {
+      "TITULO": "Evolución: ",
+      "TABLA": {
+        "EPOCA": "Época",
+        "PERDIDA": "Perdida",
+        "F1": "F1",
+        "AUC": "AUC",
+        "ACCURACY": "Accuracy",
+        "MCC": "MCC"
+      }
+    }
+  },
+  "PREDICCION": {
+    "TITULO": "🔬 Histological Analysis",
+    "SUBTITULO": "Breast Cancer Detection",
+    "FORMULARIO": {
+      "CARGAR": "Load tissue image",
+      "CLICK": "Click here or drag your histological image",
+      "ANALIZAR": "🧬 Analyze Sample",
+      "ERROR": "Only images can be uploaded"
+    },
+    "DATOS": {
+      "ANALISIS": "🔬 Analysis by Individual Models",
+      "RESULTADOS": "Preliminary results of each model",
+      "VEREDICTO": "⬇️ FINAL VERDICT ⬇️",
+      "EXPLICACION": "EXPLAINABLE AI BY MODEL",
+      "MODELOS": {
+        "ORIGINAL": "Original image",
+        "PROCESADO": "Processed image",
+        "MALIGNO": "Malignant",
+        "BENIGNO": "Benign"
+      },
+      "DEFINITIVO": {
+        "DIAGNOSTICO": "DEFINITIVE DIAGNOSIS",
+        "SISTEMA_ENSEMBLE": "XGBoost Ensemble System - Final Result",
+        "MALIGNO_ALERT": "🚨 MALIGNANT",
+        "BENIGNO_OK": "✅ BENIGN",
+        "PROBABILIDADES": "Final Probabilities",
+        "TUMOR_BENIGNO": "Benign Tumor:",
+        "TUMOR_MALIGNO": "Malignant Tumor:",
+        "CONFIANZA_SISTEMA": "System Confidence",
+        "NIVEL_CERTEZA": "Certainty Level",
+        "ALTA_CONFIANZA": "HIGH CONFIDENCE",
+        "CONFIANZA_MODERADA": "MODERATE CONFIDENCE",
+        "REQUIERE_REVISION": "REQUIRES REVIEW",
+        "NOTA_TITULO": "Important Note:",
+        "NOTA_TEXTO": "This automated diagnosis must be validated by a certified pathologist. The final result prevails over the individual predictions of the models shown above.",
+        "BOTON_REPORTE": "Generate PDF Medical Report"
+      }
+    }
+  },
+  "MENU": {
+    "HOME": { "TITLE": "Home", "SUB": "Page home" },
+    "PREDICT": { "TITLE": "Predict", "SUB": "Model prediction" },
+    "METRICS": { "TITLE": "Metrics", "SUB": "Model metrics" },
+    "EDA": { "TITLE": "EDA", "SUB": "Model EDA" },
+    "EVAL": { "TITLE": "Evaluation", "SUB": "Model evaluation" },
+    "TRAIN": { "TITLE": "Training", "SUB": "Model training" }
+  },
+  "REPORT": {
+    "TITLE_MAIN": "MEDICAL DIAGNOSIS REPORT",
+    "TITLE_SUB": "Histopathological Image Analysis",
+    "IMAGE_ANALYZED": "ANALYZED IMAGE:",
+    "IMAGE_RESOLUTION": "Histopathological image • Resolution: {{width}}x{{height}}px • Format: {{format}}",
+    "DIAGNOSIS_RESULT": "DIAGNOSIS RESULT",
+    "DIAGNOSIS": "DIAGNOSIS:",
+    "MALIGNANT": "MALIGNANT",
+    "BENIGN": "BENIGN",
+    "CONFIDENCE_LEVEL": "CONFIDENCE LEVEL:",
+    "DATE": "Analysis Date:",
+    "AI_SYSTEM": "AI System:",
+    "ENSEMBLE_MODELS": "{{model}} (8-Model Ensemble)",
+    "DETAILED_ANALYSIS": "DETAILED ANALYSIS BY MODEL",
+    "MODEL": "AI MODEL",
+    "PREDICTION": "PREDICTION",
+    "CONFIDENCE": "CONFIDENCE",
+    "NOTICE_TITLE": "⚠️  IMPORTANT MEDICAL NOTICE:",
+    "NOTICE_1": "This automated analysis is a diagnostic decision-support tool.",
+    "NOTICE_2": "The definitive diagnosis must be performed by a certified pathologist.",
+    "NOTICE_3": "This report does not replace professional medical judgment.",
+    "IMAGE_UNAVAILABLE": "⚠️ Image unavailable",
+    "IMAGE_ERROR": "Error processing the histopathological image",
+    "GENERATED": "Report generated on {{date}}",
+    "FILENAME": "diagnostic-report-{{date}}.pdf",
+    "ERROR_GENERATING": "Error generating PDF report. Please try again.",
+    "MALIGNANT_ICON": "⚠ MALIGNANT",
+    "BENIGN_ICON": "✓ BENIGN",
+    "VISUAL_ANALYSIS": "Visual Specimen Analysis",
+    "XAI_SECTION": "Interpretability & Explainable AI (XAI)",
+    "XAI_DESC": "Below are the thermal activation maps (Heatmaps) individually generated by the Deep Learning architectures, highlighting the critical regions of interest (ROI) for Benign (Class 0) and Malignant (Class 1) classifications.",
+    "LABEL_ORIGINAL": "Original Image",
+    "LABEL_PROCESSED": "Processed (Model Input)",
+    "XAI_ROI_TITLE": "Regions of Interest - {{architecture}} Architecture",
+    "XAI_HEATMAP_BENIGN": "Heatmap: Benign (Class 0)",
+    "XAI_HEATMAP_MALIGNANT": "Heatmap: Malignant (Class 1)",
+    "XAI_ERROR_CLASS_0": "Heatmap Class 0 N/A",
+    "XAI_ERROR_CLASS_1": "Heatmap Class 1 N/A",
+    "XAI_NO_ATTRIBUTION_0": "No Class 0 Attribution",
+    "XAI_NO_ATTRIBUTION_1": "No Class 1 Attribution",
+    "LABEL_PAGE": "Page"
+  }
+}
