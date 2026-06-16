@@ -1,60 +1,60 @@
 <div class="space-y-6 pt-4 mt-4">
 
-  <div class="flex justify-center gap-4 pt-2">
+  <div class="flex flex-nowrap sm:flex-wrap justify-start sm:justify-center gap-3 pt-2 overflow-x-auto pb-2 sm:pb-0 scrollbar-none">
     <button
       (click)="cambiarMetrica('accuracy')"
-      [ngClass]="metricaSeleccionada() === 'accuracy' ? 'bg-indigo-600 text-white shadow-md' : 'bg-gray-100 text-gray-600 hover:bg-gray-200'"
-      class="px-5 py-2.5 rounded-xl font-bold text-sm transition-all duration-200">
+      [ngClass]="metricaSeleccionada() === 'accuracy' ? 'bg-indigo-600 text-white shadow-md dark:bg-indigo-500' : 'bg-gray-100 text-gray-600 hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700'"
+      class="px-5 py-2.5 rounded-xl font-bold text-sm transition-all duration-200 whitespace-nowrap active:scale-95">
       Accuracy
     </button>
     <button
       (click)="cambiarMetrica('auc')"
-      [ngClass]="metricaSeleccionada() === 'auc' ? 'bg-indigo-600 text-white shadow-md' : 'bg-gray-100 text-gray-600 hover:bg-gray-200'"
-      class="px-5 py-2.5 rounded-xl font-bold text-sm transition-all duration-200">
+      [ngClass]="metricaSeleccionada() === 'auc' ? 'bg-indigo-600 text-white shadow-md dark:bg-indigo-500' : 'bg-gray-100 text-gray-600 hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700'"
+      class="px-5 py-2.5 rounded-xl font-bold text-sm transition-all duration-200 whitespace-nowrap active:scale-95">
       AUC
     </button>
     <button
       (click)="cambiarMetrica('f1')"
-      [ngClass]="metricaSeleccionada() === 'f1' ? 'bg-indigo-600 text-white shadow-md' : 'bg-gray-100 text-gray-600 hover:bg-gray-200'"
-      class="px-5 py-2.5 rounded-xl font-bold text-sm transition-all duration-200">
+      [ngClass]="metricaSeleccionada() === 'f1' ? 'bg-indigo-600 text-white shadow-md dark:bg-indigo-500' : 'bg-gray-100 text-gray-600 hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700'"
+      class="px-5 py-2.5 rounded-xl font-bold text-sm transition-all duration-200 whitespace-nowrap active:scale-95">
       F1 - score
     </button>
     <button
       (click)="cambiarMetrica('mcc')"
-      [ngClass]="metricaSeleccionada() === 'mcc' ? 'bg-indigo-600 text-white shadow-md' : 'bg-gray-100 text-gray-600 hover:bg-gray-200'"
-      class="px-5 py-2.5 rounded-xl font-bold text-sm transition-all duration-200">
+      [ngClass]="metricaSeleccionada() === 'mcc' ? 'bg-indigo-600 text-white shadow-md dark:bg-indigo-500' : 'bg-gray-100 text-gray-600 hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700'"
+      class="px-5 py-2.5 rounded-xl font-bold text-sm transition-all duration-200 whitespace-nowrap active:scale-95">
       MCC
     </button>
   </div>
 
   <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 pt-4">
 
-    <div class="bg-gray-50 border border-gray-200 rounded-2xl p-6 flex flex-col justify-between">
+    <div class="bg-gray-50 dark:bg-gray-900/50 border border-gray-200 dark:border-gray-800 rounded-2xl p-6 flex flex-col justify-between">
       <div>
         <div class="mb-4">
-          <h3 class="text-lg font-bold text-gray-900">{{ 'DASHBOARD.RANKING.RANKING' | translate  }}</h3>
-          <p class="text-xs text-gray-500">{{ 'DASHBOARD.RANKING.ORDENADO' | translate  }}<span class="font-bold uppercase text-indigo-600">{{ metricaSeleccionada() }}</span></p>
+          <h3 class="text-lg font-bold text-gray-900 dark:text-gray-100">{{ 'DASHBOARD.RANKING.RANKING' | translate }}</h3>
+          <p class="text-xs text-gray-500 dark:text-gray-400">{{ 'DASHBOARD.RANKING.ORDENADO' | translate }} <span class="font-bold uppercase text-indigo-600 dark:text-indigo-400">{{ metricaSeleccionada() }}</span></p>
         </div>
 
         <div class="space-y-2">
           @for (modelo of rankingModelos(); track modelo.nombre; let i = $index) {
             @let valorRanking = modelo[metricaSeleccionada()];
 
-            <div class="flex items-center justify-between bg-white p-2.5 rounded-xl border border-gray-100 shadow-sm transition-all duration-300">
+            <div class="flex items-center justify-between bg-white dark:bg-gray-900 p-2.5 rounded-xl border border-gray-100 dark:border-gray-800/60 shadow-sm transition-all duration-300">
               <div class="flex items-center gap-3">
                 <span
                   [ngClass]="{
-                    'bg-amber-100 text-amber-800': i === 0,
-                    'bg-slate-200 text-slate-800': i === 1,
-                    'bg-amber-700/10 text-amber-900': i === 2,
-                    'bg-gray-100 text-gray-600': i > 2
+                    'bg-amber-100 text-amber-800 dark:bg-amber-900/30 dark:text-amber-400': i === 0,
+                    'bg-slate-200 text-slate-800 dark:bg-slate-800 dark:text-slate-300': i === 1,
+                    'bg-amber-700/10 text-amber-900 dark:bg-amber-700/20 dark:text-amber-500': i === 2,
+                    'bg-gray-100 text-gray-600 dark:bg-gray-800 dark:text-gray-400': i > 2
                   }"
                   class="w-6 h-6 flex items-center justify-center rounded-md font-bold text-xs">
                   {{ i + 1 }}
                 </span>
-                <span class="font-semibold text-gray-800 text-sm">{{ modelo.nombre }}</span>
+                <span class="font-semibold text-gray-800 dark:text-gray-200 text-sm">{{ modelo.nombre }}</span>
               </div>
-              <span class="text-xs font-bold px-2 py-1 bg-gray-50 border border-gray-100 rounded text-gray-700">
+              <span class="text-xs font-bold px-2 py-1 bg-gray-50 dark:bg-gray-800 border border-gray-100 dark:border-gray-700 rounded text-gray-700 dark:text-gray-300">
                 {{ valorRanking }}%
               </span>
             </div>
@@ -63,21 +63,21 @@
       </div>
     </div>
 
-    <div class="lg:col-span-2 bg-gray-50 border border-gray-200 rounded-2xl p-6 flex flex-col justify-between min-h-[460px]">
+    <div class="lg:col-span-2 bg-gray-50 dark:bg-gray-900/50 border border-gray-200 dark:border-gray-800 rounded-2xl p-6 flex flex-col justify-between min-h-[460px]">
       <div class="flex flex-col h-full w-full">
 
         <div class="flex justify-between items-center mb-6 flex-shrink-0">
           <div>
-            <h3 class="text-lg font-bold text-gray-900">{{ 'DASHBOARD.RANKING.COMPARATIVA' | translate  }}</h3>
-            <p class="text-xs text-gray-500">{{ 'DASHBOARD.RANKING.CRECIMIENTO' | translate  }}</p>
+            <h3 class="text-lg font-bold text-gray-900 dark:text-gray-100">{{ 'DASHBOARD.RANKING.COMPARATIVA' | translate }}</h3>
+            <p class="text-xs text-gray-500 dark:text-gray-400">{{ 'DASHBOARD.RANKING.CRECIMIENTO' | translate }}</p>
           </div>
-          <span class="text-xs font-semibold bg-indigo-50 text-indigo-700 px-2.5 py-1 rounded-md border border-indigo-100 uppercase">
-            {{ 'DASHBOARD.RANKING.METRICA' | translate  }}{{ metricaSeleccionada() }}
+          <span class="text-xs font-semibold bg-indigo-50 dark:bg-indigo-950/40 text-indigo-700 dark:text-indigo-400 px-2.5 py-1 rounded-md border border-indigo-100 dark:border-indigo-900/50 uppercase">
+            {{ 'DASHBOARD.RANKING.METRICA' | translate }} {{ metricaSeleccionada() }}
           </span>
         </div>
 
-        <div class="w-full flex-1 min-h-[340px] bg-white border border-gray-100 rounded-xl flex flex-col items-center justify-between p-4 pb-14 shadow-sm relative">
-          <div class="flex items-end gap-2 w-full h-full px-2 justify-between pt-10">
+        <div class="w-full flex-1 min-h-[340px] bg-white dark:bg-gray-900 border border-gray-100 dark:border-gray-800/80 rounded-xl flex flex-col items-center justify-between p-4 pb-14 shadow-sm relative">
+          <div class="flex items-end gap-1.5 md:gap-2 w-full h-full px-1 md:px-2 justify-between pt-10">
 
             @for (modelo of graficoModelos(); track modelo.nombre; let i = $index) {
               @let valorActual = modelo[metricaSeleccionada()];
@@ -86,24 +86,24 @@
               <div
                 [style.height.%]="alturaDinamica"
                 [ngClass]="[
-                  'bg-gradient-to-t from-red-400 to-red-500 hover:from-red-500 hover:to-red-600',
-                  'bg-gradient-to-t from-orange-400 to-orange-500 hover:from-orange-500 hover:to-orange-600',
-                  'bg-gradient-to-t from-amber-400 to-amber-500 hover:from-amber-500 hover:to-amber-600',
-                  'bg-gradient-to-t from-yellow-400 to-yellow-500 hover:from-yellow-500 hover:to-yellow-600',
-                  'bg-gradient-to-t from-lime-400 to-lime-500 hover:from-lime-500 hover:to-lime-600',
-                  'bg-gradient-to-t from-green-400 to-green-500 hover:from-green-500 hover:to-green-600',
-                  'bg-gradient-to-t from-teal-400 to-teal-500 hover:from-teal-500 hover:to-teal-600',
-                  'bg-gradient-to-t from-cyan-400 to-cyan-500 hover:from-cyan-500 hover:to-cyan-600',
-                  'bg-gradient-to-t from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700 shadow-md'
+                  'bg-gradient-to-t from-red-400 to-red-500 dark:from-red-500/80 dark:to-red-600/90 hover:opacity-90',
+                  'bg-gradient-to-t from-orange-400 to-orange-500 dark:from-orange-500/80 dark:to-orange-600/90 hover:opacity-90',
+                  'bg-gradient-to-t from-amber-400 to-amber-500 dark:from-amber-500/80 dark:to-amber-600/90 hover:opacity-90',
+                  'bg-gradient-to-t from-yellow-400 to-yellow-500 dark:from-yellow-500/80 dark:to-yellow-600/90 hover:opacity-90',
+                  'bg-gradient-to-t from-lime-400 to-lime-500 dark:from-lime-500/80 dark:to-lime-600/90 hover:opacity-90',
+                  'bg-gradient-to-t from-green-400 to-green-500 dark:from-green-500/80 dark:to-green-600/90 hover:opacity-90',
+                  'bg-gradient-to-t from-teal-400 to-teal-500 dark:from-teal-500/80 dark:to-teal-600/90 hover:opacity-90',
+                  'bg-gradient-to-t from-cyan-400 to-cyan-500 dark:from-cyan-500/80 dark:to-cyan-600/90 hover:opacity-90',
+                  'bg-gradient-to-t from-blue-500 to-indigo-600 dark:from-blue-500/80 dark:to-indigo-600/90 shadow-md hover:opacity-90'
                 ][i]"
                 class="w-full transition-all duration-500 rounded-t-md relative group flex justify-center">
 
-                <div class="absolute -top-10 bg-gray-800 text-white text-[10px] font-bold py-1 px-1.5 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap z-10 shadow-md">
+                <div class="absolute -top-12 bg-gray-800 dark:bg-gray-950 text-white text-[10px] font-bold py-1 px-1.5 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap z-10 shadow-md border dark:border-gray-800">
                   {{ modelo.nombre }}<br>
-                  <span class="text-indigo-300 font-black">{{ valorActual }}%</span>
+                  <span class="text-indigo-300 dark:text-indigo-400 font-black">{{ valorActual }}%</span>
                 </div>
 
-                <span class="absolute bottom-2 text-[9px] font-bold text-white tracking-tighter uppercase select-none pointer-events-none [writing-mode:vertical-lr] rotate-180">
+                <span class="absolute bottom-2 text-[8px] md:text-[9px] font-bold text-white tracking-tighter uppercase select-none pointer-events-none [writing-mode:vertical-lr] rotate-180">
                   {{ modelo.nombre }}
                 </span>
 
@@ -112,9 +112,9 @@
 
           </div>
 
-          <div class="absolute bottom-3 left-4 right-4 border-t border-gray-200 pt-1 flex justify-between text-[9px] font-black text-gray-400 uppercase tracking-wider">
-            <span>◀ {{ 'DASHBOARD.RANKING.RENDIMIENTO_MENOR' | translate  }}</span>
-            <span>{{ 'DASHBOARD.RANKING.RENDIMIENTO_MAYOR' | translate  }} ▶</span>
+          <div class="absolute bottom-3 left-4 right-4 border-t border-gray-200 dark:border-gray-800 pt-1 flex justify-between text-[9px] font-black text-gray-400 dark:text-gray-500 uppercase tracking-wider">
+            <span>◀ {{ 'DASHBOARD.RANKING.RENDIMIENTO_MENOR' | translate }}</span>
+            <span>{{ 'DASHBOARD.RANKING.RENDIMIENTO_MAYOR' | translate }} ▶</span>
           </div>
         </div>
 

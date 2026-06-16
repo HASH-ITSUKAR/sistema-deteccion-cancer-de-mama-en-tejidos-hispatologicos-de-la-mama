@@ -1,59 +1,58 @@
-
-<div class="flex flex-col md:flex-row items-center gap-6 mb-10">
-  <div class="w-full md:w-1/2 bg-white border border-gray-200 rounded-xl p-5 shadow-lg text-center">
-    <h2 class="text-xl font-bold text-gray-700 mb-4">{{ 'PREDICCION.DATOS.MODELOS.ORIGINAL' | translate }}</h2>
-    <img [src]="original()" alt="Imagen Original (Mamografía)" class="w-[224px] h-[224px] mx-auto shadow-md">
+<div class="flex flex-col md:flex-row items-center gap-6 mb-8 transition-colors duration-300">
+  <div class="w-full md:w-1/2 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800/80 rounded-2xl p-5 shadow-md text-center">
+    <h3 class="text-base font-bold text-gray-700 dark:text-gray-300 mb-4">
+      {{ 'PREDICCION.DATOS.MODELOS.ORIGINAL' | translate }}
+    </h3>
+    <div class="bg-gray-50 dark:bg-gray-950 p-2 rounded-xl inline-block border border-gray-100 dark:border-gray-800">
+      <img [src]="original()" alt="Imagen Original Histopatológica" class="w-[224px] h-[224px] object-cover shadow-sm rounded-lg">
+    </div>
   </div>
-  <div class="w-full md:w-1/2 bg-white border border-gray-200 rounded-xl p-5 shadow-lg text-center">
-    <h2 class="text-xl font-bold text-gray-700 mb-4">{{ 'PREDICCION.DATOS.MODELOS.PROCESADO' | translate }}</h2>
-    <img [src]="imagen()" alt="Mi imagen en Base64 (Imagen Procesada)" class="max-h-96 mx-auto shadow-md">
-  </div>
 
+  <div class="w-full md:w-1/2 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800/80 rounded-2xl p-5 shadow-md text-center">
+    <h3 class="text-base font-bold text-gray-700 dark:text-gray-300 mb-4">
+      {{ 'PREDICCION.DATOS.MODELOS.PROCESADO' | translate }}
+    </h3>
+    <div class="bg-gray-50 dark:bg-gray-950 p-2 rounded-xl inline-block border border-gray-100 dark:border-gray-800">
+      <img [src]="imagen()" alt="Imagen Procesada por el Modelo" class="w-[224px] h-[224px] object-cover shadow-sm rounded-lg">
+    </div>
+  </div>
 </div>
 
-<div class="grid grid-cols-4 gap-3">
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 transition-colors duration-300">
   @for (entrada of Object.entries(resultados()); track entrada[0]) {
-    <div
-      class="bg-white border border-gray-200 rounded-lg p-3 hover:shadow-md transition-shadow opacity-80"
-    >
-      <div class="flex justify-between items-center mb-2">
-        <div
-          class="text-gray-700 text-center text-lg md:text-xl font-extrabold"
-        >
+    <div class="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800/60 rounded-xl p-4 shadow-sm hover:shadow-md transition-shadow">
+
+      <div class="flex justify-between items-center mb-3">
+        <span class="text-gray-800 dark:text-gray-200 text-base font-black tracking-tight">
           {{ entrada[0] }}
-        </div>
+        </span>
         <span
           [class]="
             entrada[1].prediccion === 1
-              ? 'bg-red-100 text-red-600 px-2 py-1 rounded text-lg md:text-xl font-extrabold'
-              : 'bg-green-100 text-green-600 px-2 py-1 rounded text-lg md:text-xl font-extrabold'
+              ? 'bg-red-50 dark:bg-red-950/40 text-red-600 dark:text-red-400 px-2 py-0.5 rounded-md text-xs font-bold border border-red-200/50 dark:border-red-900/30'
+              : 'bg-green-50 dark:bg-emerald-950/40 text-green-600 dark:text-emerald-400 px-2 py-0.5 rounded-md text-xs font-bold border border-green-200/50 dark:border-emerald-900/30'
           "
         >
-          {{ entrada[1].prediccion === 1 ? ('PREDICCION.DATOS.MODELOS.BENIGNO' | translate) : ('PREDICCION.DATOS.MODELOS.BENIGNO' | translate) }}
+          {{ entrada[1].prediccion === 1 ? ('PREDICCION.DATOS.MODELOS.MALIGNO' | translate) : ('PREDICCION.DATOS.MODELOS.BENIGNO' | translate) }}
         </span>
       </div>
-      <div class="text-xs text-gray-500 space-y-1">
-        <div
-          class="flex justify-between text-gray-700 text-center text-lg md:text-xl"
-        >
+
+      <div class="space-y-2 pt-1 border-t border-gray-100 dark:border-gray-800/80">
+        <div class="flex justify-between items-center text-xs text-gray-600 dark:text-gray-400">
           <span>{{ 'PREDICCION.DATOS.MODELOS.BENIGNO' | translate }}:</span>
-          <span class="font-mono"
-            >{{
-              entrada[1].probabilidades.clase_0 * 100 | number : "1.1-1"
-            }}%</span
-          >
+          <span class="font-mono font-bold text-gray-800 dark:text-gray-200">
+            {{ entrada[1].probabilidades.clase_0 * 100 | number : "1.1-1" }}%
+          </span>
         </div>
-        <div
-          class="flex justify-between text-gray-700 text-center text-lg md:text-xl"
-        >
+
+        <div class="flex justify-between items-center text-xs text-gray-600 dark:text-gray-400">
           <span>{{ 'PREDICCION.DATOS.MODELOS.MALIGNO' | translate }}:</span>
-          <span class="font-mono"
-            >{{
-              entrada[1].probabilidades.clase_1 * 100 | number : "1.1-1"
-            }}%</span
-          >
+          <span class="font-mono font-bold text-gray-800 dark:text-gray-200">
+            {{ entrada[1].probabilidades.clase_1 * 100 | number : "1.1-1" }}%
+          </span>
         </div>
       </div>
+
     </div>
   }
 </div>

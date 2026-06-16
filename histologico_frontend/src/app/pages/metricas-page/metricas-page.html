@@ -1,14 +1,15 @@
-<div class="min-h-screen bg-gradient-to-br from-blue-50 to-purple-100 flex items-center justify-center p-4 md:p-8">
-  <div class="w-full bg-white rounded-3xl shadow-2xl p-6 md:p-10 space-y-8">
+<div class="min-h-screen bg-gradient-to-br from-blue-50 to-purple-100 dark:from-gray-950 dark:via-slate-900 dark:to-gray-950 flex items-center justify-center p-4 md:p-8 transition-colors duration-300">
+  <div class="w-full bg-white dark:bg-gray-900 rounded-3xl shadow-2xl dark:shadow-none dark:border dark:border-gray-800/70 p-6 md:p-10 space-y-8">
 
-    <h1 class="text-3xl md:text-4xl font-extrabold text-gray-800 text-center tracking-tight">
+    <h1 class="text-3xl md:text-4xl font-extrabold text-gray-800 dark:text-gray-50 text-center tracking-tight">
       {{ 'METRICAS.TITULO' | translate }}
     </h1>
 
-    <p class="text-gray-500 text-center text-base md:text-lg max-w-2xl mx-auto">
+    <p class="text-gray-500 dark:text-gray-400 text-center text-base md:text-lg max-w-2xl mx-auto">
       {{ 'METRICAS.SUBTITULO' | translate }}
     </p>
 
+    <!-- Rejilla unificada y responsiva: Fluye automáticamente en cualquier pantalla -->
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 pt-4">
 
       <app-metricas-modelo
@@ -40,10 +41,6 @@
         loss="0.167364359005969"
       />
 
-    </div>
-
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 pt-4">
-
       <app-metricas-modelo
         nombre="Inception"
         tipo="CNN"
@@ -73,10 +70,6 @@
         mcc="82.12%"
         loss="0.176328299198838"
       />
-
-    </div>
-
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 pt-4">
 
       <app-metricas-modelo
         nombre="EfficientNet"
@@ -110,8 +103,5 @@
 
     </div>
 
+  </div>
 </div>
-
-
-<!-- <div class="min-h-screen bg-gradient-to-br from-blue-50 to-purple-100 flex items-center justify-center p-4 md:p-8">
-</div> -->

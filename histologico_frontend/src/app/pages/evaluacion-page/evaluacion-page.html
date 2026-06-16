@@ -1,10 +1,10 @@
-<div class="min-h-screen bg-gradient-to-br from-blue-50 to-purple-100 flex items-center justify-center p-4 md:p-8 w-full">
-  <div class="space-y-8 p-6 bg-gray-50 rounded-3xl border border-gray-200 mt-6 animate-fade-in w-full max-w-7xl">
+<div class="min-h-screen bg-gradient-to-br from-blue-50 to-purple-100 dark:from-gray-950 dark:via-slate-900 dark:to-gray-950 flex items-center justify-center p-4 md:p-8 w-full transition-colors duration-300">
+  <div class="space-y-8 p-6 bg-gray-50 dark:bg-gray-900/50 rounded-3xl border border-gray-200 dark:border-gray-800 mt-6 animate-fade-in w-full max-w-7xl">
 
-    <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-gray-200 pb-5">
+    <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-gray-200 dark:border-gray-800 pb-5">
       <div>
-        <h2 class="text-2xl font-black text-gray-900 tracking-tight">{{ 'EVALUACION.TITULO' | translate }}</h2>
-        <p class="text-sm text-gray-500">{{ 'EVALUACION.SUBTITULO' | translate }}</p>
+        <h2 class="text-2xl font-black text-gray-900 dark:text-gray-50 tracking-tight">{{ 'EVALUACION.TITULO' | translate }}</h2>
+        <p class="text-sm text-gray-500 dark:text-gray-400">{{ 'EVALUACION.SUBTITULO' | translate }}</p>
       </div>
 
       <div class="flex gap-1.5 overflow-x-auto pb-2 md:pb-0 scrollbar-none max-w-full">
@@ -12,9 +12,9 @@
           <button
             (click)="cambiarModelo(mod)"
             [class]="modeloSeleccionado() === mod
-              ? 'bg-indigo-600 text-white shadow-md shadow-indigo-600/20'
-              : 'bg-white text-gray-600 hover:bg-gray-100 border border-gray-200'"
-            class="px-3 py-1.5 rounded-xl text-xs font-bold transition-all whitespace-nowrap cursor-pointer">
+              ? 'bg-indigo-600 text-white shadow-md shadow-indigo-600/20 dark:bg-indigo-500'
+              : 'bg-white text-gray-600 hover:bg-gray-100 border border-gray-200 dark:bg-gray-800 dark:text-gray-300 dark:border-gray-700 dark:hover:bg-gray-700'"
+            class="px-3 py-1.5 rounded-xl text-xs font-bold transition-all whitespace-nowrap cursor-pointer active:scale-95">
             {{ mod }}
           </button>
         }
@@ -24,60 +24,60 @@
     @if (datos(); as d) {
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
 
-        <div class="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm">
+        <div class="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800/80 rounded-2xl p-6 shadow-sm">
           <div class="flex justify-between items-start mb-6">
-            <h3 class="text-base font-bold text-gray-900">{{ 'EVALUACION.MATRIZ_TITULO' | translate }}</h3>
+            <h3 class="text-base font-bold text-gray-900 dark:text-gray-100">{{ 'EVALUACION.MATRIZ_TITULO' | translate }}</h3>
           </div>
 
           <div class="relative w-full max-w-[340px] mx-auto pl-8">
-            <div class="grid grid-cols-2 text-[10px] font-black uppercase text-gray-400 tracking-wider text-center mb-2">
+            <div class="grid grid-cols-2 text-[10px] font-black uppercase text-gray-400 dark:text-gray-500 tracking-wider text-center mb-2">
               <span>{{ 'EVALUACION.PREDICHO_BENIGNO' | translate }}</span>
               <span>{{ 'EVALUACION.PREDICHO_MALIGNO' | translate }}</span>
             </div>
 
             <div class="flex items-center">
               <div class="flex flex-col justify-between h-[180px] w-8 mr-2 text-center">
-                <span class="text-[10px] font-black uppercase text-gray-400 [writing-mode:vertical-lr] rotate-180 flex-1 flex items-center justify-center">
+                <span class="text-[10px] font-black uppercase text-gray-400 dark:text-gray-500 [writing-mode:vertical-lr] rotate-180 flex-1 flex items-center justify-center">
                   {{ 'EVALUACION.REAL_BENIGNO' | translate }}
                 </span>
-                <span class="text-[10px] font-black uppercase text-gray-400 [writing-mode:vertical-lr] rotate-180 flex-1 flex items-center justify-center">
+                <span class="text-[10px] font-black uppercase text-gray-400 dark:text-gray-500 [writing-mode:vertical-lr] rotate-180 flex-1 flex items-center justify-center">
                   {{ 'EVALUACION.REAL_MALIGNO' | translate }}
                 </span>
               </div>
 
               <div class="grid grid-cols-2 gap-2 flex-grow">
-                <div class="aspect-square bg-emerald-50 border border-emerald-100 rounded-xl flex flex-col justify-center items-center p-3">
-                  <span class="text-xl font-black text-emerald-600">{{ d.matriz.verdaderos_benignos | number }}</span>
-                  <span class="text-[9px] font-medium text-emerald-500">TN</span>
+                <div class="aspect-square bg-emerald-50 dark:bg-emerald-950/20 border border-emerald-100 dark:border-emerald-900/30 rounded-xl flex flex-col justify-center items-center p-3">
+                  <span class="text-xl font-black text-emerald-600 dark:text-emerald-400">{{ d.matriz.verdaderos_benignos | number }}</span>
+                  <span class="text-[9px] font-medium text-emerald-500 dark:text-emerald-500/80">TN</span>
                 </div>
-                <div class="aspect-square bg-orange-50 border border-orange-100 rounded-xl flex flex-col justify-center items-center p-3">
-                  <span class="text-xl font-black text-orange-600">{{ d.matriz.falsos_malignos | number }}</span>
-                  <span class="text-[9px] font-medium text-orange-500">FP</span>
+                <div class="aspect-square bg-orange-50 dark:bg-orange-950/20 border border-orange-100 dark:border-orange-900/30 rounded-xl flex flex-col justify-center items-center p-3">
+                  <span class="text-xl font-black text-orange-600 dark:text-orange-400">{{ d.matriz.falsos_malignos | number }}</span>
+                  <span class="text-[9px] font-medium text-orange-500 dark:text-orange-500/80">FP</span>
                 </div>
-                <div class="aspect-square bg-red-50 border border-red-100 rounded-xl flex flex-col justify-center items-center p-3">
-                  <span class="text-xl font-black text-red-600">{{ d.matriz.falsos_benignos | number }}</span>
-                  <span class="text-[9px] font-medium text-red-500">FN</span>
+                <div class="aspect-square bg-red-50 dark:bg-red-950/20 border border-red-100 dark:border-red-900/30 rounded-xl flex flex-col justify-center items-center p-3">
+                  <span class="text-xl font-black text-red-600 dark:text-red-400">{{ d.matriz.falsos_benignos | number }}</span>
+                  <span class="text-[9px] font-medium text-red-500 dark:text-red-500/80">FN</span>
                 </div>
-                <div class="aspect-square bg-blue-50 border border-blue-100 rounded-xl flex flex-col justify-center items-center p-3">
-                  <span class="text-xl font-black text-blue-600">{{ d.matriz.verdaderos_malignos | number }}</span>
-                  <span class="text-[9px] font-medium text-blue-500">TP</span>
+                <div class="aspect-square bg-blue-50 dark:bg-blue-950/20 border border-blue-100 dark:border-blue-900/30 rounded-xl flex flex-col justify-center items-center p-3">
+                  <span class="text-xl font-black text-blue-600 dark:text-blue-400">{{ d.matriz.verdaderos_malignos | number }}</span>
+                  <span class="text-[9px] font-medium text-blue-500 dark:text-blue-500/80">TP</span>
                 </div>
               </div>
             </div>
           </div>
         </div>
 
-        <div class="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm flex flex-col justify-between">
+        <div class="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800/80 rounded-2xl p-6 shadow-sm flex flex-col justify-between">
           <div>
-            <h3 class="text-base font-bold text-gray-900 mb-1">{{ 'EVALUACION.CURVA_ROC' | translate }}</h3>
+            <h3 class="text-base font-bold text-gray-900 dark:text-gray-100 mb-1">{{ 'EVALUACION.CURVA_ROC' | translate }}</h3>
 
-            <div class="w-full max-w-[256px] mx-auto h-64 border-l-2 border-b-2 border-gray-300 relative mt-4">
+            <div class="w-full max-w-[256px] mx-auto h-64 border-l-2 border-b-2 border-gray-300 dark:border-gray-700 relative mt-4">
               <svg class="absolute inset-0 w-full h-full overflow-visible" viewBox="0 0 256 256" fill="none">
-                <line x1="0" y1="256" x2="256" y2="0" stroke="#e5e7eb" stroke-width="1.5" stroke-dasharray="4" />
-                <path [attr.d]="stringPathSVG()" fill="none" stroke="#4f46e5" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="transition-all duration-300" />
+                <line x1="0" y1="256" x2="256" y2="0" stroke="#e5e7eb" class="dark:stroke-gray-800" stroke-width="1.5" stroke-dasharray="4" />
+                <path [attr.d]="stringPathSVG()" fill="none" stroke="#4f46e5" class="dark:stroke-indigo-400" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="transition-all duration-300" />
               </svg>
 
-              <div class="absolute right-3 bottom-3 bg-indigo-600 text-white font-black px-2.5 py-1 rounded-lg text-xs shadow-md">
+              <div class="absolute right-3 bottom-3 bg-indigo-600 dark:bg-indigo-500 text-white font-black px-2.5 py-1 rounded-lg text-xs shadow-md">
                 AUC: {{ d.auc | number:'1.2-2' }}%
               </div>
             </div>
@@ -86,7 +86,7 @@
 
       </div>
     } @else {
-      <div class="flex flex-col items-center justify-center py-12 text-gray-400">
+      <div class="flex flex-col items-center justify-center py-12 text-gray-400 dark:text-gray-500">
         <div class="w-8 h-8 border-4 border-indigo-500 border-t-transparent rounded-full animate-spin mb-3"></div>
         <p class="text-xs font-bold uppercase tracking-wider">{{ 'EVALUACION.CARGANDO' | translate }}</p>
       </div>
