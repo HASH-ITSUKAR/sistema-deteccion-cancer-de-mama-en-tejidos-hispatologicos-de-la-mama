@@ -1,5 +1,5 @@
 import { DecimalPipe } from '@angular/common';
-import { Component, inject } from '@angular/core';
+import { Component, effect, inject, output } from '@angular/core';
 import { PrediccionService } from 'src/app/services/prediccion-service';
 import { TranslateModule } from '@ngx-translate/core';
 import { LanguageService } from 'src/app/services/languaje-service';
@@ -16,4 +16,16 @@ export class PrediccionDatos {
   Object = Object;
   prediccionService = inject(PrediccionService);
   languageService = inject(LanguageService)
+
+  onCargado = output<void>();
+
+  carga = effect(() => {
+    const datosPrediccion = this.prediccionService.prediccion();
+
+    // Si la Signal tiene datos (dejó de ser null/undefined), emitimos el 0
+    if (datosPrediccion) {
+      this.onCargado.emit();
+    }
+  });
+
 }

@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, output } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
 import { PrediccionService } from 'src/app/services/prediccion-service';
 import { TranslateModule } from '@ngx-translate/core';
@@ -20,6 +20,8 @@ export class PrediccionFormulario {
   });
   imagePreviewUrl: string | null = null;
 
+  onCargar = output<void>();
+
   onFileSelected(event: Event) {
     const input = event.target as HTMLInputElement;
     if (input.files && input.files.length > 0) {
@@ -35,6 +37,7 @@ export class PrediccionFormulario {
   }
 
   analyzeImage() {
+    this.onCargar.emit();
     const imagen = this.myForm.value.imagen;
     this.prediccionService.setUrlImagen(this.imagePreviewUrl!);
     if (imagen) {

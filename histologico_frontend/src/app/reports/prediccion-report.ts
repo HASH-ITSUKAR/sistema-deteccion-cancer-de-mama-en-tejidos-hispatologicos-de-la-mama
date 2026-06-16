@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { jsPDF } from 'jspdf';
 import { ResultadoPredicciones } from '../interfaces/prediccion/ResultadosPrediccion';
@@ -21,7 +21,36 @@ export class PrediccionReportService {
     warningText: [186, 139, 0]   // Texto Alerta
   };
 
-  constructor(private translate: TranslateService) {}
+  translate = inject(TranslateService)
+
+
+
+  private readonly CONFIG_IDIOMAS: { [key: string]: { locale: string, font: string, footer: string } } = {
+  // --- ALFABETO LATINO / CIRÍLICO (Nativos en jsPDF) ---
+  'es': { locale: 'es-ES', font: 'helvetica',   footer: 'italic' },
+  'en': { locale: 'en-US', font: 'helvetica',   footer: 'italic' },
+  'it': { locale: 'it-IT', font: 'helvetica',   footer: 'italic' },
+  'fr': { locale: 'fr-FR', font: 'helvetica',   footer: 'italic' },
+  'pt': { locale: 'pt-BR', font: 'helvetica',   footer: 'italic' },
+  'de': { locale: 'de-DE', font: 'helvetica',   footer: 'italic' },
+
+  'ru': { locale: 'ru-RU', font: 'NotoSans',   footer: 'normal' },
+
+  'no': { locale: 'no-NO', font: 'helvetica',   footer: 'italic' },
+  'tr': { locale: 'tr-TR', font: 'helvetica',   footer: 'italic' },
+  'in': { locale: 'id-ID', font: 'helvetica',   footer: 'italic' },
+
+  'zh': { locale: 'zh-CN', font: 'NotoSansSC',  footer: 'normal' },
+  'ja': { locale: 'ja-JP', font: 'NotoSerifJP', footer: 'normal' },
+  'ko': { locale: 'ko-KR', font: 'NotoSansKR',  footer: 'normal' },
+
+  'ar': { locale: 'ar-SA', font: 'NotoSansArabic',     footer: 'normal' },
+  'hi': { locale: 'hi-IN', font: 'NotoSansDevanagari', footer: 'normal' },
+  'bn': { locale: 'bn-BD', font: 'NotoSansBengali',    footer: 'normal' }
+};
+
+  fontPrincipal = 'helvetica';
+  estiloFooter = 'italic';
 
   async generarReportePDF(resultados: ResultadoPredicciones, imagePreviewUrl: string) {
     const doc = new jsPDF({
@@ -30,20 +59,87 @@ export class PrediccionReportService {
       format: 'a4'
     });
 
-    this.reportData.fechaHora = new Date().toLocaleString(
-      this.translate.currentLang === 'es' ? 'es-ES' : 'en-US'
-    );
+    const idiomaActual = this.translate.currentLang || 'en';
+    const idioma = this.CONFIG_IDIOMAS[idiomaActual] ? idiomaActual : 'en';
+
+    this.fontPrincipal = this.CONFIG_IDIOMAS[idioma].font;
+    this.estiloFooter = this.CONFIG_IDIOMAS[idioma].footer;
+
+    if (idioma === 'zh') {
+      const fuentesChinas = await import('./fonts/NotoSansSC');
+      doc.addFileToVFS('NotoSansSC-Regular.ttf', fuentesChinas.default.regular);
+      doc.addFileToVFS('NotoSansSC-Bold.ttf', fuentesChinas.default.bold);
+      doc.addFont('NotoSansSC-Regular.ttf', 'NotoSansSC', 'normal');
+      doc.addFont('NotoSansSC-Bold.ttf', 'NotoSansSC', 'bold');
+    }
+    if (idioma === 'ja') {
+      const fuentesJaponesas = await import('./fonts/NotoSerifJP'); // Variable renombrada
+      doc.addFileToVFS('NotoSerifJP-Regular.ttf', fuentesJaponesas.default.regular);
+      doc.addFileToVFS('NotoSerifJP-Bold.ttf', fuentesJaponesas.default.bold);
+      doc.addFont('NotoSerifJP-Regular.ttf', 'NotoSerifJP', 'normal');
+      doc.addFont('NotoSerifJP-Bold.ttf', 'NotoSerifJP', 'bold');
+    }
+    if (idioma === 'ko') {
+      const fuentesCoreanas = await import('./fonts/NotoSansKR'); // Variable renombrada
+      doc.addFileToVFS('NotoSansKR-Regular.ttf', fuentesCoreanas.default.regular);
+      doc.addFileToVFS('NotoSansKR-Bold.ttf', fuentesCoreanas.default.bold);
+      doc.addFont('NotoSansKR-Regular.ttf', 'NotoSansKR', 'normal');
+      doc.addFont('NotoSansKR-Bold.ttf', 'NotoSansKR', 'bold');
+    }
+
+    if (idioma === 'ar') {
+        const fuentesArabes = await import('./fonts/NotoSansArabic');
+        doc.addFileToVFS('NotoSansArabic-Regular.ttf', fuentesArabes.default.regular);
+        doc.addFileToVFS('NotoSansArabic-Bold.ttf', fuentesArabes.default.bold);
+        doc.addFont('NotoSansArabic-Regular.ttf', 'NotoSansArabic', 'normal');
+        doc.addFont('NotoSansArabic-Bold.ttf', 'NotoSansArabic', 'bold');
+    }
+
+    if (idioma === 'hi') {
+        const fuentesHindi = await import('./fonts/NotoSansDevanagari');
+        doc.addFileToVFS('NotoSansDevanagari-Regular.ttf', fuentesHindi.default.regular);
+        doc.addFileToVFS('NotoSansDevanagari-Bold.ttf', fuentesHindi.default.bold);
+        doc.addFont('NotoSansDevanagari-Regular.ttf', 'NotoSansDevanagari', 'normal');
+        doc.addFont('NotoSansDevanagari-Bold.ttf', 'NotoSansDevanagari', 'bold');
+    }
+
+    if (idioma === 'bn') {
+        const fuentesBengali = await import('./fonts/NotoSansBengali');
+        doc.addFileToVFS('NotoSansBengali-Regular.ttf', fuentesBengali.default.regular);
+        doc.addFileToVFS('NotoSansBengali-Bold.ttf', fuentesBengali.default.bold);
+        doc.addFont('NotoSansBengali-Regular.ttf', 'NotoSansBengali', 'normal');
+        doc.addFont('NotoSansBengali-Bold.ttf', 'NotoSansBengali', 'bold');
+    }
+
+    if (idioma === 'ru') {
+        const fuentesRusas = await import('./fonts/NotoSans');
+        doc.addFileToVFS('NotoSans-Regular.ttf', fuentesRusas.default.regular);
+        doc.addFileToVFS('NotoSans-Bold.ttf', fuentesRusas.default.bold);
+        doc.addFont('NotoSans-Regular.ttf', 'NotoSans', 'normal');
+        doc.addFont('NotoSans-Bold.ttf', 'NotoSans', 'bold');
+    }
+
+    const localeActual = this.CONFIG_IDIOMAS[idioma].locale;
+
+    this.reportData.fechaHora = new Date().toLocaleString(localeActual, {
+      year: 'numeric',
+      month: '2-digit',
+      day: '2-digit',
+      hour: '2-digit',
+      minute: '2-digit',
+      second: '2-digit'
+    });
 
     try {
       // ----------------------------------------------------
       // HEADER
       // ----------------------------------------------------
-      doc.setFont('helvetica', 'bold');
+      doc.setFont(this.fontPrincipal, 'bold');
       doc.setFontSize(20);
       doc.setTextColor(this.colors.darkText[0], this.colors.darkText[1], this.colors.darkText[2]);
       doc.text(this.translate.instant('REPORT.TITLE_MAIN'), 105, 20, { align: 'center' });
 
-      doc.setFont('helvetica', 'normal');
+      doc.setFont(this.fontPrincipal, 'normal');
       doc.setFontSize(11);
       doc.setTextColor(this.colors.lightText[0], this.colors.lightText[1], this.colors.lightText[2]);
       doc.text(this.translate.instant('REPORT.TITLE_SUB'), 105, 27, { align: 'center' });
@@ -57,7 +153,7 @@ export class PrediccionReportService {
       // ----------------------------------------------------
       // SECCIÓN: COMPARATIVA DE IMÁGENES (Original vs Procesada)
       // ----------------------------------------------------
-      doc.setFont('helvetica', 'bold');
+      doc.setFont(this.fontPrincipal, 'bold');
       doc.setFontSize(12);
       doc.setTextColor(this.colors.darkText[0], this.colors.darkText[1], this.colors.darkText[2]);
       doc.text(this.translate.instant('REPORT.VISUAL_ANALYSIS'), 25, yPos);
@@ -98,7 +194,7 @@ export class PrediccionReportService {
       // ----------------------------------------------------
       // SECCIÓN DE RESULTADOS PRINCIPALES (ENSEMBLE)
       // ----------------------------------------------------
-      doc.setFont('helvetica', 'bold');
+      doc.setFont(this.fontPrincipal, 'bold');
       doc.setFontSize(13);
       doc.setTextColor(this.colors.darkText[0], this.colors.darkText[1], this.colors.darkText[2]);
       doc.text(this.translate.instant('REPORT.DIAGNOSIS_RESULT'), 25, yPos);
@@ -113,12 +209,12 @@ export class PrediccionReportService {
       doc.setDrawColor(230, 235, 240);
       doc.rect(25, yPos, 160, 15);
 
-      doc.setFont('helvetica', 'bold');
+      doc.setFont(this.fontPrincipal, 'bold');
       doc.setFontSize(11);
       doc.setTextColor(this.colors.darkText[0], this.colors.darkText[1], this.colors.darkText[2]);
       doc.text(this.translate.instant('REPORT.DIAGNOSIS'), 32, yPos + 9.5);
 
-      doc.setFont('helvetica', 'bold');
+      doc.setFont(this.fontPrincipal, 'bold');
       doc.setFontSize(15);
       doc.setTextColor(colorResultado[0], colorResultado[1], colorResultado[2]);
       doc.text(this.translate.instant(esMaligno ? 'REPORT.MALIGNANT' : 'REPORT.BENIGN'), 95, yPos + 10);
@@ -129,7 +225,7 @@ export class PrediccionReportService {
         ? (resultados.XGBoost_ensamble.probabilidades.clase_1 * 100)
         : (resultados.XGBoost_ensamble.probabilidades.clase_0 * 100);
 
-      doc.setFont('helvetica', 'bold');
+      doc.setFont(this.fontPrincipal, 'bold');
       doc.setFontSize(11);
       doc.setTextColor(this.colors.darkText[0], this.colors.darkText[1], this.colors.darkText[2]);
       doc.text(this.translate.instant('REPORT.CONFIDENCE_LEVEL'), 25, yPos);
@@ -145,24 +241,24 @@ export class PrediccionReportService {
       doc.setFillColor(colorResultado[0], colorResultado[1], colorResultado[2]);
       doc.rect(barX, yPos - 4, progressWidth, barHeight, 'F');
 
-      doc.setFont('helvetica', 'bold');
+      doc.setFont(this.fontPrincipal, 'bold');
       doc.setFontSize(12);
       doc.setTextColor(this.colors.darkText[0], this.colors.darkText[1], this.colors.darkText[2]);
       doc.text(`${confianza.toFixed(1)}%`, barX + barWidth + 5, yPos);
       yPos += 12;
 
       // Metadata básica
-      doc.setFont('helvetica', 'bold');
+      doc.setFont(this.fontPrincipal, 'bold');
       doc.setFontSize(10);
       doc.setTextColor(this.colors.darkText[0], this.colors.darkText[1], this.colors.darkText[2]);
       doc.text(this.translate.instant('REPORT.DATE'), 25, yPos);
-      doc.setFont('helvetica', 'normal');
+      doc.setFont(this.fontPrincipal, 'normal');
       doc.text(this.reportData.fechaHora, 95, yPos);
       yPos += 6;
 
-      doc.setFont('helvetica', 'bold');
+      doc.setFont(this.fontPrincipal, 'bold');
       doc.text(this.translate.instant('REPORT.AI_SYSTEM'), 25, yPos);
-      doc.setFont('helvetica', 'normal');
+      doc.setFont(this.fontPrincipal, 'normal');
       const ensembleText = this.translate.instant('REPORT.ENSEMBLE_MODELS', { model: this.reportData.modeloPrincipal });
       doc.text(ensembleText, 95, yPos);
       yPos += 16;
@@ -172,7 +268,7 @@ export class PrediccionReportService {
       // ----------------------------------------------------
       if (yPos > 210) { doc.addPage(); yPos = 25; }
 
-      doc.setFont('helvetica', 'bold');
+      doc.setFont(this.fontPrincipal, 'bold');
       doc.setFontSize(13);
       doc.setTextColor(this.colors.darkText[0], this.colors.darkText[1], this.colors.darkText[2]);
       doc.text(this.translate.instant('REPORT.DETAILED_ANALYSIS'), 25, yPos);
@@ -181,7 +277,7 @@ export class PrediccionReportService {
       doc.setFillColor(this.colors.primary[0], this.colors.primary[1], this.colors.primary[2]);
       doc.rect(25, yPos - 5, 160, 9, 'F');
 
-      doc.setFont('helvetica', 'bold');
+      doc.setFont(this.fontPrincipal, 'bold');
       doc.setFontSize(10);
       doc.setTextColor(255, 255, 255);
       doc.text(this.translate.instant('REPORT.MODEL'), 30, yPos + 1);
@@ -201,7 +297,7 @@ export class PrediccionReportService {
           doc.addPage(); yPos = 25;
           doc.setFillColor(this.colors.primary[0], this.colors.primary[1], this.colors.primary[2]);
           doc.rect(25, yPos - 5, 160, 9, 'F');
-          doc.setFont('helvetica', 'bold');
+          doc.setFont(this.fontPrincipal, 'bold');
           doc.setTextColor(255, 255, 255);
           doc.text(this.translate.instant('REPORT.MODEL'), 30, yPos + 1);
           doc.text(this.translate.instant('REPORT.PREDICTION'), 95, yPos + 1);
@@ -214,7 +310,7 @@ export class PrediccionReportService {
           doc.rect(25, yPos - 5, 160, 8, 'F');
         }
 
-        doc.setFont('helvetica', 'normal');
+        doc.setFont(this.fontPrincipal, 'normal');
         doc.setFontSize(9.5);
         doc.setTextColor(this.colors.darkText[0], this.colors.darkText[1], this.colors.darkText[2]);
         doc.text(nombre, 30, yPos);
@@ -222,7 +318,7 @@ export class PrediccionReportService {
         const individualMaligno = modelo.prediccion === 1;
         const colorIndividual = individualMaligno ? this.colors.malignant : this.colors.benign;
 
-        doc.setFont('helvetica', 'bold');
+        doc.setFont(this.fontPrincipal, 'bold');
         doc.setTextColor(colorIndividual[0], colorIndividual[1], colorIndividual[2]);
         doc.text(this.translate.instant(individualMaligno ? 'REPORT.MALIGNANT_ICON' : 'REPORT.BENIGN_ICON'), 95, yPos);
 
@@ -240,13 +336,13 @@ export class PrediccionReportService {
       doc.addPage();
       yPos = 25;
 
-      doc.setFont('helvetica', 'bold');
+      doc.setFont(this.fontPrincipal, 'bold');
       doc.setFontSize(14);
       doc.setTextColor(this.colors.primary[0], this.colors.primary[1], this.colors.primary[2]);
       doc.text(this.translate.instant('REPORT.XAI_SECTION'), 25, yPos);
 
       yPos += 5;
-      doc.setFont('helvetica', 'normal');
+      doc.setFont(this.fontPrincipal, 'normal');
       doc.setFontSize(9.5);
       doc.setTextColor(this.colors.lightText[0], this.colors.lightText[1], this.colors.lightText[2]);
       const xaiDesc = this.translate.instant('REPORT.XAI_DESC');
@@ -268,7 +364,7 @@ export class PrediccionReportService {
           yPos = 25;
         }
 
-        doc.setFont('helvetica', 'bold');
+        doc.setFont(this.fontPrincipal, 'bold');
         doc.setFontSize(11);
         doc.setTextColor(this.colors.darkText[0], this.colors.darkText[1], this.colors.darkText[2]);
 
@@ -324,12 +420,12 @@ export class PrediccionReportService {
       doc.setDrawColor(245, 230, 180);
       doc.rect(25, yPos, 160, 22);
 
-      doc.setFont('helvetica', 'bold');
+      doc.setFont(this.fontPrincipal, 'bold');
       doc.setFontSize(9);
       doc.setTextColor(this.colors.warningText[0], this.colors.warningText[1], this.colors.warningText[2]);
       doc.text(this.translate.instant('REPORT.NOTICE_TITLE'), 30, yPos + 5);
 
-      doc.setFont('helvetica', 'normal');
+      doc.setFont(this.fontPrincipal, 'normal');
       doc.setFontSize(8);
       doc.text(this.translate.instant('REPORT.NOTICE_1'), 30, yPos + 10);
       doc.text(this.translate.instant('REPORT.NOTICE_2'), 30, yPos + 14);
@@ -343,7 +439,7 @@ export class PrediccionReportService {
 
       for (let i = 1; i <= totalPages; i++) {
         doc.setPage(i);
-        doc.setFont('helvetica', 'italic');
+        doc.setFont(this.fontPrincipal, this.estiloFooter);
         doc.setFontSize(8);
         doc.setTextColor(this.colors.lightText[0], this.colors.lightText[1], this.colors.lightText[2]);
 
@@ -390,7 +486,7 @@ export class PrediccionReportService {
 
     doc.addImage(imgData.dataURL, imgData.format, imgX, imgY, imgW, imgH, undefined, 'FAST');
 
-    doc.setFont('helvetica', 'normal');
+    doc.setFont(this.fontPrincipal, 'normal');
     doc.setFontSize(8.5);
     doc.setTextColor(this.colors.darkText[0], this.colors.darkText[1], this.colors.darkText[2]);
     doc.text(label, x + (w / 2), y + h + 4, { align: 'center' });
@@ -403,7 +499,7 @@ export class PrediccionReportService {
     doc.setLineWidth(0.25);
     doc.rect(x, y, w, h);
 
-    doc.setFont('helvetica', 'italic');
+    doc.setFont(this.fontPrincipal, 'italic');
     doc.setFontSize(8);
     doc.setTextColor(153, 27, 27);
     doc.text(errorMsg, x + (w / 2), y + (h / 2), { align: 'center' });

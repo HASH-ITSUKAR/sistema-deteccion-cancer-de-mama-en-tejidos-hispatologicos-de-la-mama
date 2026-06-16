@@ -5,11 +5,11 @@
       <h2 class="text-2xl font-bold text-gray-800 mb-6">CaiT</h2>
       <div class="flex flex-row gap-4 justify-center items-center">
         <div class="w-1/2">
-          <img [src]="cait_0()" alt="CaiT - Clase 0" class="max-h-80 mx-auto block">
+          <img [src]="obtenerImagenSrc('cait_0', cait_0())" (click)="conmutarImagen('cait_0')" alt="CaiT - Clase 0" class="max-h-80 mx-auto block cursor-pointer hover:opacity-90 transition-opacity">
           <p class="text-sm font-semibold text-gray-600 mt-3">{{ 'PREDICCION.DATOS.MODELOS.BENIGNO' | translate }}</p>
         </div>
         <div class="w-1/2">
-          <img [src]="cait_1()" alt="CaiT - Clase 1" class="max-h-80 mx-auto block">
+          <img [src]="obtenerImagenSrc('cait_1', cait_1())" (click)="conmutarImagen('cait_1')" alt="CaiT - Clase 1" class="max-h-80 mx-auto block cursor-pointer hover:opacity-90 transition-opacity">
           <p class="text-sm font-semibold text-gray-600 mt-3">{{ 'PREDICCION.DATOS.MODELOS.MALIGNO' | translate }}</p>
         </div>
       </div>
@@ -21,11 +21,11 @@
       <h2 class="text-2xl font-bold text-gray-800 mb-6">DeiT</h2>
       <div class="flex flex-row gap-4 justify-center items-center">
         <div class="w-1/2">
-          <img [src]="deit_0()" alt="DeiT - Clase 0" class="max-h-80 mx-auto block">
+          <img [src]="obtenerImagenSrc('deit_0', deit_0())" (click)="conmutarImagen('deit_0')" alt="DeiT - Clase 0" class="max-h-80 mx-auto block cursor-pointer hover:opacity-90 transition-opacity">
           <p class="text-sm font-semibold text-gray-600 mt-3">{{ 'PREDICCION.DATOS.MODELOS.BENIGNO' | translate }}</p>
         </div>
         <div class="w-1/2">
-          <img [src]="deit_1()" alt="DeiT - Clase 1" class="max-h-80 mx-auto block">
+          <img [src]="obtenerImagenSrc('deit_1', deit_1())" (click)="conmutarImagen('deit_1')" alt="DeiT - Clase 1" class="max-h-80 mx-auto block cursor-pointer hover:opacity-90 transition-opacity">
           <p class="text-sm font-semibold text-gray-600 mt-3">{{ 'PREDICCION.DATOS.MODELOS.MALIGNO' | translate }}</p>
         </div>
       </div>
@@ -41,11 +41,11 @@
       <h2 class="text-2xl font-bold text-gray-800 mb-6">DenseNet</h2>
       <div class="flex flex-row gap-4 justify-center items-center">
         <div class="w-1/2">
-          <img [src]="densenet_0()" alt="CaiT - Clase 0" class="max-h-80 mx-auto block">
+          <img [src]="obtenerImagenSrc('densenet_0', densenet_0())" (click)="conmutarImagen('densenet_0')" alt="DenseNet - Clase 0" class="max-h-80 mx-auto block cursor-pointer hover:opacity-90 transition-opacity">
           <p class="text-sm font-semibold text-gray-600 mt-3">{{ 'PREDICCION.DATOS.MODELOS.BENIGNO' | translate }}</p>
         </div>
         <div class="w-1/2">
-          <img [src]="densenet_1()" alt="CaiT - Clase 1" class="max-h-80 mx-auto block">
+          <img [src]="obtenerImagenSrc('densenet_1', densenet_1())" (click)="conmutarImagen('densenet_1')" alt="DenseNet - Clase 1" class="max-h-80 mx-auto block cursor-pointer hover:opacity-90 transition-opacity">
           <p class="text-sm font-semibold text-gray-600 mt-3">{{ 'PREDICCION.DATOS.MODELOS.MALIGNO' | translate }}</p>
         </div>
       </div>
@@ -57,11 +57,11 @@
       <h2 class="text-2xl font-bold text-gray-800 mb-6">EfficientNet</h2>
       <div class="flex flex-row gap-4 justify-center items-center">
         <div class="w-1/2">
-          <img [src]="efficientnet_0()" alt="DeiT - Clase 0" class="max-h-80 mx-auto block">
+          <img [src]="obtenerImagenSrc('efficientnet_0', efficientnet_0())" (click)="conmutarImagen('efficientnet_0')" alt="EfficientNet - Clase 0" class="max-h-80 mx-auto block cursor-pointer hover:opacity-90 transition-opacity">
           <p class="text-sm font-semibold text-gray-600 mt-3">{{ 'PREDICCION.DATOS.MODELOS.BENIGNO' | translate }}</p>
         </div>
         <div class="w-1/2">
-          <img [src]="efficientnet_1()" alt="DeiT - Clase 1" class="max-h-80 mx-auto block">
+          <img [src]="obtenerImagenSrc('efficientnet_1', efficientnet_1())" (click)="conmutarImagen('efficientnet_1')" alt="EfficientNet - Clase 1" class="max-h-80 mx-auto block cursor-pointer hover:opacity-90 transition-opacity">
           <p class="text-sm font-semibold text-gray-600 mt-3">{{ 'PREDICCION.DATOS.MODELOS.MALIGNO' | translate }}</p>
         </div>
       </div>
@@ -77,11 +77,11 @@
       <h2 class="text-2xl font-bold text-gray-800 mb-6">Inception</h2>
       <div class="flex flex-row gap-4 justify-center items-center">
         <div class="w-1/2">
-          <img [src]="inception_0()" alt="CaiT - Clase 0" class="max-h-80 mx-auto block">
+          <img [src]="obtenerImagenSrc('inception_0', inception_0())" (click)="conmutarImagen('inception_0')" alt="Inception - Clase 0" class="max-h-80 mx-auto block cursor-pointer hover:opacity-90 transition-opacity">
           <p class="text-sm font-semibold text-gray-600 mt-3">{{ 'PREDICCION.DATOS.MODELOS.BENIGNO' | translate }}</p>
         </div>
         <div class="w-1/2">
-          <img [src]="inception_1()" alt="CaiT - Clase 1" class="max-h-80 mx-auto block">
+          <img [src]="obtenerImagenSrc('inception_1', inception_1())" (click)="conmutarImagen('inception_1')" alt="Inception - Clase 1" class="max-h-80 mx-auto block cursor-pointer hover:opacity-90 transition-opacity">
           <p class="text-sm font-semibold text-gray-600 mt-3">{{ 'PREDICCION.DATOS.MODELOS.MALIGNO' | translate }}</p>
         </div>
       </div>
@@ -93,11 +93,11 @@
       <h2 class="text-2xl font-bold text-gray-800 mb-6">PVT</h2>
       <div class="flex flex-row gap-4 justify-center items-center">
         <div class="w-1/2">
-          <img [src]="pvt_0()" alt="DeiT - Clase 0" class="max-h-80 mx-auto block">
+          <img [src]="obtenerImagenSrc('pvt_0', pvt_0())" (click)="conmutarImagen('pvt_0')" alt="PVT - Clase 0" class="max-h-80 mx-auto block cursor-pointer hover:opacity-90 transition-opacity">
           <p class="text-sm font-semibold text-gray-600 mt-3">{{ 'PREDICCION.DATOS.MODELOS.BENIGNO' | translate }}</p>
         </div>
         <div class="w-1/2">
-          <img [src]="pvt_1()" alt="DeiT - Clase 1" class="max-h-80 mx-auto block">
+          <img [src]="obtenerImagenSrc('pvt_1', pvt_1())" (click)="conmutarImagen('pvt_1')" alt="PVT - Clase 1" class="max-h-80 mx-auto block cursor-pointer hover:opacity-90 transition-opacity">
           <p class="text-sm font-semibold text-gray-600 mt-3">{{ 'PREDICCION.DATOS.MODELOS.MALIGNO' | translate }}</p>
         </div>
       </div>
@@ -113,11 +113,11 @@
       <h2 class="text-2xl font-bold text-gray-800 mb-6">Swin</h2>
       <div class="flex flex-row gap-4 justify-center items-center">
         <div class="w-1/2">
-          <img [src]="swin_0()" alt="CaiT - Clase 0" class="max-h-80 mx-auto block">
+          <img [src]="obtenerImagenSrc('swin_0', swin_0())" (click)="conmutarImagen('swin_0')" alt="Swin - Clase 0" class="max-h-80 mx-auto block cursor-pointer hover:opacity-90 transition-opacity">
           <p class="text-sm font-semibold text-gray-600 mt-3">{{ 'PREDICCION.DATOS.MODELOS.BENIGNO' | translate }}</p>
         </div>
         <div class="w-1/2">
-          <img [src]="swin_1()" alt="CaiT - Clase 1" class="max-h-80 mx-auto block">
+          <img [src]="obtenerImagenSrc('swin_1', swin_1())" (click)="conmutarImagen('swin_1')" alt="Swin - Clase 1" class="max-h-80 mx-auto block cursor-pointer hover:opacity-90 transition-opacity">
           <p class="text-sm font-semibold text-gray-600 mt-3">{{ 'PREDICCION.DATOS.MODELOS.MALIGNO' | translate }}</p>
         </div>
       </div>
@@ -129,11 +129,11 @@
       <h2 class="text-2xl font-bold text-gray-800 mb-6">ViT</h2>
       <div class="flex flex-row gap-4 justify-center items-center">
         <div class="w-1/2">
-          <img [src]="vit_0()" alt="DeiT - Clase 0" class="max-h-80 mx-auto block">
+          <img [src]="obtenerImagenSrc('vit_0', vit_0())" (click)="conmutarImagen('vit_0')" alt="ViT - Clase 0" class="max-h-80 mx-auto block cursor-pointer hover:opacity-90 transition-opacity">
           <p class="text-sm font-semibold text-gray-600 mt-3">{{ 'PREDICCION.DATOS.MODELOS.BENIGNO' | translate }}</p>
         </div>
         <div class="w-1/2">
-          <img [src]="vit_1()" alt="DeiT - Clase 1" class="max-h-80 mx-auto block">
+          <img [src]="obtenerImagenSrc('vit_1', vit_1())" (click)="conmutarImagen('vit_1')" alt="ViT - Clase 1" class="max-h-80 mx-auto block cursor-pointer hover:opacity-90 transition-opacity">
           <p class="text-sm font-semibold text-gray-600 mt-3">{{ 'PREDICCION.DATOS.MODELOS.MALIGNO' | translate }}</p>
         </div>
       </div>

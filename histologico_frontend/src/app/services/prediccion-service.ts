@@ -14,6 +14,8 @@ export class PrediccionService {
   prediccionReportService = inject(PrediccionReportService);
 
   predecir(imagen: File): Observable<ResultadoPredicciones> {
+    this.prediccion.set(null); // 👈 Limpias el estado anterior justo al empezar
+
     const formData = new FormData();
     formData.append('imagen', imagen);
 

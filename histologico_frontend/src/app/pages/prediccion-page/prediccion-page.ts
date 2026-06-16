@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, signal } from '@angular/core';
 import { PrediccionFormulario } from "./prediccion-formulario/prediccion-formulario";
 import { PrediccionService } from 'src/app/services/prediccion-service';
 import { PrediccionDatos } from "./prediccion-datos/prediccion-datos";
@@ -19,4 +19,15 @@ export class PrediccionPage {
     const currentLang = this.languageService.getCurrentLanguage();
     this.languageService.setLanguage(currentLang);
   }
+
+  carga = signal<number>(0);
+
+  cargando() {
+    this.carga.set(1); // 👈 Actualiza con .set()
+  }
+
+  cargado() {
+    this.carga.set(0); // 👈 Actualiza con .set()
+  }
+
 }

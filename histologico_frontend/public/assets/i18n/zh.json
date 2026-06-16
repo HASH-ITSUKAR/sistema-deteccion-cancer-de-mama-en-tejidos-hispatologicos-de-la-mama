@@ -109,7 +109,7 @@
     "TITULO": "🔬 组织学分析",
     "SUBTITULO": "乳腺癌检测",
     "FORMULARIO": {
-      "CARGAR": "加载组织 image",
+      "CARGAR": "加载组织图片",
       "CLICK": "点击此处或拖拽您的组织病理学图像",
       "ANALIZAR": "🧬 分析样本",
       "ERROR": "只能上传图像文件"
